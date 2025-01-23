@@ -27,7 +27,7 @@ let r = 255;
 let g = 174;
 let b = 231;
 
-let reset = 0;
+let reset = 500;
 /**
  * setup
 */
@@ -57,10 +57,9 @@ function drawRectangles(x, y) {
 }
 
 function moveRectangle03() {
-    rect03y = rect03y + 1;
-    if (rect03y < 720) {
-        resetY
-        console.log(rect03y)
+    rect03y += 1;
+    if (rect03y > 720) {
+        rect03y = reset
     }
 }
 
@@ -76,9 +75,7 @@ function keyPressed() {
     }
 }
 
-function resetY() {
-    rect03y = 200;
-}
+
 
 
 
