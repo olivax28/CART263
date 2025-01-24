@@ -100,9 +100,12 @@ length
 
     /*************************************** */
     /* 4: the last image element inside the element that has the class img-container */
-    /***CODE */
+    /***CODE */ console.log(document.getElementsByClassName("img-container").length);
+    console.log(document.getElementsByClassName("img-container")[7]);
     /***OUTPUT: 
-     * 
+     * <div class="img-container">
+                        <img class="img-image" src="task-1-images/seventeen.png">
+                    </div>
      */
 
 
@@ -110,10 +113,13 @@ length
     /* 5A: all h2 elements */
     /* 5B: length of the list in 5A */
     /* 5C: the text content of the first element in the list from 5A */
-    /***CODE */
+    /***CODE */console.log(document.getElementsByTagName("h2"));
     /***OUTPUT: 
-     * 
-     */
+     * ALL h2 Elements:
+     *  HTMLCollection [h2]
+     * 0 : h2
+        length:  1
+        [[Prototype]] :  HTMLCollection
 
 
     /*************************************** */
