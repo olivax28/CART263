@@ -110,17 +110,24 @@ length
 
 
     /*************************************** */
-    /* 5A: all h2 elements */
-    /* 5B: length of the list in 5A */
-    /* 5C: the text content of the first element in the list from 5A */
-    /***CODE */console.log(document.getElementsByTagName("h2"));
-    /***OUTPUT: 
+    /* 5A: all h2 elements */console.log(document.getElementsByTagName("h2"));
+    /* 5B: length of the list in 5A */ console.log(document.querySelectorAll("h2").length);
+    /* 5C: the text content of the first element in the list from 5A */ console.log(document.getElementsByTagName("h2")[0].textContent);
+    /***CODE */
+    /***OUTPUT:
+     * A)
      * ALL h2 Elements:
      *  HTMLCollection [h2]
      * 0 : h2
         length:  1
         [[Prototype]] :  HTMLCollection
 
+    B)
+    HTMLCollection [h2]
+     1
+    
+    C)
+    The header of this fancy page
 
     /*************************************** */
     /* 6: the element with id name parent */
