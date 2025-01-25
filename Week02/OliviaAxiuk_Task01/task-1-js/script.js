@@ -111,7 +111,7 @@ length
 
     /*************************************** */
     /* 5A: all h2 elements */console.log(document.getElementsByTagName("h2"));
-    /* 5B: length of the list in 5A */ console.log(document.querySelectorAll("h2").length);
+    /* 5B: length of the list in 5A */ console.log(document.getElementsByTagName("h2").length);
     /* 5C: the text content of the first element in the list from 5A */ console.log(document.getElementsByTagName("h2")[0].textContent);
     /***CODE */
     /***OUTPUT:
@@ -131,8 +131,18 @@ length
 
     /*************************************** */
     /* 6: the element with id name parent */
-    /***CODE */
+    /***CODE */ console.log(document.getElementById("parent"));
     /***OUTPUT: 
+     * <section id="parent">
+            <div class="inner-container"></div>
+            <div class="inner-container"></div>
+            <div class="inner-container"></div>
+            <div class="inner-container"></div>
+            <div class="inner-container"></div>
+            <div class="inner-container"></div>
+            <div class="inner-container"></div>
+            <div class="inner-container"></div>
+        </section>
      * 
      */
 
