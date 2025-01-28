@@ -161,12 +161,13 @@ length
 
 
     /***CODE */
-    console.log(document.getElementsByClassName("content-container")[0].style.background = "black");
+    console.log(document.getElementsByClassName("content-container")[0].style.background = "orange");
+    console.log(document.getElementsByClassName("content-container")[1].style.background = "purple");
 
 
     /*************************************** */
     /* 3: Change the src element of the first image element on the page to be ...
-    /***CODE */
+    /***CODE */console.log(document.getElementsByTagName("img")[0].src = "/task-1-images/seven.png");
 
     /*************************************** */
     /* 4: Select the third paragraph element on the page and 
