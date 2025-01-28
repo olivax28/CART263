@@ -154,30 +154,30 @@ length
     /*** START PART TWO MODIFY */
     /*************************************** */
     /* 1: Select the first paragraph and replace the text within the paragraph... */
-    /***CODE */console.log(document.getElementsByTagName("p")[0].textContent = "new text in parapgraph 01: Julia Axiuk and Olivia Axiuk on the following date: 2025-01-28");
+    /***CODE */(document.getElementsByTagName("p")[0].textContent = "new text in parapgraph 01: Julia Axiuk and Olivia Axiuk on the following date: 2025-01-28");
     /*************************************** */
     /* 2: Select all elements in the HTML that have the class name content-container
      and change the background color ... of first and second ...*/
 
 
     /***CODE */
-    console.log(document.getElementsByClassName("content-container")[0].style.background = "orange");
-    console.log(document.getElementsByClassName("content-container")[1].style.background = "purple");
+    (document.getElementsByClassName("content-container")[0].style.background = "orange");
+    (document.getElementsByClassName("content-container")[1].style.background = "purple");
 
 
     /*************************************** */
     /* 3: Change the src element of the first image element on the page to be ...
-    /***CODE */console.log(document.getElementsByTagName("img")[0].src = "/task-1-images/seven.png");
+    /***CODE */(document.getElementsByTagName("img")[0].src = "/task-1-images/seven.png");
 
     /*************************************** */
     /* 4: Select the third paragraph element on the page and 
     replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
-    /***CODE */
+    /***CODE */document.getElementsByTagName("p")[2].innerHTML = "<h2> TEST 123</h2>";
 
     /*************************************** */
     /* 5: Select the fourth paragraph element on the page and 
     add to the existing content an h2 element containing the text `TEST 123`
-    /***CODE */
+    /***CODE */ console.log(document.getElementsByTagName("p")[3].innerHTML += "<h2> TEST 123</h2>");
 
     /*************************************** */
     /* 6: Select the fifth paragraph element on the page and add to the existing content 
