@@ -154,11 +154,15 @@ length
     /*** START PART TWO MODIFY */
     /*************************************** */
     /* 1: Select the first paragraph and replace the text within the paragraph... */
-    /***CODE */
+    /***CODE */console.log(document.getElementsByTagName("p")[0].textContent = "new text in parapgraph 01: Julia Axiuk and Olivia Axiuk on the following date: 2025-01-28");
     /*************************************** */
     /* 2: Select all elements in the HTML that have the class name content-container
      and change the background color ... of first and second ...*/
+
+
     /***CODE */
+    console.log(document.getElementsByClassName("content-container")[0].style.background = "black");
+
 
     /*************************************** */
     /* 3: Change the src element of the first image element on the page to be ...
