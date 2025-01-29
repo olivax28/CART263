@@ -289,11 +289,25 @@ length
 
         newDiv.classList.add("testDiv");
 
+        newDiv.innerHTML = "<div> NEW ELEMENT TWO </div>";
+
         parent.append(newDiv);
 
         return newDiv
 
     };
+
+    let rowNumbers = 9;
+    let columnNumbers = 9;
+
+    let newDivID = (document.querySelector("#new-grid"));
+
+    for (let row = 0; row <= rowNumbers; row++) {
+        for (let column = 0; column <= columnNumbers; column++) {
+            let createdDiv = customNewBoxCreate(newDivID);
+        }
+    }
+
 
 
     /***EXPLANATION::
