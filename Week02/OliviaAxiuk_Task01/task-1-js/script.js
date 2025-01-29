@@ -214,30 +214,35 @@ length
     /* 1A: Access all paragraph elements, and store the result in a variable called: allPTagsThree */
     let allPTagsThree = document.getElementsByTagName("p");
     /* 1B: Create a function:function customCreateElement(parent){ //body } */
-    function customCreateElement(parent) { body };
-    /* 1C:  In the body of customCreateElement create a new parargraph element*/
+
     function customCreateElement(parent) {
-        allPTagsThree.classList.add("p");
+        /* 1C:  In the body of customCreateElement create a new parargraph element*/
+
+        let newParagraph = document.createElement("p");
+        /* 1D:  Set the text of this element to be : `using create Element`*/
+
+        newParagraph.innerHTML = "<p> using create Element </p>";
+
+        /* 1E:  Set the background of this paragraph element to be green */
+
+        newParagraph.background = "green";
+
+        /* 1F:  Set the color of the text in this paragraph element to be white */
+
+        newParagraph.color = "white";
+        /* 1G: Append this new element to the parent variable within the function. */
+
+        parent.appendChild(newParagraph);
+
 
     }
-    /* 1D:  Set the text of this element to be : `using create Element`*/
 
-    allPTagsThree.innerHTML = "<p> using create Element </p>";
 
-    /* 1E:  Set the background of this paragraph element to be green */
-
-    allPTagsThree.backgroundColor = "green";
-
-    /* 1F:  Set the color of the text in this paragraph element to be white */
-
-    allPTagsThree.color = "white";
-
-    /* 1G: Append this new element to the parent variable within the function. */
     /* 1H: Iterate through the allPTagsThree array and call customCreateElement(),
     passing the current allPTagsThree element as the parent with each iteration.*/
     /***CODE */
 
-
+    customCreateElement(allPTagsThree);
 
 
     /***EXPLANATION::
