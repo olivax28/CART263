@@ -233,8 +233,6 @@ length
         /* 1G: Append this new element to the parent variable within the function. */
 
         parent.append(newParagraph);
-
-
     }
 
 
@@ -244,8 +242,13 @@ length
     allPTagsThree.forEach((newP) => { customCreateElement(newP) });
 
     /***EXPLANATION::
-     * 
-     * 
+     * store all of the iexisting paragraph tags as an array in the allPTagsThree variable
+     * Create a function that...
+        * 1. Defines newParagraph as a p element to be created to the document
+        * 2. Indicates that this p element will be added to the html as a <p> tag
+        * 3. Defines the style of the new paragraph as green with white text
+        * 4. Appends this new Paragrapj to the parent
+     * Then, use the forEach function to define that for all of the exisitng p tags in allPTagsThree there will be a corresponding array for the newly created paragraph using our custom function
      */
 
     /*************************************** */
