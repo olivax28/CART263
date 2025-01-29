@@ -151,57 +151,57 @@ length
 
 
     /*************************************** */
-    /*** START PART TWO MODIFY */
-    /*************************************** */
-    /* 1: Select the first paragraph and replace the text within the paragraph... */
-    /***CODE */(document.getElementsByTagName("p")[0].textContent = "new text in parapgraph 01: Julia Axiuk and Olivia Axiuk on the following date: 2025-01-28");
-    /*************************************** */
-    /* 2: Select all elements in the HTML that have the class name content-container
-     and change the background color ... of first and second ...*/
+    // /*** START PART TWO MODIFY */
+    // /*************************************** */
+    // /* 1: Select the first paragraph and replace the text within the paragraph... */
+    // /***CODE */(document.getElementsByTagName("p")[0].textContent = "new text in parapgraph 01: Julia Axiuk and Olivia Axiuk on the following date: 2025-01-28");
+    // /*************************************** */
+    // /* 2: Select all elements in the HTML that have the class name content-container
+    //  and change the background color ... of first and second ...*/
 
 
-    /***CODE */
-    (document.getElementsByClassName("content-container")[0].style.background = "orange");
-    (document.getElementsByClassName("content-container")[1].style.background = "purple");
+    // /***CODE */
+    // (document.getElementsByClassName("content-container")[0].style.background = "orange");
+    // (document.getElementsByClassName("content-container")[1].style.background = "purple");
 
 
-    /*************************************** */
-    /* 3: Change the src element of the first image element on the page to be ...
-    /***CODE */(document.getElementsByTagName("img")[0].src = "/task-1-images/seven.png");
+    // /*************************************** */
+    // /* 3: Change the src element of the first image element on the page to be ...
+    // /***CODE */(document.getElementsByTagName("img")[0].src = "/task-1-images/seven.png");
 
-    /*************************************** */
-    /* 4: Select the third paragraph element on the page and 
-    replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
-    /***CODE */(document.getElementsByTagName("p")[2].innerHTML = "<h2> TEST 123</h2>");
+    // /*************************************** */
+    // /* 4: Select the third paragraph element on the page and 
+    // replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
+    // /***CODE */(document.getElementsByTagName("p")[2].innerHTML = "<h2> TEST 123</h2>");
 
-    /*************************************** */
-    /* 5: Select the fourth paragraph element on the page and 
-    add to the existing content an h2 element containing the text `TEST 123`
-    /***CODE */ (document.getElementsByTagName("p")[3].innerHTML += "<h2> TEST 123</h2>");
+    // /*************************************** */
+    // /* 5: Select the fourth paragraph element on the page and 
+    // add to the existing content an h2 element containing the text `TEST 123`
+    // /***CODE */ (document.getElementsByTagName("p")[3].innerHTML += "<h2> TEST 123</h2>");
 
-    /*************************************** */
-    /* 6: Select the fifth paragraph element on the page and add to the existing content 
-    an img element that holds `one.png`, and add the class newStyle to said paragraph element.
-    /***CODE */console.log(document.getElementsByTagName("p")[4].innerHTML += "<img src =/task-1-images/one.png>");
-    //console.log(document.getElementsByTagName("p")[4].innerHTML += "");
-    document.querySelectorAll("p")[4].setAttribute("class", "newStyle")
+    // /*************************************** */
+    // /* 6: Select the fifth paragraph element on the page and add to the existing content 
+    // an img element that holds `one.png`, and add the class newStyle to said paragraph element.
+    // /***CODE */console.log(document.getElementsByTagName("p")[4].innerHTML += "<img src =/task-1-images/one.png>");
+    // //console.log(document.getElementsByTagName("p")[4].innerHTML += "");
+    // document.querySelectorAll("p")[4].setAttribute("class", "newStyle")
 
 
 
-    /*************************************** */
-    /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];,
-    then access all elements with class name inner-container and save to a variable called `innerContainers`. 
-    Next, iterate over the colors array, and for each color: 
-    assign the element from innerContainers variable with the same index 
-    (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
-    a background using that color.
-    /***CODE */
-    let colors = ['red', 'blue', 'green', 'orange'];
-    let innerContainers = document.getElementsByClassName("inner-container");
-    (innerContainers[0].style.background = colors[0]);
-    (innerContainers[1].style.background = colors[1]);
-    (innerContainers[2].style.background = colors[2]);
-    (innerContainers[3].style.background = colors[3]);
+    // /*************************************** */
+    // /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];,
+    // then access all elements with class name inner-container and save to a variable called `innerContainers`. 
+    // Next, iterate over the colors array, and for each color: 
+    // assign the element from innerContainers variable with the same index 
+    // (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
+    // a background using that color.
+    // /***CODE */
+    // let colors = ['red', 'blue', 'green', 'orange'];
+    // let innerContainers = document.getElementsByClassName("inner-container");
+    // (innerContainers[0].style.background = colors[0]);
+    // (innerContainers[1].style.background = colors[1]);
+    // (innerContainers[2].style.background = colors[2]);
+    // (innerContainers[3].style.background = colors[3]);
 
     /*************************************** */
     /*** END PART TWO MODIFY */
@@ -212,11 +212,26 @@ length
     /*************************************** */
     /* 1: NEW PARAGRAPHS */
     /* 1A: Access all paragraph elements, and store the result in a variable called: allPTagsThree */
+    let allPTagsThree = document.getElementsByTagName("p");
     /* 1B: Create a function:function customCreateElement(parent){ //body } */
+    function customCreateElement(parent) { body };
     /* 1C:  In the body of customCreateElement create a new parargraph element*/
+    function customCreateElement(parent) {
+        allPTagsThree.classList.add("p");
+
+    }
     /* 1D:  Set the text of this element to be : `using create Element`*/
+
+    allPTagsThree.innerHTML = "<p> using create Element </p>";
+
     /* 1E:  Set the background of this paragraph element to be green */
+
+    allPTagsThree.backgroundColor = "green";
+
     /* 1F:  Set the color of the text in this paragraph element to be white */
+
+    allPTagsThree.color = "white";
+
     /* 1G: Append this new element to the parent variable within the function. */
     /* 1H: Iterate through the allPTagsThree array and call customCreateElement(),
     passing the current allPTagsThree element as the parent with each iteration.*/
