@@ -212,7 +212,7 @@ length
     /*************************************** */
     /* 1: NEW PARAGRAPHS */
     /* 1A: Access all paragraph elements, and store the result in a variable called: allPTagsThree */
-    let allPTagsThree = document.getElementsByTagName("p");
+    let allPTagsThree = document.querySelectorAll("p");
     /* 1B: Create a function:function customCreateElement(parent){ //body } */
 
     function customCreateElement(parent) {
@@ -225,14 +225,14 @@ length
 
         /* 1E:  Set the background of this paragraph element to be green */
 
-        newParagraph.background = "green";
+        newParagraph.style.background = "green";
 
         /* 1F:  Set the color of the text in this paragraph element to be white */
 
-        newParagraph.color = "white";
+        newParagraph.style.color = "white";
         /* 1G: Append this new element to the parent variable within the function. */
 
-        parent.appendChild(newParagraph);
+        parent.append(newParagraph);
 
 
     }
@@ -241,8 +241,15 @@ length
     /* 1H: Iterate through the allPTagsThree array and call customCreateElement(),
     passing the current allPTagsThree element as the parent with each iteration.*/
     /***CODE */
+    allPTagsThree.forEach((element) => {
+        customCreateElement(element)
+    })
 
-    customCreateElement(allPTagsThree);
+
+
+
+
+
 
 
     /***EXPLANATION::
@@ -309,3 +316,4 @@ length
 
 
 }
+
