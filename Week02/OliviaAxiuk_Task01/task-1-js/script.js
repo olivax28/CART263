@@ -289,7 +289,7 @@ length
 
         newDiv.classList.add("testDiv");
 
-        newDiv.innerHTML = "<div> NEW ELEMENT TWO </div>";
+        newDiv.innerHTML = "NEW ELEMENT TWO";
 
         parent.append(newDiv);
 
@@ -304,10 +304,12 @@ length
 
     for (let row = 0; row <= rowNumbers; row++) {
         for (let column = 0; column <= columnNumbers; column++) {
+            let returnedDiv = customNewBoxCreate(newDivID);
+            returnedDiv.style.left = `${row * 40}px`;
+            returnedDiv.style.top = `${column * 40}px`;
             (customNewBoxCreate(newDivID));
         }
     }
-
 
 
     /***EXPLANATION::
