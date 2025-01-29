@@ -304,7 +304,7 @@ length
 
     for (let row = 0; row <= rowNumbers; row++) {
         for (let column = 0; column <= columnNumbers; column++) {
-            let createdDiv = customNewBoxCreate(newDivID);
+            (customNewBoxCreate(newDivID));
         }
     }
 
