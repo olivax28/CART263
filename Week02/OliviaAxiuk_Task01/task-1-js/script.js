@@ -172,17 +172,17 @@ length
     /*************************************** */
     /* 4: Select the third paragraph element on the page and 
     replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
-    /***CODE */document.getElementsByTagName("p")[2].innerHTML = "<h2> TEST 123</h2>";
+    /***CODE */(document.getElementsByTagName("p")[2].innerHTML = "<h2> TEST 123</h2>");
 
     /*************************************** */
     /* 5: Select the fourth paragraph element on the page and 
     add to the existing content an h2 element containing the text `TEST 123`
-    /***CODE */ console.log(document.getElementsByTagName("p")[3].innerHTML += "<h2> TEST 123</h2>");
+    /***CODE */ (document.getElementsByTagName("p")[3].innerHTML += "<h2> TEST 123</h2>");
 
     /*************************************** */
     /* 6: Select the fifth paragraph element on the page and add to the existing content 
     an img element that holds `one.png`, and add the class newStyle to said paragraph element.
-    /***CODE */
+    /***CODE */console.log(document.getElementsByTagName("p")[4].innerHTML += "<img src =/task-1-images/one.png>");
 
 
     /*************************************** */
