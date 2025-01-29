@@ -183,6 +183,9 @@ length
     /* 6: Select the fifth paragraph element on the page and add to the existing content 
     an img element that holds `one.png`, and add the class newStyle to said paragraph element.
     /***CODE */console.log(document.getElementsByTagName("p")[4].innerHTML += "<img src =/task-1-images/one.png>");
+    //console.log(document.getElementsByTagName("p")[4].innerHTML += "");
+    document.querySelectorAll("p")[4].setAttribute("class", "newStyle")
+
 
 
     /*************************************** */
@@ -195,10 +198,10 @@ length
     /***CODE */
     let colors = ['red', 'blue', 'green', 'orange'];
     let innerContainers = document.getElementsByClassName("inner-container");
-    console.log(innerContainers[0].style.background = colors[0]);
-    console.log(innerContainers[1].style.background = colors[1]);
-    console.log(innerContainers[2].style.background = colors[2]);
-    console.log(innerContainers[3].style.background = colors[3]);
+    (innerContainers[0].style.background = colors[0]);
+    (innerContainers[1].style.background = colors[1]);
+    (innerContainers[2].style.background = colors[2]);
+    (innerContainers[3].style.background = colors[3]);
 
     /*************************************** */
     /*** END PART TWO MODIFY */
