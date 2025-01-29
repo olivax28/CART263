@@ -241,16 +241,7 @@ length
     /* 1H: Iterate through the allPTagsThree array and call customCreateElement(),
     passing the current allPTagsThree element as the parent with each iteration.*/
     /***CODE */
-    allPTagsThree.forEach((element) => {
-        customCreateElement(element)
-    })
-
-
-
-
-
-
-
+    allPTagsThree.forEach((newP) => { customCreateElement(newP) });
 
     /***EXPLANATION::
      * 
