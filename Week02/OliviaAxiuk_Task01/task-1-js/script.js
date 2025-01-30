@@ -196,12 +196,12 @@ length
     // (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
     // a background using that color.
     // /***CODE */
-    let colors = ['red', 'blue', 'green', 'orange'];
-    let innerContainers = document.getElementsByClassName("inner-container");
-    for (let i = 0; i < colors.length; i++) {
-        innerContainers[i].style.background = colors[i]
+    // let colors = ['red', 'blue', 'green', 'orange'];
+    // let innerContainers = document.getElementsByClassName("inner-container");
+    // for (let i = 0; i < colors.length; i++) {
+    //     innerContainers[i].style.background = colors[i]
 
-    }
+    // }
 
 
 
