@@ -307,7 +307,17 @@ length
             let returnedDiv = customNewBoxCreate(newDivID);
             returnedDiv.style.left = `${row * 40}px`;
             returnedDiv.style.top = `${column * 40}px`;
+            if (row % 2 === 0) {
+                returnedDiv.style.background = "purple";
+            }
+            else {
+                returnedDiv.style.background = "white";
+
+            }
+
+
             (customNewBoxCreate(newDivID));
+
         }
     }
 
