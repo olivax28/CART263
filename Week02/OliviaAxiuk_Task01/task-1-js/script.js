@@ -283,6 +283,58 @@ length
         otherwise lat it have the content `ODD`.*/
 
     /***CODE */
+    // function customNewBoxCreate(parent) {
+
+    //     let newDiv = document.createElement("div");
+
+    //     newDiv.classList.add("testDiv");
+
+    //     newDiv.innerHTML = "NEW ELEMENT TWO";
+
+    //     parent.append(newDiv);
+
+    //     return newDiv
+
+    // };
+
+    // let rowNumbers = 9;
+    // let columnNumbers = 9;
+
+    // let newDivID = (document.querySelector("#new-grid"));
+
+    // for (let row = 0; row <= rowNumbers; row++) {
+    //     for (let column = 0; column <= columnNumbers; column++) {
+    //         let returnedDiv = customNewBoxCreate(newDivID);
+    //         returnedDiv.style.left = `${row * 40}px`;
+    //         returnedDiv.style.top = `${column * 40}px`;
+    //         (customNewBoxCreate(newDivID));
+    //     }
+    // }
+
+
+    /***EXPLANATION::
+     * First, we created a function that creates a new box, and appends it to the parent. It also adds it to the class list, adds text and retunrs the final newDiv. Next, 
+     * two variables are created for the row and column numbers (we want 10 boxes in each), but an array starts at 0, so we wrote 9. After assigning the newDivId ID to the variable that will ne our new divs, we create a nested forloop.
+     * This forloop goes through the array for the rows and columns, assigning the newDivId ID to each them of them, as well as chaning their styles.
+     * 
+     */
+
+    /*************************************** */
+    /* 3: GRID OF BOXES II */
+
+    /* 3A: Create ANOTHER nested for loop - in order to generate a new grid ...
+        USE the same customNewBoxCreate function..., the only difference is that the parent element 
+        for each of these new divs is the element whose id is `new-grid-three`. */
+    /* 3B: Then: write the code to check when a column is a multiple of 3 (no remainder),
+        when it is a column where the remainder is 1 or when the remainder is 2 ... 
+        HINT:: look up the % operator.. */
+    /* 3C: Then for each of the above cases: give the new divs in the first case a background of red,
+            then the second a background of orange and the third yellow. */
+    /*  3D: Finally, let each div contain the text content representing the associated remainder
+        when dividing by three. */
+
+    /***CODE */
+
     function customNewBoxCreate(parent) {
 
         let newDiv = document.createElement("div");
@@ -300,38 +352,31 @@ length
     let rowNumbers = 9;
     let columnNumbers = 9;
 
-    let newDivID = (document.querySelector("#new-grid"));
+    let newDivID = document.querySelector("#new-grid-three");
 
     for (let row = 0; row <= rowNumbers; row++) {
         for (let column = 0; column <= columnNumbers; column++) {
             let returnedDiv = customNewBoxCreate(newDivID);
             returnedDiv.style.left = `${row * 40}px`;
             returnedDiv.style.top = `${column * 40}px`;
+            if (column % 3 === 0) {
+                returnedDiv.style.background = "red";
+
+            }
+
+            if (column % 3 === 1) {
+                returnedDiv.style.background = "orange";
+
+            }
+            if (column % 3 === 2) {
+                returnedDiv.style.background = "white";
+
+            }
             (customNewBoxCreate(newDivID));
+            returnedDiv.textContent = column % 3;
         }
     }
 
-
-    /***EXPLANATION::
-     * 
-     * 
-     */
-
-    /*************************************** */
-    /* 3: GRID OF BOXES II */
-
-    /* 3A: Create ANOTHER nested for loop - in order to generate a new grid ... 
-        USE the same customNewBoxCreate function..., the only difference is that the parent element 
-        for each of these new divs is the element whose id is `new-grid-three`. */
-    /* 3B: Then: write the code to check when a column is a multiple of 3 (no remainder), 
-        when it is a column where the remainder is 1 or when the remainder is 2 ... 
-        HINT:: look up the % operator.. */
-    /* 3C: Then for each of the above cases: give the new divs in the first case a background of red, 
-            then the second a background of orange and the third yellow. */
-    /*  3D: Finally, let each div contain the text content representing the associated remainder 
-        when dividing by three. */
-
-    /***CODE */
 
 
     /***EXPLANATION::
