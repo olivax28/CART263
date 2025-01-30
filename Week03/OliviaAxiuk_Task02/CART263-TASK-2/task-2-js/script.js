@@ -153,6 +153,26 @@ function createNewDrawingPoint(mouseX, mouseY) {
   *   turn drawing off it is on or on if it is off (when the drawing mode is mouse-move)
   */
   let modeButton = document.querySelector("#change-mode-button");
+modeButton.addEventListener("click", clickCallback);
+function clickCallback(e){
+  if( currentPresets.drawingMode ==="mouse-move"){
+      currentPresets.drawingMode = "mouse-click";
+      modeButton.innerHTML = "<p>mouse-click</p>";
+  }
+  else {
+    currentPresets.drawingMode = "mouse-move";
+    modeButton.innerHTML = "<p>mouse-move</p>";
+}
+}
+
+pCanvas.addEventListener("click", canvasClick);
+function canvasClick(e){
+  createNewDrawingPoint(e.clientX,e.clientY);
+
+  
+}
+
+
 
    /*E:: OPACITY BUTTON ********************************************/
   /* TO DO: 
