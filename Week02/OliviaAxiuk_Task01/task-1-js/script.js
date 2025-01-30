@@ -283,33 +283,33 @@ length
         otherwise lat it have the content `ODD`.*/
 
     /***CODE */
-    // function customNewBoxCreate(parent) {
+    function customNewBoxCreate(parent) {
 
-    //     let newDiv = document.createElement("div");
+        let newDiv = document.createElement("div");
 
-    //     newDiv.classList.add("testDiv");
+        newDiv.classList.add("testDiv");
 
-    //     newDiv.innerHTML = "NEW ELEMENT TWO";
+        newDiv.innerHTML = "NEW ELEMENT TWO";
 
-    //     parent.append(newDiv);
+        parent.append(newDiv);
 
-    //     return newDiv
+        return newDiv
 
-    // };
+    };
 
-    // let rowNumbers = 9;
-    // let columnNumbers = 9;
+    let rowNumbers = 9;
+    let columnNumbers = 9;
 
-    // let newDivID = (document.querySelector("#new-grid"));
+    let newDivID = (document.querySelector("#new-grid"));
 
-    // for (let row = 0; row <= rowNumbers; row++) {
-    //     for (let column = 0; column <= columnNumbers; column++) {
-    //         let returnedDiv = customNewBoxCreate(newDivID);
-    //         returnedDiv.style.left = `${row * 40}px`;
-    //         returnedDiv.style.top = `${column * 40}px`;
-    //         (customNewBoxCreate(newDivID));
-    //     }
-    // }
+    for (let row = 0; row <= rowNumbers; row++) {
+        for (let column = 0; column <= columnNumbers; column++) {
+            let returnedDiv = customNewBoxCreate(newDivID);
+            returnedDiv.style.left = `${row * 40}px`;
+            returnedDiv.style.top = `${column * 40}px`;
+            (customNewBoxCreate(newDivID));
+        }
+    }
 
 
     /***EXPLANATION::
@@ -349,31 +349,31 @@ length
 
     };
 
-    let rowNumbers = 9;
-    let columnNumbers = 9;
+    let rowNumbers3 = 9;
+    let columnNumbers3 = 9;
 
-    let newDivID = document.querySelector("#new-grid-three");
+    let newDivID03 = document.querySelector("#new-grid-three");
 
-    for (let row = 0; row <= rowNumbers; row++) {
-        for (let column = 0; column <= columnNumbers; column++) {
-            let returnedDiv = customNewBoxCreate(newDivID);
+    for (let row = 0; row <= rowNumbers3; row++) {
+        for (let column = 0; column <= columnNumbers3; column++) {
+            let returnedDiv = customNewBoxCreate(newDivID03);
             returnedDiv.style.left = `${row * 40}px`;
             returnedDiv.style.top = `${column * 40}px`;
-            if (column % 3 === 0) {
+            if (row % 3 === 1) {
                 returnedDiv.style.background = "red";
 
             }
 
-            if (column % 3 === 1) {
+            if (row % 3 === 2) {
                 returnedDiv.style.background = "orange";
 
             }
-            if (column % 3 === 2) {
+            if (row % 3 === 0) {
                 returnedDiv.style.background = "white";
 
             }
-            (customNewBoxCreate(newDivID));
-            returnedDiv.textContent = column % 3;
+            (customNewBoxCreate(newDivID03));
+            returnedDiv.textContent = row % 3;
         }
     }
 
