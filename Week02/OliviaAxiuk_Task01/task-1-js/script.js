@@ -3,6 +3,7 @@ window.onload = setup;
 /** function setup */
 function setup() {
     console.log("we are a go!")
+    // Done in a group: Olivia Axiuk and Julia Axiuk
 /*** ALL ANWSERS TO BE ADDED IN THE ALLOCATED SPACE */
 /*** START PART ONE ACCESS */
 /* 1: all paragraph elements */
