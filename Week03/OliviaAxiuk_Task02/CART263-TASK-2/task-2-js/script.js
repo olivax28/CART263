@@ -152,9 +152,13 @@ function createNewDrawingPoint(mouseX, mouseY) {
   *   FILL IN THE CONDITION IN THE GIVEN EVENT listener for clicking the mouse and add the code to  toggle the drawing mode:
   *   turn drawing off it is on or on if it is off (when the drawing mode is mouse-move)
   */
+ // create variable to store the change mode button
   let modeButton = document.querySelector("#change-mode-button");
+  //using the modeButton and adding the click event to it,clickCallback
 modeButton.addEventListener("click", clickCallback);
+//when click happens...
 function clickCallback(e){
+  // check if the drawing mode is mouse move
   if( currentPresets.drawingMode ==="mouse-move"){
       currentPresets.drawingMode = "mouse-click";
       modeButton.innerHTML = "<p>mouse-click</p>";
