@@ -377,7 +377,7 @@ length
             }
             (customNewBoxCreate(newDivID03));
             returnedDiv.textContent = row % 3;
-        }
+        } 
     }
 
 
