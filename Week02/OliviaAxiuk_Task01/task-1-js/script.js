@@ -335,19 +335,7 @@ length
 
     /***CODE */
 
-    function customNewBoxCreate(parent) {
-
-        let newDiv = document.createElement("div");
-
-        newDiv.classList.add("testDiv");
-
-        newDiv.innerHTML = "NEW ELEMENT TWO";
-
-        parent.append(newDiv);
-
-        return newDiv
-
-    };
+    // NOTE: using customBoc function from last question
 
     let rowNumbers3 = 9;
     let columnNumbers3 = 9;
@@ -380,8 +368,11 @@ length
 
 
     /***EXPLANATION::
-     * 
-     * 
+     * Used the customNewBocCreate function already created in the last question
+     * defined a new variable for the new div to be created
+     * Used the same for loop as was used in the last question but with the names of the new variables asigned to the new grid
+     * Used the % operator (information found on mozilla!) to calculate the remainder of the divided row number by 3
+     * Displayed the text content of the returned Div as the row % 3
      */
 
     /*************************************** */
