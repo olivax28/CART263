@@ -112,23 +112,20 @@ parentCanvas.appendChild(ballDiv)
 
 let speedX = 2;
 let speedY = 3;
+let bool = ballDiv.getAttribute("groupD_boolean");
 
   ballDiv.addEventListener ("click", function (){
-    let bool = ballDiv.getAttribute("groupD_boolean");
-    bool === "on";
-
+    bool = "on";
     if (bool === "on"){
+      window.requestAnimationFrame(animate);
+      function animate() {   
+      ballDiv.style.left = parseInt(ballDiv.style.left) + speedX+ "px";
+      ballDiv.style.top = parseInt(ballDiv.style.top) + speedY + "px";
+      checkBounds(parentCanvas, ballDiv);
+      window.requestAnimationFrame(animate);
 
     }
-    window.requestAnimationFrame(animate);
    
-
-    function animate() {
-    
-    ballDiv.style.left = parseInt(ballDiv.style.left) + speedX+ "px";
-    ballDiv.style.top = parseInt(ballDiv.style.top) + speedY + "px";
-    checkBounds(parentCanvas, ballDiv);
-    window.requestAnimationFrame(animate);
  
  
 }
