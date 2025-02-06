@@ -74,6 +74,8 @@ function setup_D() {
    /**************** ANI A ************************************ */
   /** PUT ALL YOUR CODE FOR ANIMATION A INSIDE  HERE */
   /**************** ANI A ************************************ */
+//new element
+
   /**************** TASK *******************************************
    * YOU CAN USE ALL NOTES --- and see my examples in team-h.js for inspiration and possibly help:)
    * 1: use the function window.requestAnimationFrame() to create an animation
@@ -91,7 +93,80 @@ function setup_D() {
 
   function aniA(parentCanvas) {
     console.log("in A");
+    let ballDiv = document.createElement("div");
+ballDiv.classList.add("TEAM_H_h_circle");
+ballDiv.style.left = "50px";
+ballDiv.style.top = "50px";
+ballDiv.style.width = "10px";
+ballDiv.style.height = "10px";
+ballDiv.setAttribute("groupD_boolean", "off");
+
+
+
+// access parent element
+parentCanvas.appendChild(ballDiv)
+
+
+
+
+
+let speedX = 2;
+let speedY = 3;
+
+  ballDiv.addEventListener ("click", function (){
+    let bool = ballDiv.getAttribute("groupD_boolean");
+    bool === "on";
+
+    if (bool === "on"){
+
+    }
+    window.requestAnimationFrame(animate);
+   
+
+    function animate() {
+    
+    ballDiv.style.left = parseInt(ballDiv.style.left) + speedX+ "px";
+    ballDiv.style.top = parseInt(ballDiv.style.top) + speedY + "px";
+    checkBounds(parentCanvas, ballDiv);
+    window.requestAnimationFrame(animate);
+ 
+ 
+}
+ 
+// else if (event.code === "click") {
+//   let bool = document.getElementById("boxB").getAttribute("custom-bool");
+//   if (bool === "off") {
+//     document.getElementById("boxB").style.background = "orange";
+//     document.getElementById("boxB").setAttribute("custom-bool", "on");
+//   } else {
+//     ballDiv = "rgb(112, 184, 226)";
+//     document.getElementById("boxB").setAttribute("custom-bool", "off");
+//   }
+// }
+function checkBounds(parent, p) {
+  console.log(parseInt(p.style.left))
+  let bounds = parent.getBoundingClientRect();
+  console.log (bounds)
+  if (parseInt(p.style.left) > bounds.width) {
+    speedX*=-1;
+ 
+
+  } 
+  else if (parseInt(p.style.left) < 0) {
+    speedX*=-1;
+ 
   }
+ 
+  if (parseInt(p.style.top) > bounds.height) {
+    speedY*=-1;
+ 
+  } 
+  else if (parseInt(p.style.top) < 0) {
+    speedY*=-1;
+  }
+   }
+  })}
+
   /**************** ANI B ************************************ */
   /** PUT ALL YOUR CODE FOR ANIMATION B INSIDE  HERE */
   /**************** ANI B ************************************ */
