@@ -211,7 +211,6 @@ function setup_D() {
           if (state = "default") {
             rect.textContent = faces[0];
             rect.style.background = "green";
-            console.log(rect.textContent);
           }
         }
         )
