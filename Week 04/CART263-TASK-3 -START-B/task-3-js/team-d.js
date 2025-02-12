@@ -110,8 +110,8 @@ function setup_D() {
 
 
 
-    let speedX = 1;
-    let speedY = 1;
+    let speedX = 2;
+    let speedY = 3;
 
     let ref = null;
 
