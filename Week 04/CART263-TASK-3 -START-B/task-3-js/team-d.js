@@ -97,8 +97,8 @@ function setup_D() {
     ballDiv.classList.add("TEAM_H_h_circle");
     ballDiv.style.left = "50px";
     ballDiv.style.top = "50px";
-    ballDiv.style.width = "10px";
-    ballDiv.style.height = "10px";
+    ballDiv.style.width = "20px";
+    ballDiv.style.height = "20px";
     ballDiv.setAttribute("groupD_boolean", "off");
 
 
@@ -110,13 +110,19 @@ function setup_D() {
 
 
 
-    let speedX = 2;
-    let speedY = 3;
+    let speedX = 1;
+    let speedY = 1;
     let bool = ballDiv.getAttribute("groupD_boolean");
 
     ballDiv.addEventListener("click", function () {
+
       bool = "on";
-      if (bool === "on") {
+      if (bool === "off") {
+        speedX = 0;
+        speedY = 0;
+      }
+      else {
+
         window.requestAnimationFrame(animate);
         function animate() {
           ballDiv.style.left = parseInt(ballDiv.style.left) + speedX + "px";
@@ -125,10 +131,11 @@ function setup_D() {
           window.requestAnimationFrame(animate);
 
         }
-
-
-
+        console.log(bool);
       }
+
+
+
 
       // else if (event.code === "click") {
       //   let bool = document.getElementById("boxB").getAttribute("custom-bool");
@@ -141,9 +148,7 @@ function setup_D() {
       //   }
       // }
       function checkBounds(parent, p) {
-        console.log(parseInt(p.style.left))
         let bounds = parent.getBoundingClientRect();
-        console.log(bounds)
         if (parseInt(p.style.left) > bounds.width) {
           speedX *= -1;
 
