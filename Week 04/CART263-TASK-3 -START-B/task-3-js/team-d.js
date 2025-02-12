@@ -208,14 +208,6 @@ function setup_D() {
         rect.style.width = "50px";
         rect.style.height = "50px";
 
-        rect.addEventListener("mousedown", function () {
-          if (state = "default") {
-            rect.textContent = faces[0];
-            rect.style.background = "green";
-            state === "happy";
-          }
-        }
-        )
 
 
         window.setTimeout(changeToBlack, 3000);
@@ -224,12 +216,25 @@ function setup_D() {
           if (state === "default") {
             rect.style.background = "black";
             rect.textcontent = faces[1];
+            state === "blackSad";
           }
 
           if (state === "happy") {
             return;
           }
         }
+        rect.addEventListener("mousedown", function () {
+          if (state = "default") {
+            rect.textContent = faces[0];
+            rect.style.background = "green";
+            state === "happy";
+          }
+          if (state === "blackSad") {
+            return;
+          }
+        }
+        )
+
       }
     }
   }
