@@ -196,25 +196,25 @@ function setup_D() {
     console.log(boundingBoxParent);
 
 
-    for (let row = 10; row < boundingBoxParent.width; row += 30) {
-      for (let col = 10; col < boundingBoxParent.height; col += 30) {
+    for (let row = 10; row < boundingBoxParent.width; row += 40) {
+      for (let col = 10; col < boundingBoxParent.height; col += 40) {
 
         let rect = document.createElement("div");
         rect.classList.add("TEAM_D_d_cell");
         parentCanvas.appendChild(rect);
         rect.style.left = `${col + 5}px`;
         rect.style.top = `${row}px`;
-        rect.textContent = faces[0];
+        rect.textContent = faces[2];
         rect.style.width = "50px";
         rect.style.height = "50px";
         rect.addEventListener("mousedown", function () {
           if (state = "default") {
-            rect.textContent = faces[2];
-            rect.style.background = "red";
+            rect.textContent = faces[0];
+            rect.style.background = "green";
+            console.log(rect.textContent);
           }
         }
         )
-        console.log(rect.textContent);
       }
 
 
