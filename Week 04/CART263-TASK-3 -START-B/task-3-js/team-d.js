@@ -183,43 +183,35 @@ function setup_D() {
    * **/
   function aniB(parentCanvas) {
 
-    function createCircle(parent) {
 
-      let newCircle = document.createElement("div");
 
-      newCircle.classList.add("TEAM_H_h_circle");
 
-      parent.append(newCircle);
 
-      return newCircle
+    let boundingBoxParent = parentCanvas.getBoundingClientRect();
+    console.log(boundingBoxParent);
 
-    };
+    //make a grid of cells
+    for (let i = 20; i < boundingBoxParent.width; i += 30) {
+      for (let j = 20; j < boundingBoxParent.height; j += 80) {
+        //create a div and place in the grid
+        let rect = document.createElement("div");
+        rect.classList.add("TEAM_H_h_cell");
+        parentCanvas.appendChild(rect);
+        rect.style.left = `${j + 10}px`;
+        rect.style.top = `${i}px`;
+        rect.textContent = "test";
+        rect.style.width = "40px";
+        rect.style.height = "20px";
+        rect.style.opacity = 1;
 
-    parentCanvas.appendChild(newCircle);
-
-    let circleRow = 10;
-    let circleCol = 10;
-
-    for (let row = 0; row <= circleRow; row++) {
-      for (let column = 0; column <= circleCol; column++) {
-        let returnedDiv = createCircle(newCircle);
-        returnedDiv.style.left = `${row * 40}px`;
-        returnedDiv.style.top = `${column * 40}px`;
-        if (row % 3 === 1) {
-          returnedDiv.style.background = "red";
-
+        if (j % 3 === 1) {
+          rect.style.background = "orange";
+        } else if (j % 3 === 2) {
+          rect.style.background = "red";
         }
+        rect.setAttribute("isactive", "false");
 
-        if (row % 3 === 2) {
-          returnedDiv.style.background = "orange";
 
-        }
-        if (row % 3 === 0) {
-          returnedDiv.style.background = "white";
-
-        }
-        (circleCreate(newDivID03));
-        returnedDiv.textContent = row % 3;
       }
     }
 
