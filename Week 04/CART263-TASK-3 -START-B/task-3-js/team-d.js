@@ -213,8 +213,15 @@ function setup_D() {
             rect.style.background = "green";
           }
         }
+
         )
+        setInterval(changeToBlack, 1000);
+
+        function changeToBlack() {
+          rect.style.background = "black";
+        }
       }
+
 
 
 
