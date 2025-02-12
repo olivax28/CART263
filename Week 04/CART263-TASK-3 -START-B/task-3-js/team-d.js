@@ -117,8 +117,6 @@ function setup_D() {
 
     ballDiv.addEventListener("mousedown", function () {
       let bool = ballDiv.getAttribute("groupD_boolean");
-
-
       if (bool === "on") {
         speedX = 0;
         speedY = 0;
@@ -162,6 +160,7 @@ function setup_D() {
         else if (parseInt(p.style.top) < 0) {
           speedY *= -1;
         }
+
       }
     })
   }
