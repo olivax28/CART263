@@ -190,6 +190,8 @@ function setup_D() {
     ];
 
 
+
+
     let boundingBoxParent = parentCanvas.getBoundingClientRect();
     console.log(boundingBoxParent);
 
@@ -223,12 +225,21 @@ function setup_D() {
     window.setTimeout(changeToBlack, 3000);
     function changeToBlack() {
       let allRects = document.querySelectorAll(".TEAM_D_d_cell");
-      for (let i = 0; i < allRects.length; i++) {
-        if (allRects[i].getAttribute("state") === "default") {
-          allRects[i].style.background = "black";
-          allRects[i].textcontent = faces[1];
-          allRects[i].setAttribute("state", "blackSad");
+      for (let rectArray = 0; rectArray < allRects.length; rectArray++) {
+        if (allRects[rectArray].getAttribute("state") === "default") {
+          allRects[rectArray].style.background = "black" //window.setInterval(endColors, 2000);
+          allRects[rectArray].setAttribute("state", "blackSad");
+
+          // function endColors() {
+          //   const sadcolors = ["red", "BlueViolet", "chartreuse", "DeepPink"];
+          //   for (let sadcolors = [0]; sadcolors < sadcolors.length; sadcolors++) {
+          //     allRects[sadcolors].style.background =
+          //       parseInt(allRects[sadcolors].style.background);
+          //   }
+
+          // }
         }
+
       }
     }
   }
