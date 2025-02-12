@@ -232,9 +232,10 @@ function setup_D() {
 
           function endColors() {
             const sadcolors = ["red", "BlueViolet", "chartreuse", "DeepPink"];
+
             for (let colorsArray = [0]; colorsArray < sadcolors.length; colorsArray++) {
-              allRects[sadcolors].style.background =
-                parseInt(allRects[sadcolors].style.background);
+              let d = allRects[rectArray];
+              d.style.background = sadcolors[""];
             }
 
           }

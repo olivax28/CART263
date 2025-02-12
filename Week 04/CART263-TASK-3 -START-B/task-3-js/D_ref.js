@@ -204,7 +204,7 @@ function setup_D() {
     window.setTimeout(changeToBlack, 3000);
     function changeToBlack() {
       let allRects = document.querySelectorAll(".TEAM_D_d_cell");
-      console.log("allRects");
+      
       for (let i = 0; i < allRects.length; i++) {
         if (allRects[i].getAttribute("state") === "default") {
           allRects[i].style.background = "black";
