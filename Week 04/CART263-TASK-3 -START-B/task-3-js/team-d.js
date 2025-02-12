@@ -222,27 +222,47 @@ function setup_D() {
       }
 
     }
-    window.setTimeout(changeToBlack, 3000);
+    window.setTimeout(changeToBlack, 5000);
     function changeToBlack() {
       let allRects = document.querySelectorAll(".TEAM_D_d_cell");
       for (let rectArray = 0; rectArray < allRects.length; rectArray++) {
         if (allRects[rectArray].getAttribute("state") === "default") {
-          allRects[rectArray].style.background = window.setInterval(endColors, 2000) //"black"; 
+          allRects[rectArray].style.background = "black";
           allRects[rectArray].setAttribute("state", "blackSad");
 
-          function endColors() {
-            const sadcolors = ["red", "BlueViolet", "chartreuse", "DeepPink"];
+          // function endColors() {
+          //   const sadcolors = ["red", "BlueViolet", "chartreuse", "DeepPink"];
 
-            for (let colorsArray = [0]; colorsArray < sadcolors.length; colorsArray++) {
-              let d = allRects[rectArray];
-              d.style.background = sadcolors[""];
-            }
+          //   for (let colorsArray = [0]; colorsArray < sadcolors.length; colorsArray++) {
+          //     let d = allRects[rectArray];
+          //     d.style.background = sadcolors[""];
+          //   }
 
-          }
+          // }
         }
 
       }
     }
+    const shades = ["red", "BlueViolet", "chartreuse", "DeepPink"];
+    window.setInterval(changeColor, 1000);
+    let colorIndex = 0;
+    function changeColor() {
+      let allRects = document.querySelectorAll(".TEAM_D_d_cell");
+      for (let i = 0; i < allRects.length; i++) {
+        if (allRects[i].getAttribute("state") === "default") {
+          allRects[i].style.background = shades[colorIndex];
+
+        }
+      }
+      if (colorIndex < shades.length - 1) {
+        colorIndex++
+
+      }
+      else {
+        colorIndex = 0;
+      }
+    }
+
   }
   /**************** ANI C ************************************ */
   /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN C INSIDE  HERE */
