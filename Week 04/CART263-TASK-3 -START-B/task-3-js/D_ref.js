@@ -101,14 +101,8 @@ function setup_D() {
     ballDiv.style.height = "20px";
     ballDiv.setAttribute("groupD_boolean", "off");
 
-
-
     // access parent element
-    parentCanvas.appendChild(ballDiv)
-
-
-
-
+    parentCanvas.appendChild(ballDiv);
 
     let speedX = 2;
     let speedY = 3;
@@ -122,13 +116,10 @@ function setup_D() {
         // speedY = 0;
         //set the attribute (for testing the condition on the next click)
         ballDiv.setAttribute("groupD_boolean", "off");
-        // CANCEL the animation 
+        // CANCEL the animation
         //ref -> is a variable referencing the animation (assigned to window.requestAnimationFrame()...)
         cancelAnimationFrame(ref);
-      }
-
-      else {
-
+      } else {
         ref = window.requestAnimationFrame(animate);
         ballDiv.setAttribute("groupD_boolean", "on");
         function animate() {
@@ -143,24 +134,17 @@ function setup_D() {
         let bounds = parent.getBoundingClientRect();
         if (parseInt(p.style.left) > bounds.width) {
           speedX *= -1;
-
-
-        }
-        else if (parseInt(p.style.left) < 0) {
+        } else if (parseInt(p.style.left) < 0) {
           speedX *= -1;
-
         }
 
         if (parseInt(p.style.top) > bounds.height) {
           speedY *= -1;
-
-        }
-        else if (parseInt(p.style.top) < 0) {
+        } else if (parseInt(p.style.top) < 0) {
           speedY *= -1;
         }
-
       }
-    })
+    });
   }
 
   /**************** ANI B ************************************ */
@@ -182,21 +166,14 @@ function setup_D() {
    * Do not change any code above or the HTML markup.
    * **/
   function aniB(parentCanvas) {
-    const faces = [
-      ":D",
-      ">:0",
-      ":(",
-      ":)"
-    ];
-
+    //let state = "default"
+    const faces = [":D", ">:0", ":(", ":)"];
 
     let boundingBoxParent = parentCanvas.getBoundingClientRect();
     console.log(boundingBoxParent);
 
-
     for (let row = 10; row < boundingBoxParent.width; row += 40) {
       for (let col = 10; col < boundingBoxParent.height; col += 40) {
-
         let rect = document.createElement("div");
         rect.classList.add("TEAM_D_d_cell");
         parentCanvas.appendChild(rect);
@@ -205,6 +182,7 @@ function setup_D() {
         rect.textContent = faces[2];
         rect.style.width = "50px";
         rect.style.height = "50px";
+        //SABINE:: add the state to each rect
         rect.setAttribute("state", "default");
 
         rect.addEventListener("mousedown", function () {
@@ -212,23 +190,32 @@ function setup_D() {
             rect.textContent = faces[0];
             rect.style.background = "green";
             rect.setAttribute("state", "happy");
+            //state = "happy";
           }
-        }
-        );
-
-
+          //not needed
+          // if (state === "blackSad") {
+          //   return;
+          // }
+        });
       }
-
     }
+
+    //OUTSIDE OF FOR LOOP SET UP THE TIMER
     window.setTimeout(changeToBlack, 3000);
     function changeToBlack() {
       let allRects = document.querySelectorAll(".TEAM_D_d_cell");
+      console.log("allRects");
       for (let i = 0; i < allRects.length; i++) {
         if (allRects[i].getAttribute("state") === "default") {
           allRects[i].style.background = "black";
           allRects[i].textcontent = faces[1];
           allRects[i].setAttribute("state", "blackSad");
         }
+
+        //note needed
+        // if (state === "happy") {
+        //   return;
+        // }
       }
     }
   }
@@ -236,22 +223,20 @@ function setup_D() {
   /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN C INSIDE  HERE */
   /**************** ANI C ************************************ */
   /**************** TASK *******************************************
-    * YOU CAN USE ALL NOTES --- and see my examples in team-h.js for inspiration and possibly help:)
-    * 1: use the PROVIDED keyup/down callbacks `windowKeyDownRef` and/or `windowKeyUpnRef` to handle keyboard events
-    * 2: create an interactive pattern/sketch based on keyboard input. Anything goes.
-    * do not use  requestAnimationFrame(), setInterval() nor setTimeout() -> meaning keep it simple ;)
-    * 
-    * NOTE::: PLEASE::: if you add any custom css PLEASE use the style.css and prefix any class names with your team label
-    * i.e. you want to create a custom div class and you are in "Team_A" then call your class TEAM_A_ANI_A_Div -
-    * this is so that your styles are not overriden by other teams.
-    * NOTE::: All your code is to be added here inside this function -
-    * remember you can define other functions inside....
-    * Do not change any code above or the HTML markup.
-    * **/
-
+   * YOU CAN USE ALL NOTES --- and see my examples in team-h.js for inspiration and possibly help:)
+   * 1: use the PROVIDED keyup/down callbacks `windowKeyDownRef` and/or `windowKeyUpnRef` to handle keyboard events
+   * 2: create an interactive pattern/sketch based on keyboard input. Anything goes.
+   * do not use  requestAnimationFrame(), setInterval() nor setTimeout() -> meaning keep it simple ;)
+   *
+   * NOTE::: PLEASE::: if you add any custom css PLEASE use the style.css and prefix any class names with your team label
+   * i.e. you want to create a custom div class and you are in "Team_A" then call your class TEAM_A_ANI_A_Div -
+   * this is so that your styles are not overriden by other teams.
+   * NOTE::: All your code is to be added here inside this function -
+   * remember you can define other functions inside....
+   * Do not change any code above or the HTML markup.
+   * **/
 
   function aniC(parentCanvas) {
-
     console.log("in C");
     let blurAmount = 0;
 
@@ -261,8 +246,8 @@ function setup_D() {
     let p = document.createElement("div");
     p.classList.add("TEAM_D_d_circle");
     parentCanvas.appendChild(p);
-    p.style.width = '10px';
-    p.style.height = '10px';
+    p.style.width = "10px";
+    p.style.height = "10px";
     p.style.left = parentCanvas.getBoundingClientRect().width / 2 + "px";
     p.style.top = parentCanvas.getBoundingClientRect().height / 2 + "px";
     let speedX = 5;
@@ -274,16 +259,13 @@ function setup_D() {
 
       // if left key pressed
       if (e.key === "ArrowLeft") {
-
         // move ri
         p.style.left = parseInt(p.style.left) + speedX + "px";
 
         // if right key pressed
       } else if (e.key === "ArrowRight") {
-
         // move left
         p.style.left = parseInt(p.style.left) - speedX + "px";
-
       }
 
       // if left key pressed
@@ -305,15 +287,11 @@ function setup_D() {
 
       //to white
       else if (e.key === "-") {
-
       }
 
       //to blue
       else if (e.key === "+") {
-
       }
-
-
     };
 
     //DO NOT REMOVE
