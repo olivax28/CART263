@@ -186,7 +186,7 @@ function setup_D() {
     let state = "default"
     const faces = [
       ":D",
-      ":0",
+      ">:0",
       ":(",
       ":)"
     ];
@@ -215,10 +215,15 @@ function setup_D() {
         }
 
         )
-        setInterval(changeToBlack, 1000);
+        setInterval(changeToBlack, 3000);
 
         function changeToBlack() {
-          rect.style.background = "black";
+
+          if (state === "default") {
+            rect.style.background = "black";
+            rect.textcontent = faces[1];
+          }
+
         }
       }
 
