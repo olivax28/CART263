@@ -112,41 +112,37 @@ function setup_D() {
 
     let speedX = 1;
     let speedY = 1;
-    let bool = ballDiv.getAttribute("groupD_boolean");
 
-    ballDiv.addEventListener("click", function () {
+    let ref = null;
 
-      bool = "on";
-      if (bool === "off") {
+    ballDiv.addEventListener("mousedown", function () {
+      let bool = ballDiv.getAttribute("groupD_boolean");
+
+
+      if (bool === "on") {
         speedX = 0;
         speedY = 0;
+        //set the attribute (for testing the condition on the next click)
+        ballDiv.setAttribute("groupD_boolean", "off");
+        // CANCEL the animation 
+        //ref -> is a variable referencing the animation (assigned to window.requestAnimationFrame()...)
+        cancelAnimationFrame(ref);
       }
+
       else {
 
-        window.requestAnimationFrame(animate);
+        ref = window.requestAnimationFrame(animate);
+        ballDiv.setAttribute("groupD_boolean", "on");
         function animate() {
           ballDiv.style.left = parseInt(ballDiv.style.left) + speedX + "px";
           ballDiv.style.top = parseInt(ballDiv.style.top) + speedY + "px";
           checkBounds(parentCanvas, ballDiv);
-          window.requestAnimationFrame(animate);
+          ref = window.requestAnimationFrame(animate);
 
         }
         console.log(bool);
       }
 
-
-
-
-      // else if (event.code === "click") {
-      //   let bool = document.getElementById("boxB").getAttribute("custom-bool");
-      //   if (bool === "off") {
-      //     document.getElementById("boxB").style.background = "orange";
-      //     document.getElementById("boxB").setAttribute("custom-bool", "on");
-      //   } else {
-      //     ballDiv = "rgb(112, 184, 226)";
-      //     document.getElementById("boxB").setAttribute("custom-bool", "off");
-      //   }
-      // }
       function checkBounds(parent, p) {
         let bounds = parent.getBoundingClientRect();
         if (parseInt(p.style.left) > bounds.width) {
@@ -189,7 +185,49 @@ function setup_D() {
    * Do not change any code above or the HTML markup.
    * **/
   function aniB(parentCanvas) {
-    console.log("in B");
+
+    function createCircle(parent) {
+
+      let newCircle = document.createElement("div");
+
+      newCircle.classList.add("TEAM_H_h_circle");
+
+      parent.append(newCircle);
+
+      return newCircle
+
+    };
+
+    parentCanvas.appendChild(newCircle);
+
+    let circleRow = 10;
+    let circleCol = 10;
+
+    for (let row = 0; row <= circleRow; row++) {
+      for (let column = 0; column <= circleCol; column++) {
+        let returnedDiv = createCircle(newCircle);
+        returnedDiv.style.left = `${row * 40}px`;
+        returnedDiv.style.top = `${column * 40}px`;
+        if (row % 3 === 1) {
+          returnedDiv.style.background = "red";
+
+        }
+
+        if (row % 3 === 2) {
+          returnedDiv.style.background = "orange";
+
+        }
+        if (row % 3 === 0) {
+          returnedDiv.style.background = "white";
+
+        }
+        (circleCreate(newDivID03));
+        returnedDiv.textContent = row % 3;
+      }
+    }
+
+
+
   }
   /**************** ANI C ************************************ */
   /** PUT ALL YOUR CODE FOR INTERACTIVE PATTERN C INSIDE  HERE */
