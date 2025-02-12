@@ -1,5 +1,7 @@
 setup_D();
-/** THEME: DECEPTION  */
+/** THEME: DECEPTION  
+ * GROUP MEMBERS: Olivia Axiuk, Julia Axiuk, Carael Bandojo
+*/
 function setup_D() {
   console.log("in d");
   /**************************************************** */
