@@ -207,16 +207,18 @@ function setup_D() {
         rect.textContent = faces[2];
         rect.style.width = "50px";
         rect.style.height = "50px";
+
         rect.addEventListener("mousedown", function () {
           if (state = "default") {
             rect.textContent = faces[0];
             rect.style.background = "green";
+            state === "happy";
           }
         }
-
         )
-        setInterval(changeToBlack, 3000);
 
+
+        window.setTimeout(changeToBlack, 3000);
         function changeToBlack() {
 
           if (state === "default") {
@@ -224,21 +226,11 @@ function setup_D() {
             rect.textcontent = faces[1];
           }
 
+          if (state === "happy") {
+            return;
+          }
         }
       }
-
-
-
-
-
-      // setInterval(animateFaces, 2000);
-
-      // let div = 3;
-
-      // function animateFaces() {
-      //   ///use a for each loop...?
-
-      // }
     }
   }
   /**************** ANI C ************************************ */
