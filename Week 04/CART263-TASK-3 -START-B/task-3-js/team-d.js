@@ -118,8 +118,8 @@ function setup_D() {
     ballDiv.addEventListener("mousedown", function () {
       let bool = ballDiv.getAttribute("groupD_boolean");
       if (bool === "on") {
-        speedX = 0;
-        speedY = 0;
+        // speedX = 0;
+        // speedY = 0;
         //set the attribute (for testing the condition on the next click)
         ballDiv.setAttribute("groupD_boolean", "off");
         // CANCEL the animation 
@@ -136,9 +136,7 @@ function setup_D() {
           ballDiv.style.top = parseInt(ballDiv.style.top) + speedY + "px";
           checkBounds(parentCanvas, ballDiv);
           ref = window.requestAnimationFrame(animate);
-
         }
-        console.log(bool);
       }
 
       function checkBounds(parent, p) {
