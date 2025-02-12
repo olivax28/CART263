@@ -191,25 +191,25 @@ function setup_D() {
     console.log(boundingBoxParent);
 
     //make a grid of cells
-    for (let i = 20; i < boundingBoxParent.width; i += 30) {
-      for (let j = 20; j < boundingBoxParent.height; j += 80) {
+    for (let row = 10; row < boundingBoxParent.width; row += 30) {
+      for (let col = 10; col < boundingBoxParent.height; col += 30) {
         //create a div and place in the grid
         let rect = document.createElement("div");
-        rect.classList.add("TEAM_H_h_cell");
+        rect.classList.add("TEAM_D_d_cell");
         parentCanvas.appendChild(rect);
-        rect.style.left = `${j + 10}px`;
-        rect.style.top = `${i}px`;
-        rect.textContent = "test";
-        rect.style.width = "40px";
-        rect.style.height = "20px";
+        rect.style.left = `${col + 10}px`;
+        rect.style.top = `${row}px`;
+        rect.textContent = "7";
+        rect.style.width = "50px";
+        rect.style.height = "50px";
         rect.style.opacity = 1;
 
-        if (j % 3 === 1) {
-          rect.style.background = "orange";
-        } else if (j % 3 === 2) {
-          rect.style.background = "red";
-        }
-        rect.setAttribute("isactive", "false");
+        // if (j % 3 === 1) {
+        //   rect.style.background = "orange";
+        // } else if (j % 3 === 2) {
+        //   rect.style.background = "red";
+        // }
+        // rect.setAttribute("isactive", "false");
 
 
       }
