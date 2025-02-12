@@ -97,8 +97,8 @@ function setup_D() {
     ballDiv.classList.add("TEAM_H_h_circle");
     ballDiv.style.left = "50px";
     ballDiv.style.top = "50px";
-    ballDiv.style.width = "20px";
-    ballDiv.style.height = "20px";
+    ballDiv.style.width = "50px";
+    ballDiv.style.height = "50px";
     ballDiv.setAttribute("groupD_boolean", "off");
 
 
@@ -109,26 +109,23 @@ function setup_D() {
 
 
 
-
-    let speedX = 2;
+    // defining the ball's speed
+    let speedX = 4;
     let speedY = 3;
-
+    // to be used later to cancel the animation
     let ref = null;
 
+    // event listener to start and stop the ball by clicking on it
     ballDiv.addEventListener("mousedown", function () {
       let bool = ballDiv.getAttribute("groupD_boolean");
       if (bool === "on") {
-        // speedX = 0;
-        // speedY = 0;
-        //set the attribute (for testing the condition on the next click)
         ballDiv.setAttribute("groupD_boolean", "off");
-        // CANCEL the animation 
-        //ref -> is a variable referencing the animation (assigned to window.requestAnimationFrame()...)
+        // CANCEL the animation if the boolean is off
         cancelAnimationFrame(ref);
       }
 
       else {
-
+        // click on the ball, bool is on and the ball moves
         ref = window.requestAnimationFrame(animate);
         ballDiv.setAttribute("groupD_boolean", "on");
         function animate() {
@@ -139,6 +136,7 @@ function setup_D() {
         }
       }
 
+      // checks if the ball hits the edge, reverses its speed if it does
       function checkBounds(parent, p) {
         let bounds = parent.getBoundingClientRect();
         if (parseInt(p.style.left) > bounds.width) {
@@ -187,16 +185,13 @@ function setup_D() {
       ":(",
     ];
 
+    //defines the size of the parent canvas
+    let canvassBoundsParent = parentCanvas.getBoundingClientRect();
 
-
-
-    let boundingBoxParent = parentCanvas.getBoundingClientRect();
-    console.log(boundingBoxParent);
-
-
-    for (let row = 10; row < boundingBoxParent.width; row += 40) {
-      for (let col = 10; col < boundingBoxParent.height; col += 40) {
-
+    // for loop creating the grid
+    for (let row = 10; row < canvassBoundsParent.width; row += 40) {
+      for (let col = 10; col < canvassBoundsParent.height; col += 40) {
+        // defines the attributes of the rectangles within the grid
         let rect = document.createElement("div");
         rect.classList.add("TEAM_D_d_cell");
         parentCanvas.appendChild(rect);
@@ -206,7 +201,7 @@ function setup_D() {
         rect.style.width = "50px";
         rect.style.height = "50px";
         rect.setAttribute("state", "default");
-
+        // mousedown event to be able to click on the sad faces and make them happy
         rect.addEventListener("mousedown", function () {
           if (rect.getAttribute("state") === "default") {
             rect.textContent = faces[0];
@@ -220,6 +215,7 @@ function setup_D() {
       }
 
     }
+    // timer is set, 5 seconds to make as many faces happy as possible before mousedown function is deactivated
     window.setTimeout(changeToBlack, 5000);
     function changeToBlack() {
       let allRects = document.querySelectorAll(".TEAM_D_d_cell");
@@ -227,20 +223,11 @@ function setup_D() {
         if (allRects[rectArray].getAttribute("state") === "default") {
           allRects[rectArray].style.background = "black";
           allRects[rectArray].setAttribute("state", "blackSad");
-
-          // function endColors() {
-          //   const sadcolors = ["red", "BlueViolet", "chartreuse", "DeepPink"];
-
-          //   for (let colorsArray = [0]; colorsArray < sadcolors.length; colorsArray++) {
-          //     let d = allRects[rectArray];
-          //     d.style.background = sadcolors[""];
-          //   }
-
-          // }
         }
 
       }
     }
+    // colors change, marking countdown time
     const shades = ["red", "BlueViolet", "chartreuse", "DeepPink"];
     window.setInterval(changeColor, 1000);
     let colorIndex = 0;
