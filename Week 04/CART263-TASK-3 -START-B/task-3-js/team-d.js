@@ -227,17 +227,17 @@ function setup_D() {
       let allRects = document.querySelectorAll(".TEAM_D_d_cell");
       for (let rectArray = 0; rectArray < allRects.length; rectArray++) {
         if (allRects[rectArray].getAttribute("state") === "default") {
-          allRects[rectArray].style.background = "black" //window.setInterval(endColors, 2000);
+          allRects[rectArray].style.background = window.setInterval(endColors, 2000) //"black"; 
           allRects[rectArray].setAttribute("state", "blackSad");
 
-          // function endColors() {
-          //   const sadcolors = ["red", "BlueViolet", "chartreuse", "DeepPink"];
-          //   for (let sadcolors = [0]; sadcolors < sadcolors.length; sadcolors++) {
-          //     allRects[sadcolors].style.background =
-          //       parseInt(allRects[sadcolors].style.background);
-          //   }
+          function endColors() {
+            const sadcolors = ["red", "BlueViolet", "chartreuse", "DeepPink"];
+            for (let colorsArray = [0]; colorsArray < sadcolors.length; colorsArray++) {
+              allRects[sadcolors].style.background =
+                parseInt(allRects[sadcolors].style.background);
+            }
 
-          // }
+          }
         }
 
       }
