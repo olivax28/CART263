@@ -184,9 +184,7 @@ function setup_D() {
   function aniB(parentCanvas) {
     const faces = [
       ":D",
-      ">:0",
       ":(",
-      ":)"
     ];
 
 
@@ -204,7 +202,7 @@ function setup_D() {
         parentCanvas.appendChild(rect);
         rect.style.left = `${col + 5}px`;
         rect.style.top = `${row}px`;
-        rect.textContent = faces[2];
+        rect.textContent = faces[1];
         rect.style.width = "50px";
         rect.style.height = "50px";
         rect.setAttribute("state", "default");
@@ -248,9 +246,9 @@ function setup_D() {
     let colorIndex = 0;
     function changeColor() {
       let allRects = document.querySelectorAll(".TEAM_D_d_cell");
-      for (let i = 0; i < allRects.length; i++) {
-        if (allRects[i].getAttribute("state") === "default") {
-          allRects[i].style.background = shades[colorIndex];
+      for (let timerColors = 0; timerColors < allRects.length; timerColors++) {
+        if (allRects[timerColors].getAttribute("state") === "default") {
+          allRects[timerColors].style.background = shades[colorIndex];
 
         }
       }
