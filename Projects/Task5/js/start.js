@@ -101,6 +101,7 @@ function animationLoop(){
  * make the rectangle (over the video) - follow the mouse ... AND change color when you click on the canvas
  * USE & FILL IN THE METHODS ALREADY set out in the VideoObj class...
  * 
+ * //mouse move and colors
  * 
  * PLEASE NOTE: there will be marks taken off if you ignore the instructions ;)
  *  
