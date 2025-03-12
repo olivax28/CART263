@@ -24,6 +24,11 @@ class VideoObj {
     let hueInput = document.getElementById("huenum");
     this.userProvidedHue = 0;
 
+    let filterButton_invert = document.getElementById("filter_button_invert");
+    let invertInput = document.getElementById("invertnum");
+    this.userProvidedInvert = 0;
+
+
 
     let self = this;
 
@@ -52,6 +57,23 @@ class VideoObj {
     });
 
 
+    filterButton_invert.addEventListener("click", function () {
+      //get value from input field
+      self.userProvidedInvert = invertInput.value;
+
+      console.log(self.userProvidedInvert);
+      document.getElementById("invertnum").max = 100;
+
+
+
+    });
+
+
+
+
+
+
+
   }
 
   display() {
@@ -61,6 +83,8 @@ class VideoObj {
     this.context.filter += `sepia(${this.userProvidedSepia * 10}%)`;
 
     this.context.filter += `hue-rotate(${this.userProvidedHue}deg)`;
+
+    this.context.filter += `invert(${this.userProvidedInvert}%)`;
 
     this.context.drawImage(this.videoElement, this.x, this.y, this.w, this.h);
     this.context.fillStyle = this.shapeCol;
@@ -75,6 +99,7 @@ class VideoObj {
   //called when rectangle Pos is to be updated
   updatePositionRect(mx, my) {
     /** FILL IN */
+
   }
   update(videoElement) {
     this.videoElement = videoElement;
