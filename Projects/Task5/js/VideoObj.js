@@ -32,6 +32,8 @@ class VideoObj {
 
     let self = this;
 
+    //event listeners for the filters
+
     filterButton_blur.addEventListener("click", function () {
       //get value from input field
       self.userProvidedBlur = blurInput.value;
@@ -96,7 +98,10 @@ class VideoObj {
   changeColor(newCol) {
     /** FILL IN */
     //found on stackoverflow.com
-    newCol = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+
+
+    //newCol = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+    this.shapeCol = newCol;
 
 
 
@@ -105,6 +110,9 @@ class VideoObj {
   //called when rectangle Pos is to be updated
   updatePositionRect(mx, my) {
     /** FILL IN */
+
+    this.shapeX = mx
+    this.shapeY = my
 
   }
   update(videoElement) {
