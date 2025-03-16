@@ -32,7 +32,7 @@ class VideoObj {
 
     let self = this;
 
-    //event listeners for the filters
+    //event listeners for the filters (Olivia)
 
     filterButton_blur.addEventListener("click", function () {
       //get value from input field
@@ -79,6 +79,7 @@ class VideoObj {
   }
 
   display() {
+    // Adds the value of the inputted filter (olivia)
     this.context.save();
     this.context.filter = `blur(${this.userProvidedBlur}px)`;
     //my filters
@@ -94,15 +95,15 @@ class VideoObj {
     this.context.restore();
   }
 
-  //called when rectangle color is to be updated
+  //called when rectangle color is to be updated (Olivia)
   changeColor(newCol) {
-    /** FILL IN */
+
     this.shapeCol = newCol;
   }
 
-  //called when rectangle Pos is to be updated
+  //called when rectangle Pos is to be updated (Olivia)
   updatePositionRect(mx, my) {
-    /** FILL IN */
+
 
     this.shapeX = mx
     this.shapeY = my
