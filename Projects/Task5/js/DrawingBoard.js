@@ -58,6 +58,7 @@ class DrawingBoard {
     }
     if (this.drawingBoardId === "partD") {
       console.log("in D")
+      VideoObj.changeColor()
     }
   }
   /* method to add obj to canvas */
