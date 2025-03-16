@@ -97,12 +97,7 @@ class VideoObj {
   //called when rectangle color is to be updated
   changeColor(newCol) {
     /** FILL IN */
-    //found on stackoverflow.com
-    newCol = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
     this.shapeCol = newCol;
-
-
-
   }
 
   //called when rectangle Pos is to be updated

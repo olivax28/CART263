@@ -58,8 +58,12 @@ class DrawingBoard {
     }
     if (this.drawingBoardId === "partD") {
       console.log("in D")
-      VideoObj.changeColor()
+      //found on stackoverflow.com
+      let newCol = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+      this.objectsOnCanvas[0].changeColor(newCol);
+
     }
+
   }
   /* method to add obj to canvas */
   addObj(objToAdd) {
