@@ -36,6 +36,10 @@ class DrawingBoard {
     if (this.drawingBoardId === "partD") {
       console.log("in D")
     }
+    // square follows the mouse
+    let mx = this.mouseOffsetX
+    let my = this.mouseOffsetY
+    this.objectsOnCanvas[0].updatePositionRect(mx, my);
   }
 
   clickCanvas(e) {
@@ -58,7 +62,7 @@ class DrawingBoard {
     }
     if (this.drawingBoardId === "partD") {
       console.log("in D")
-      //found on stackoverflow.com
+      //color randomizer found on stackoverflow.com
       let newCol = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
       this.objectsOnCanvas[0].changeColor(newCol);
 
