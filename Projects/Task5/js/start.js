@@ -9,6 +9,7 @@ function go_all_stuff() {
         if (videoEl.currentTime === 0) {
             videoEl.play()
         }
+
     })
 
 
