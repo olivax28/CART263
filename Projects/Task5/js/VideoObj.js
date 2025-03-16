@@ -98,8 +98,6 @@ class VideoObj {
   changeColor(newCol) {
     /** FILL IN */
     //found on stackoverflow.com
-
-
     newCol = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
     this.shapeCol = newCol;
 
