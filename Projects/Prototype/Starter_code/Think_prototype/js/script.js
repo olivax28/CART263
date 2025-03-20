@@ -11,7 +11,7 @@
 
 
 //the background image for the cutscenes
-let cutsceneBG = undefined;
+let BG = undefined;
 
 //The titlescreen image
 let titleScreenIMG = undefined;
@@ -30,7 +30,7 @@ let state = "title"
 
 // Might need a timer?
 let playSceneTimer = {
-    counter: 10,
+    counter: undefined,
 };
 
 // loads in the timer based on the JSON file
@@ -50,7 +50,7 @@ const clickBox = {
 }
 
 
-const textBoxSpeecj = {
+const textBoxSpeech = {
     // body: {
     //     x: //,
     //     y: //,
@@ -73,7 +73,7 @@ const textBoxSpeecj = {
 
 
 
-//sound FX Sound effects will be defined here
+//sound effects will be defined here
 let soundFX = undefined
 
 
@@ -89,7 +89,7 @@ function preload() {
  * creates the canvas
 */
 function setup() {
-    createCanvas(9120, 1080);
+    createCanvas(1920, 1080);
     // links the storyTimer object to the JSON file, then directs it to the Delay part of each scene (calls each after the designated delay time)
     storyTimer.counter = storyDialogue.Scenes[sceneIndex].Delay;
 }
@@ -109,7 +109,7 @@ function draw() {
     }
 }
 
-// The title screen menu with three game modes, Play Game, Story and Defend
+// The title screen menu 
 function title() {
     //sets size and alignment of the Title text 
     textSize(32);
@@ -120,9 +120,7 @@ function title() {
     image(titleScreenIMG, width / 2, height / 2);
     pop();
     //"title Boxes" act as hit boxes to detect which one the player wants to choose
-    gamePick(titleBoxPlay);
-    gamePick(titleBoxDefender);
-    gamePick(titleBoxStory);
+    gamePick(/*titleBoxPlay*/);
 }
 
 
@@ -177,15 +175,6 @@ function playScene(timer, scene) {
 
 
 
-// key pressed to be used later
-// function keyPressed() {
-//     if () {
-
-
-//     }
-// }
-
-
 //For the dialogue text
 //Functions draws the text boxes (needs to be edited)
 function drawTextBox(textBox, textArray) {
@@ -227,7 +216,7 @@ function showTheTextBox() {
 }
 
 // //Allows the player to click through the dialogues
-// This code is taken from another project and will serve as an example for "Think" but needs to be modified
+// This code is taken from another project and will serve as an example for "Think" but needs to be modified used for iterating through story dialogue
 // function mousePressed() {
 //     // for the play game version
 //     if (state === /** current scene */ && showDialogueBox === true) {
