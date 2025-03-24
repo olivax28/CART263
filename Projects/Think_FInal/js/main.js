@@ -150,7 +150,7 @@ function draw() {
 //start the game
 function NewGame() {
     drawUI(uiBorder, width / 2, height / 2);
-    drawUI(brainIdle, width / 1.5, height / 3);
+    drawUI(brainIdle, width / 1.35, height / 3.3);
 }
 
 
