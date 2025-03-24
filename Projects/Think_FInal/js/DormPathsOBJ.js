@@ -5,25 +5,15 @@ class Choice {
     this.x = x;
     this.y = y;
     this.size = size;
-    this.stemLength = stemLength;
 
-    this.stemThickness = 5;
-    this.petalThickness = 4;
-    this.flowerStemDiv = document.createElement("div");
-    this.flowerPetalDiv = document.createElement("div");
 
-    // Color information
-    this.stemColor = {
-      r: 50,
-      g: 150,
-      b: 50,
+    // character info
+    this.characterSprite = {
+      sprite: undefined,
+      x: height / 2,
+      y: width / 2,
     };
-    this.petalColor = petalColor;
-    this.centreColor = {
-      r: 50,
-      g: 0,
-      b: 0,
-    };
+    this.background = background;
 
     let self = this;//keep a copy of 'this'
 
