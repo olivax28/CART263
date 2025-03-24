@@ -16,7 +16,9 @@
 // //The titlescreen image
 // let titleScreenIMG = undefined;
 // //loads inthe JSON file for the story dialogue
-// let storyDialogue = undefined;
+let storyDialogue = undefined;
+let uiBorder = undefined;
+let brainIdle = undefined;
 // // goes through the scenes of the JSON file for the story mode dialogue
 // let sceneIndex = 0;
 // // 
@@ -24,8 +26,8 @@
 // let showDialogueBox = false;
 
 
-// //sets the initial state
-// let state = "NewGame"
+//sets the initial state
+let state = "NewGame"
 
 
 // // Might need a timer?
@@ -70,6 +72,10 @@
 
 // }
 
+const UI = {
+
+}
+
 
 
 
@@ -82,6 +88,8 @@ function preload() {
     //load story mode dialogue data
     storyDialogue = loadJSON("assets/Data/dialogue.JSON");
     //sprites and sounds will be loaded in here
+    uiBorder = loadImage("assets/images/UI/border.PNG");
+    brainIdle = loadImage("assets/images/UI/brain_idle.PNG");
 
 }
 
@@ -92,7 +100,7 @@ function preload() {
 function setup() {
     createCanvas(1920, 1080);
     // links the storyTimer object to the JSON file, then directs it to the Delay part of each scene (calls each after the designated delay time)
-    storyTimer.counter = storyDialogue.Scenes[sceneIndex].Delay;
+    // storyTimer.counter = storyDialogue.Scenes[sceneIndex].Delay;
 }
 
 
@@ -105,9 +113,9 @@ function draw() {
     // if (state === "title") {
     //     title();
     // }
-    // if (state === "NewGame") {
-    //     NewGame();
-    // }
+    if (state === "NewGame") {
+        NewGame();
+    }
 }
 
 // // The title screen menu 
@@ -141,6 +149,16 @@ function draw() {
 
 //start the game
 function NewGame() {
+    drawUI(uiBorder);
+}
+
+
+function drawUI(uiElement) {
+    push();
+    imageMode(CENTER);
+    image(uiElement, width / 2, height / 2);
+    pop();
+
 }
 
 // example of iterating through dialogue
