@@ -149,14 +149,15 @@ function draw() {
 
 //start the game
 function NewGame() {
-    drawUI(uiBorder);
+    drawUI(uiBorder, width / 2, height / 2);
+    drawUI(brainIdle, width / 1.5, height / 3);
 }
 
 
-function drawUI(uiElement) {
+function drawUI(uiElement, x, y,) {
     push();
     imageMode(CENTER);
-    image(uiElement, width / 2, height / 2);
+    image(uiElement, x, y);
     pop();
 
 }
