@@ -19,6 +19,7 @@
 let storyDialogue = undefined;
 let uiBorder = undefined;
 let brainIdle = undefined;
+let saraNeutral = undefined;
 // // goes through the scenes of the JSON file for the story mode dialogue
 // let sceneIndex = 0;
 // // 
@@ -28,6 +29,10 @@ let brainIdle = undefined;
 
 //sets the initial state
 let state = "NewGame"
+
+let charspriteX = 1920 / 2;
+let charSpriteY = 1080 / 2;
+
 
 
 // // Might need a timer?
@@ -90,15 +95,18 @@ function preload() {
     //sprites and sounds will be loaded in here
     uiBorder = loadImage("assets/images/UI/border.PNG");
     brainIdle = loadImage("assets/images/UI/brain_idle.PNG");
-
+    saraNeutral = loadImage("assets/images/Sprites/Sara_neutral.PNG");
 }
 
 
 /**
  * creates the canvas
 */
+let DormChoice01 = undefined;
+
 function setup() {
     createCanvas(1920, 1080);
+    DormChoice01 = new Choice(saraNeutral);
     // links the storyTimer object to the JSON file, then directs it to the Delay part of each scene (calls each after the designated delay time)
     // storyTimer.counter = storyDialogue.Scenes[sceneIndex].Delay;
 }
@@ -151,7 +159,13 @@ function draw() {
 function NewGame() {
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
+
+
 }
+
+
+
+
 
 
 function drawUI(uiElement, x, y,) {
@@ -169,14 +183,6 @@ function drawUI(uiElement, x, y,) {
 
 
 
-
-// responsible for drawing all the elements that have sprites 
-function drawSpriteElements(spriteObject) {
-    push();
-    imageMode(CENTER);
-    image(spriteObject.body.sprite, spriteObject.body.x, spriteObject.body.y);
-    pop();
-}
 
 
 // //For the dialogue text
