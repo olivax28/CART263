@@ -28,7 +28,7 @@ let saraNeutral = undefined;
 
 
 //sets the initial state
-let state = "NewGame"
+let state = "Dorm"
 
 let charspriteX = 1920 / 2;
 let charSpriteY = 1080 / 2;
@@ -107,6 +107,7 @@ let DormChoice01 = undefined;
 function setup() {
     createCanvas(1920, 1080);
     DormChoice01 = new Choice(saraNeutral);
+
     // links the storyTimer object to the JSON file, then directs it to the Delay part of each scene (calls each after the designated delay time)
     // storyTimer.counter = storyDialogue.Scenes[sceneIndex].Delay;
 }
@@ -121,10 +122,14 @@ function draw() {
     // if (state === "title") {
     //     title();
     // }
-    if (state === "NewGame") {
-        NewGame();
+    if (state === "Dorm") {
+        dorm();
+
     }
 }
+
+
+
 
 // // The title screen menu 
 // function title() {
@@ -156,7 +161,7 @@ function draw() {
 // }
 
 //start the game
-function NewGame() {
+function dorm() {
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
 

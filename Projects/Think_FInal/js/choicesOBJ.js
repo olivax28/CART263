@@ -1,4 +1,4 @@
-class Choices {
+class Choice {
   constructor(/*dialogue,**/ characterSprite, /*mcEmotion, item, journalEntry**/) {
 
 
