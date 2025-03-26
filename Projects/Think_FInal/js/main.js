@@ -31,7 +31,7 @@ let saraNeutral = undefined;
 let state = "Dorm"
 
 let charspriteX = 1920 / 2;
-let charSpriteY = 1080 / 2;
+let charSpriteY = 1080 / 2 + 20;
 
 
 

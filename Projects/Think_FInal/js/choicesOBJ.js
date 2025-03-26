@@ -19,6 +19,7 @@ class Choice {
     push();
     imageMode(CENTER);
     image(this.spriteImg, charspriteX, charSpriteY);
+    this.spriteImg.resize(0, 780);
     pop();
     console.log(this.spriteImg);
   }
