@@ -164,9 +164,9 @@ function draw() {
 
 //start the game
 function dorm() {
+    DormChoice01.drawCharacterSpriteElements(charspriteX, charSpriteY);
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
-    DormChoice01.drawCharacterSpriteElements(charspriteX, charSpriteY);
     console.log();
 
 
