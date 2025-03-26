@@ -18,8 +18,9 @@ class Choice {
   drawCharacterSpriteElements(charspriteX, charSpriteY) {
     push();
     imageMode(CENTER);
-    image(this.spriteImg.sprite, charspriteX, charSpriteY);
+    image(this.spriteImg, charspriteX, charSpriteY);
     pop();
+    console.log(this.spriteImg);
   }
 
 }
