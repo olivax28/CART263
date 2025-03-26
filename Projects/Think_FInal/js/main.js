@@ -19,6 +19,9 @@
 let storyDialogue = undefined;
 let uiBorder = undefined;
 let brainIdle = undefined;
+//Backgrounds
+let dormBG = undefined;
+// Character Sprites
 let saraNeutral = undefined;
 // // goes through the scenes of the JSON file for the story mode dialogue
 // let sceneIndex = 0;
@@ -96,6 +99,8 @@ function preload() {
     uiBorder = loadImage("assets/images/UI/border.PNG");
     brainIdle = loadImage("assets/images/UI/brain_idle.PNG");
     saraNeutral = loadImage("assets/images/Sprites/Sara_neutral.PNG");
+    dormBG = loadImage("assets/images/BGs/dorm_BG.PNG");
+
 }
 
 
@@ -164,6 +169,7 @@ function draw() {
 
 //start the game
 function dorm() {
+    drawBG(dormBG, width / 2, height / 2);
     DormChoice01.drawCharacterSpriteElements(charspriteX, charSpriteY);
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
@@ -181,6 +187,17 @@ function drawUI(uiElement, x, y,) {
     push();
     imageMode(CENTER);
     image(uiElement, x, y);
+    pop();
+
+}
+
+
+
+function drawBG(bgIMG, x, y,) {
+    push();
+    imageMode(CENTER);
+    image(bgIMG, x, y);
+    bgIMG.resize(0, 900);
     pop();
 
 }
