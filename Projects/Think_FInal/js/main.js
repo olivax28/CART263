@@ -23,6 +23,8 @@ let brainIdle = undefined;
 let dormBG = undefined;
 // Character Sprites
 let saraNeutral = undefined;
+let saraSad = undefined;
+let renNeutral = undefined;
 // // goes through the scenes of the JSON file for the story mode dialogue
 // let sceneIndex = 0;
 // // 
@@ -60,25 +62,25 @@ let charSpriteY = 1080 / 2 + 20;
 // }
 
 
-// const textBoxSpeech = {
-//     // body: {
-//     //     x: //,
-//     //     y: //,
-//     //     w: //,
-//     //     h: //,
-//     //     fill: "#******",
-//     // },
+const textBoxSpeech = {
+    body: {
+        x: 600,
+        y: 700,
+        w: 825,
+        h: 200,
+        fill: "#000000",
+    },
 
-//     // border: {
-//     //     x: //,
-//     //     y: //,
-//     //     w: //,
-//     //     h: //,
-//     //     fill: "#******",
+    border: {
+        x: 595,
+        y: 695,
+        w: 835,
+        h: 210,
+        fill: "#FFFFFF",
 
-//     // }
+    }
 
-// }
+}
 
 const UI = {
 
@@ -99,6 +101,8 @@ function preload() {
     uiBorder = loadImage("assets/images/UI/border.PNG");
     brainIdle = loadImage("assets/images/UI/brain_idle.PNG");
     saraNeutral = loadImage("assets/images/Sprites/Sara_neutral.PNG");
+    saraSad = loadImage("assets/images/Sprites/Sara_sad.PNG");
+    renNeutral = loadImage("assets/images/Sprites/Ren_neutral.PNG");
     dormBG = loadImage("assets/images/BGs/dorm_BG.PNG");
 
 }
@@ -108,10 +112,14 @@ function preload() {
  * creates the canvas
 */
 let DormChoice01 = undefined;
+let DormChoice02 = undefined;
+
 
 function setup() {
     createCanvas(1920, 1080);
     DormChoice01 = new Choice(saraNeutral);
+    // DormChoice02 = new Choice(renNeutral);
+
 
 
     // links the storyTimer object to the JSON file, then directs it to the Delay part of each scene (calls each after the designated delay time)
@@ -136,11 +144,51 @@ function draw() {
 }
 
 
+//start the game
+function dorm() {
+    drawBG(dormBG, width / 2, height / 2);
+    activatedChoice(DormChoice01);
+    drawUI(uiBorder, width / 2, height / 2);
+    drawUI(brainIdle, width / 1.35, height / 3.3);
+    console.log();
 
 
-// // The title screen menu 
+}
+
+function activatedChoice(choiceIndex) {
+    choiceIndex.drawCharacterSpriteElements(charspriteX, charSpriteY);
+    choiceIndex.drawTextBox(textBoxSpeech);
+    console.log(textBoxSpeech);
+}
+
+
+
+
+function drawUI(uiElement, x, y,) {
+    push();
+    imageMode(CENTER);
+    image(uiElement, x, y);
+    pop();
+
+}
+
+
+
+function drawBG(bgIMG, x, y,) {
+    push();
+    imageMode(CENTER);
+    image(bgIMG, x, y);
+    bgIMG.resize(0, 900);
+    pop();
+
+}
+
+
+
+
+// // The title screen menu
 // function title() {
-//     //sets size and alignment of the Title text 
+//     //sets size and alignment of the Title text
 //     textSize(32);
 //     textAlign(LEFT, LEFT)
 //     background("#000000");
@@ -167,40 +215,6 @@ function draw() {
 //     }
 // }
 
-//start the game
-function dorm() {
-    drawBG(dormBG, width / 2, height / 2);
-    DormChoice01.drawCharacterSpriteElements(charspriteX, charSpriteY);
-    drawUI(uiBorder, width / 2, height / 2);
-    drawUI(brainIdle, width / 1.35, height / 3.3);
-    console.log();
-
-
-}
-
-
-
-
-
-
-function drawUI(uiElement, x, y,) {
-    push();
-    imageMode(CENTER);
-    image(uiElement, x, y);
-    pop();
-
-}
-
-
-
-function drawBG(bgIMG, x, y,) {
-    push();
-    imageMode(CENTER);
-    image(bgIMG, x, y);
-    bgIMG.resize(0, 900);
-    pop();
-
-}
 
 // example of iterating through dialogue
 // const dialogArray = storyDialogue.Scenes[sceneIndex].Dialogue;
@@ -211,74 +225,7 @@ function drawBG(bgIMG, x, y,) {
 
 
 
-// //For the dialogue text
-// //Functions draws the text boxes (needs to be edited)
-// function drawTextBox(textBox, textArray) {
-//     //border
-//     push();
-//     fill(textBox.border.fill);
-//     rect(textBox.border.x, textBox.border.y, textBox.border.w, textBox.border.h);
-//     pop();
-//     // text box
-//     push();
-//     fill(textBox.body.fill);
-//     rect(textBox.body.x, textBox.body.y, textBox.body.w, textBox.body.h);
-//     pop();
-//     push();
-//     fill("#66ff66");
-//     textSize(20);
-//     textAlign(LEFT);
-//     textFont('Courier New');
-//     //plug in wanted text here!
-//     text(textArray[dialogueIndex], textBox.body.x + 5, textBox.body.y + 5, textBox.body.w, textBox.body.h)
-//     pop();
-// }
 
-
-// //Delays the appearance of the dialogue box
-// function checkDialogueTimer(scene, dialogue) {
-//     //dialogue appearance
-//     if (state === scene) {
-//         setTimeout(showTheTextBox, 1000);
-//     }
-//     if (showDialogueBox == true) {
-//         drawTextBox(textBoxCutscene, dialogue);
-//     }
-// }
-
-// //handles the showing of the text box
-// function showTheTextBox() {
-//     showDialogueBox = true;
-// }
-
-// //Allows the player to click through the dialogues
-// //This code is taken from another project and will serve as an example for "Think" but needs to be modified used for iterating through story dialogue
-// function mousePressed() {
-//     // for the play game version
-//     if (state === /** current scene */ && showDialogueBox === true) {
-//         dialogueIndex++;
-//         if (dialogueIndex === cutsceneText.length) {
-//         }
-//     }
-//     // for the story mode cutscenes
-//     if (state === "storyCutscene" && showDialogueBox === true) {
-//         dialogueIndex++;
-//         // returns the Dialogue JSON path, selects the scene from the array, then the dialogue of that scene
-//         if (dialogueIndex === storyDialogue.Scenes[sceneIndex].Dialogue.length) {
-//             sceneIndex++;
-//             if (sceneIndex === storyDialogue.Scenes.length) {
-//                 // at the end of all scenes, return to the title screen
-//                 state = "title";
-//             }
-//             else {
-//                 // if not at the end of the scenes, return to the game
-//                 dialogueIndex = 0;
-//                 storyTimer.counter = storyDialogue.Scenes[sceneIndex].Delay;
-//                 state = "storyMode";
-//             }
-//         }
-//     }
-// }
 
 
 
