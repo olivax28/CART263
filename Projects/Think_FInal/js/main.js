@@ -51,10 +51,10 @@ let charSpriteY = 1080 / 2 + 20;
 //     counter: undefined,
 // };
 
-// // loads in the timer based on the JSON file
-// let storyTimer = {
-//     counter: undefined
-// };
+// loads in the timer based on the JSON file
+let textBoxDelay = {
+    counter: undefined
+};
 
 // // the hit boxes for the title screen
 // const clickBox = {
@@ -121,10 +121,14 @@ function preload() {
 let DormChoice01 = undefined;
 let DormChoice02 = undefined;
 
-let testDialog = "Hey this is a test"
+
+
+
 function setup() {
     createCanvas(1920, 1080);
-    DormChoice01 = new Choice(testDialog, saraNeutral);
+    const dialogArray = storyDialogue.Scenes[sceneIndex].Dialogue;
+    textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
+    DormChoice01 = new Choice(dialogArray, saraNeutral);
     // DormChoice02 = new Choice(renNeutral);
 
 
@@ -165,7 +169,7 @@ function dorm() {
 function activatedChoice(choiceIndex) {
     choiceIndex.drawCharacterSpriteElements(charspriteX, charSpriteY);
     choiceIndex.drawTextBox(textBoxSpeech);
-    console.log(testDialog);
+
 }
 
 
