@@ -15,8 +15,8 @@
 
 // //The titlescreen image
 // let titleScreenIMG = undefined;
-// //loads inthe JSON file for the story dialogue
-let storyDialogue = undefined;
+
+
 let uiBorder = undefined;
 let brainIdle = undefined;
 //Backgrounds
@@ -25,11 +25,17 @@ let dormBG = undefined;
 let saraNeutral = undefined;
 let saraSad = undefined;
 let renNeutral = undefined;
-// // goes through the scenes of the JSON file for the story mode dialogue
-// let sceneIndex = 0;
-// // 
-// let dialogueIndex = 0;
-// let showDialogueBox = false;
+
+
+// controls the dialogue
+let storyDialogue = undefined;
+
+// goes through the scenes of the JSON file for the story mode dialogue
+let sceneIndex = 0;
+// goes through the array for the Play Game mode and Story dialogue
+let dialogueIndex = 0;
+let showDialogueBox = false;
+
 
 
 //sets the initial state
@@ -108,16 +114,17 @@ function preload() {
 }
 
 
+
 /**
  * creates the canvas
 */
 let DormChoice01 = undefined;
 let DormChoice02 = undefined;
 
-
+let testDialog = "Hey this is a test"
 function setup() {
     createCanvas(1920, 1080);
-    DormChoice01 = new Choice(saraNeutral);
+    DormChoice01 = new Choice(testDialog, saraNeutral);
     // DormChoice02 = new Choice(renNeutral);
 
 
@@ -158,7 +165,7 @@ function dorm() {
 function activatedChoice(choiceIndex) {
     choiceIndex.drawCharacterSpriteElements(charspriteX, charSpriteY);
     choiceIndex.drawTextBox(textBoxSpeech);
-    console.log(textBoxSpeech);
+    console.log(testDialog);
 }
 
 

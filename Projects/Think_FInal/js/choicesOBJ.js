@@ -1,11 +1,12 @@
 class Choice {
-  constructor(/*dialogue,**/ characterSprite, /*mcEmotion, item, journalEntry**/) {
+  constructor(dialogue, characterSprite, /*mcEmotion, item, journalEntry**/) {
 
 
     // character info
 
 
     this.spriteImg = characterSprite;
+    this.textArray = dialogue;
 
 
 
@@ -31,7 +32,7 @@ class Choice {
   // This section handles the dialogue
 
   //Functions draws the text boxes (needs to be edited)
-  drawTextBox(textBox, /*textArray**/) {
+  drawTextBox(textBox) {
     //border
     push();
     fill(textBox.border.fill);
@@ -43,14 +44,14 @@ class Choice {
     // textBox.body.fill.setAlpha(128);
     rect(textBox.body.x, textBox.body.y, textBox.body.w, textBox.body.h);
     pop();
-    // push();
-    // fill("#66ff66");
-    // textSize(20);
-    // textAlign(LEFT);
-    // textFont('Courier New');
-    // //plug in wanted text here!
-    // text(textArray[dialogueIndex], textBox.body.x + 5, textBox.body.y + 5, textBox.body.w, textBox.body.h)
-    // pop();
+    push();
+    fill("#FFFFFF");
+    textSize(20);
+    textAlign(LEFT);
+    textFont('Courier New');
+    //plug in wanted text here!
+    text(this.textArray/*[dialogueIndex]**/, textBox.body.x + 5, textBox.body.y + 5, textBox.body.w, textBox.body.h);
+    pop();
   }
 
 
