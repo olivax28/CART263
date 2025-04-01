@@ -74,18 +74,8 @@ const textBoxSpeech = {
         y: 700,
         w: 825,
         h: 200,
-        fill: "#000000",
+        fill: "#000a"
     },
-
-    border: {
-        x: 595,
-        y: 695,
-        w: 835,
-        h: 210,
-        fill: "#FFFFFF",
-
-    }
-
 }
 
 const UI = {

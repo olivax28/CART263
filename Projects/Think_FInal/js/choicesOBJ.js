@@ -33,15 +33,11 @@ class Choice {
 
   //Functions draws the text boxes (needs to be edited)
   drawTextBox(textBox) {
-    //border
-    push();
-    fill(textBox.border.fill);
-    rect(textBox.border.x, textBox.border.y, textBox.border.w, textBox.border.h);
-    pop();
     // text box
     push();
+    stroke("#FFF9");
+    strokeWeight(5);
     fill(textBox.body.fill);
-    // textBox.body.fill.setAlpha(128);
     rect(textBox.body.x, textBox.body.y, textBox.body.w, textBox.body.h);
     pop();
     push();
@@ -50,7 +46,7 @@ class Choice {
     textAlign(LEFT);
     textFont('Courier New');
     //plug in wanted text here!
-    text(this.textArray/*[dialogueIndex]**/, textBox.body.x + 5, textBox.body.y + 5, textBox.body.w, textBox.body.h);
+    text(this.textArray[dialogueIndex], textBox.body.x + 5, textBox.body.y + 5, textBox.body.w, textBox.body.h);
     pop();
   }
 
@@ -71,33 +67,28 @@ class Choice {
   //     showDialogueBox = true;
   // }
 
-  // //Allows the player to click through the dialogues
-  // //This code is taken from another project and will serve as an example for "Think" but needs to be modified used for iterating through story dialogue
-  // function mousePressed() {
-  //     // for the play game version
-  //     if (state === /** current scene */ && showDialogueBox === true) {
-  //         dialogueIndex++;
-  //         if (dialogueIndex === cutsceneText.length) {
-  //         }
-  //     }
-  //     // for the story mode cutscenes
-  //     if (state === "storyCutscene" && showDialogueBox === true) {
-  //         dialogueIndex++;
-  //         // returns the Dialogue JSON path, selects the scene from the array, then the dialogue of that scene
-  //         if (dialogueIndex === storyDialogue.Scenes[sceneIndex].Dialogue.length) {
-  //             sceneIndex++;
-  //             if (sceneIndex === storyDialogue.Scenes.length) {
-  //                 // at the end of all scenes, return to the title screen
-  //                 state = "title";
-  //             }
-  //             else {
-  //                 // if not at the end of the scenes, return to the game
-  //                 dialogueIndex = 0;
-  //                 storyTimer.counter = storyDialogue.Scenes[sceneIndex].Delay;
-  //                 state = "storyMode";
-  //             }
-  //         }
-  //     }
-  // }
+  //Allows the player to click through the dialogues
+  //This code is taken from another project and will serve as an example for "Think" but needs to be modified used for iterating through story dialogue
+  mousePressed() {
+    // for the story mode cutscenes
+    if (showDialogueBox === true) {
+      dialogueIndex++;
+      // returns the Dialogue JSON path, selects the scene from the array, then the dialogue of that scene
+      if (dialogueIndex === this.textArray.Scenes[sceneIndex].Dialogue.length) {
+        // need a different way of operating the scene index
+        sceneIndex++;
+        if (sceneIndex === this.textArray.Scenes.length) {
+          // at the end of all scenes, return to the title screen
+          showDialogueBox === false;
+        }
+        else {
+          // if not at the end of the scenes, return to the game
+          dialogueIndex = 0;
+          storyTimer.counter = this.textArray.Scenes[sceneIndex].Delay;
+          state = "storyMode";
+        }
+      }
+    }
+  }
 
 }

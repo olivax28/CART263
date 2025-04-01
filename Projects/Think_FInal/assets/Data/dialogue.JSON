@@ -4,7 +4,8 @@
         {
             "Delay": 5,
             "Dialogue": [
-                "Hello, this is an example of a line of dialogue"
+                "Hello, this is an example of a line of dialogue.",
+                "My Name is Sara, I'm your roommate."
             ]
         },
         {
