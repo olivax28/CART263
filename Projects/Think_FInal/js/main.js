@@ -74,7 +74,7 @@ const textBoxSpeech = {
         y: 700,
         w: 825,
         h: 200,
-        fill: "#000a"
+        fill: ("#000a")
     },
 }
 
@@ -118,7 +118,7 @@ function setup() {
     createCanvas(1920, 1080);
     const dialogArray = storyDialogue.Scenes[sceneIndex].Dialogue;
     textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
-    DormChoice01 = new Choice(dialogArray, saraNeutral);
+    DormChoice01 = new Choice(dialogArray, saraNeutral, "Dorm", textBoxSpeech);
     // DormChoice02 = new Choice(renNeutral);
 
 
@@ -158,7 +158,8 @@ function dorm() {
 
 function activatedChoice(choiceIndex) {
     choiceIndex.drawCharacterSpriteElements(charspriteX, charSpriteY);
-    choiceIndex.drawTextBox(textBoxSpeech);
+    choiceIndex.checkDialogueTimer();
+    // choiceIndex.drawTextBox(textBoxSpeech);
 
 }
 

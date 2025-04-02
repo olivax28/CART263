@@ -1,5 +1,5 @@
 class Choice {
-  constructor(dialogue, characterSprite, /*mcEmotion, item, journalEntry**/) {
+  constructor(dialogue, characterSprite, room, textBox/*mcEmotion, item, journalEntry**/) {
 
 
     // character info
@@ -7,6 +7,8 @@ class Choice {
 
     this.spriteImg = characterSprite;
     this.textArray = dialogue;
+    this.scene = room;
+    this.textBox = textBox;
 
 
 
@@ -32,13 +34,13 @@ class Choice {
   // This section handles the dialogue
 
   //Functions draws the text boxes (needs to be edited)
-  drawTextBox(textBox) {
+  drawTextBox() {
     // text box
     push();
     stroke("#FFF9");
     strokeWeight(5);
-    fill(textBox.body.fill);
-    rect(textBox.body.x, textBox.body.y, textBox.body.w, textBox.body.h);
+    fill(this.textBox.body.fill);
+    rect(this.textBox.body.x, this.textBox.body.y, this.textBox.body.w, this.textBox.body.h);
     pop();
     push();
     fill("#FFFFFF");
@@ -46,7 +48,7 @@ class Choice {
     textAlign(LEFT);
     textFont('Courier New');
     //plug in wanted text here!
-    text(this.textArray[dialogueIndex], textBox.body.x + 5, textBox.body.y + 5, textBox.body.w, textBox.body.h);
+    text(this.textArray[dialogueIndex], this.textBox.body.x + 5, this.textBox.body.y + 5, this.textBox.body.w, this.textBox.body.h);
     pop();
   }
 
@@ -66,6 +68,24 @@ class Choice {
   // function showTheTextBox() {
   //     showDialogueBox = true;
   // }
+  //Delays the appearance of the dialogue box
+
+  //handles the showing of the text box
+  // showTheTextBox() {
+  //   showDialogueBox = true;
+  // }
+
+
+  checkDialogueTimer() {
+    //dialogue appearance for the play game custscene
+    if (state === this.scene) {
+      setTimeout(showDialogueBox = true, 1000);
+    }
+    if (showDialogueBox == true) {
+      this.drawTextBox();
+    }
+  }
+
 
   //Allows the player to click through the dialogues
   //This code is taken from another project and will serve as an example for "Think" but needs to be modified used for iterating through story dialogue
