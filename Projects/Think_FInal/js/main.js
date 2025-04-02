@@ -119,6 +119,7 @@ function setup() {
     const dialogArray = storyDialogue.Scenes[sceneIndex].Dialogue;
     textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
     DormChoice01 = new Choice(dialogArray, saraNeutral, "Dorm", textBoxSpeech);
+
     // DormChoice02 = new Choice(renNeutral);
 
 

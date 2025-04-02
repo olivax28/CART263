@@ -13,12 +13,14 @@ class Choice {
 
 
 
+
     let self = this;//keep a copy of 'this'
 
     // this.flowerStemDiv.addEventListener("click", growStem);
     // function growStem(e) {
     // }
   }
+
   // this.context.fillStyle = this.fill_color; // change the color we are using
   drawCharacterSpriteElements(charspriteX, charSpriteY) {
     push();
@@ -100,12 +102,6 @@ class Choice {
         if (sceneIndex === this.textArray.Scenes.length) {
           // at the end of all scenes, return to the title screen
           showDialogueBox === false;
-        }
-        else {
-          // if not at the end of the scenes, return to the game
-          dialogueIndex = 0;
-          storyTimer.counter = this.textArray.Scenes[sceneIndex].Delay;
-          state = "storyMode";
         }
       }
     }
