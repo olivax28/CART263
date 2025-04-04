@@ -41,6 +41,10 @@ let showDialogueBox = false;
 //sets the initial state
 let state = "Dorm"
 
+//set inital state (sabine :)
+let setup_state = "Dorm-setup"
+
+
 let charspriteX = 1920 / 2;
 let charSpriteY = 1080 / 2 + 20;
 
@@ -111,14 +115,24 @@ function preload() {
 let DormChoice01 = undefined;
 let DormChoice02 = undefined;
 
+//SABINE ADDITION::
+//A: since there is only one active choice at the time .. 
+//make an activeChoice var to hold the `activatedChoice`
+let currentActivatedChoice = null;
+
+
 
 
 
 function setup() {
     createCanvas(1920, 1080);
     const dialogArray = storyDialogue.Scenes[sceneIndex].Dialogue;
+    console.log(dialogArray)
     textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
     DormChoice01 = new Choice(dialogArray, saraNeutral, "Dorm", textBoxSpeech);
+
+    //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
+    currentActivatedChoice = DormChoice01;
 
     // DormChoice02 = new Choice(renNeutral);
 
@@ -138,6 +152,20 @@ function draw() {
     // if (state === "title") {
     //     title();
     // }
+    /*SABINE:: idea: for every transition to a new "choice"
+    have a state to `set-up` the choice ...: will run ONE time -
+    then we have the actual state (which loops..)
+    WHY? - well because we do not want to have a setTimeout run in a loop - 
+    as well as possibly other vars to be set up ONE TIME ..
+    so we need to differentiate */
+
+    if (setup_state === "Dorm-setup") {
+        setupdorm();
+        //immediatly after one time - change state
+        state = "Dorm"
+
+
+    }
     if (state === "Dorm") {
         dorm();
 
@@ -146,24 +174,21 @@ function draw() {
 }
 
 
+function setupdorm() {
+    currentActivatedChoice.startDialogueTimer();
+}
+
+
 //start the game
 function dorm() {
     drawBG(dormBG, width / 2, height / 2);
-    activatedChoice(DormChoice01);
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
-    console.log();
+    currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
+    currentActivatedChoice.drawTextBox(textBoxSpeech);
 
 
 }
-
-function activatedChoice(choiceIndex) {
-    choiceIndex.drawCharacterSpriteElements(charspriteX, charSpriteY);
-    choiceIndex.checkDialogueTimer();
-    // choiceIndex.drawTextBox(textBoxSpeech);
-
-}
-
 
 
 
@@ -183,6 +208,12 @@ function drawBG(bgIMG, x, y,) {
     image(bgIMG, x, y);
     bgIMG.resize(0, 900);
     pop();
+
+}
+
+//p5 mousePressed
+function mousePressed() {
+    currentActivatedChoice.mousePressed();
 
 }
 
