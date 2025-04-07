@@ -19,6 +19,7 @@
 
 let uiBorder = undefined;
 let brainIdle = undefined;
+let brainMenu = undefined;
 //Backgrounds
 let dormBG = undefined;
 // Character Sprites
@@ -100,6 +101,7 @@ function preload() {
     //sprites and sounds will be loaded in here
     uiBorder = loadImage("assets/images/UI/border.PNG");
     brainIdle = loadImage("assets/images/UI/brain_idle.PNG");
+    brainMenu = loadImage("assets/images/UI/brain_options.PNG");
     saraNeutral = loadImage("assets/images/Sprites/Sara_neutral.PNG");
     saraSad = loadImage("assets/images/Sprites/Sara_sad.PNG");
     renNeutral = loadImage("assets/images/Sprites/Ren_neutral.PNG");

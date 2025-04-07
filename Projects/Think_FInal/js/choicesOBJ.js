@@ -1,11 +1,12 @@
 class Choice {
-  constructor(dialogue, characterSprite, room, textBox/*mcEmotion, item, journalEntry**/) {
+  constructor(dialogue, characterSprite, room, textBox, brainMenuIMG/*mcEmotion, item, journalEntry**/) {
 
 
     // character info
 
 
     this.spriteImg = characterSprite;
+    this.brainMenuIMG = brainMenuIMG
     this.textArray = dialogue;
     console.log(this.textArray) //init dialogue
     this.scene = room;
@@ -14,7 +15,7 @@ class Choice {
     console.log(this.scene) //same
     //sabine: make showDialogueBox a member var of the class (so ech choice has its OWN)
     this.showDialogueBox = false; // initially false
-
+    this.showBrainMenu = false; // initially false
 
     let self = this;//keep a copy of 'this'
   }
@@ -78,7 +79,7 @@ class Choice {
       // returns the Dialogue JSON path, selects the scene from the array, then the dialogue of that scene
       if (dialogueIndex === this.textArray.Scenes[sceneIndex].Dialogue.length) {
         // need a different way of operating the scene index
-        sceneIndex++;
+        sceneIndex++; // modify this so that the scene is instead chosen by the curent choice
         if (sceneIndex === this.textArray.Scenes.length) {
           // at the end of all scenes, return to the title screen
           this.showDialogueBox === false;
@@ -87,4 +88,28 @@ class Choice {
     }
   }
 
+  displayBrainMenu() {
+    if (dialogueIndex === this.textArray.Scenes[sceneIndex].Dialogue.length) {
+      this.showBrainMenu === true;
+      console.log("drawin brain menu");
+    }
+
+  }
+
+  // draws the brain choice menu
+
+  drawBrainMwenu() {
+    // text box
+    if (this.showBrainMenu === true) {
+      push();
+      imageMode(CENTER);
+      image(this.brainMenuIMG, 1422.222, 327.2727);
+      pop();
+    }
+  }
+
 }
+
+
+
+
