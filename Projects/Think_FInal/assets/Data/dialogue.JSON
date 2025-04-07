@@ -11,7 +11,10 @@
         },
         {
             "Delay": 5,
-            "Dialogue": []
+            "Dialogue": [
+                "this is scene Index number 02",
+                "this is the second line of the seconds scene"
+            ]
         },
         {
             "Delay": 2,

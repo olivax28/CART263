@@ -26,6 +26,7 @@ let dormBG = undefined;
 let saraNeutral = undefined;
 let saraSad = undefined;
 let renNeutral = undefined;
+let renHappy = undefined;
 
 
 // controls the dialogue
@@ -105,6 +106,7 @@ function preload() {
     saraNeutral = loadImage("assets/images/Sprites/Sara_neutral.PNG");
     saraSad = loadImage("assets/images/Sprites/Sara_sad.PNG");
     renNeutral = loadImage("assets/images/Sprites/Ren_neutral.PNG");
+    renHappy = loadImage("assets/images/Sprites/Ren_happy.PNG");
     dormBG = loadImage("assets/images/BGs/dorm_BG.PNG");
 
 }
@@ -116,6 +118,7 @@ function preload() {
 */
 let DormChoice01 = undefined;
 let DormChoice02 = undefined;
+let DormChoice03 = undefined;
 
 //SABINE ADDITION::
 //A: since there is only one active choice at the time .. 
@@ -128,16 +131,20 @@ let currentActivatedChoice = null;
 
 function setup() {
     createCanvas(1920, 1080);
-    const dialogArray = storyDialogue.Scenes[sceneIndex].Dialogue;
-    console.log(dialogArray)
+
+    const dialogArray01 = storyDialogue.Scenes[0].Dialogue;
+    const dialogArray02 = storyDialogue.Scenes[1].Dialogue;
+    // console.log(dialogArray)
     textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
-    DormChoice01 = new Choice(dialogArray, saraNeutral, "Dorm", textBoxSpeech);
+    // all potnetial choices defined here
+    DormChoice01 = new Choice(dialogArray01, saraNeutral, "Dorm", textBoxSpeech);
+    DormChoice02 = new Choice(dialogArray02, saraSad, "Dorm", textBoxSpeech);
+    DormChoice03 = new Choice(dialogArray02, renHappy, "Dorm", textBoxSpeech);
 
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
-    currentActivatedChoice = DormChoice01;
+    currentActivatedChoice = DormChoice03;
 
-    // DormChoice02 = new Choice(renNeutral);
-
+    //NOTE FOR LATER CODING....brain click function will change the currently activated choice, dialogue defined by the dialog array constant
 
 
     // links the storyTimer object to the JSON file, then directs it to the Delay part of each scene (calls each after the designated delay time)
