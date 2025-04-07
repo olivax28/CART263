@@ -58,6 +58,10 @@ class Choice {
 
 
 
+
+
+
+
   // sabine changed the name
   startDialogueTimer() {
     let self = this;
@@ -72,7 +76,7 @@ class Choice {
   //SABINE THIS WILL BE CALLED BY the mousePressed function in the main.js
   //Allows the player to click through the dialogues
   //This code is taken from another project and will serve as an example for "Think" but needs to be modified used for iterating through story dialogue
-  mousePressed() {
+  Pressed() {
     // for the story mode cutscenes
     if (this.showDialogueBox === true) {
       dialogueIndex++;
@@ -80,7 +84,7 @@ class Choice {
       if (dialogueIndex === this.textArray.Scenes[sceneIndex].Dialogue.length) {
         // need a different way of operating the scene index
         sceneIndex++; // modify this so that the scene is instead chosen by the curent choice
-        if (sceneIndex === this.textArray.Scenes.length) {
+        if (sceneIndex === this.textArray.Scenes.Dialogue.length) {
           // at the end of all scenes, return to the title screen
           this.showDialogueBox === false;
         }
@@ -91,7 +95,7 @@ class Choice {
   displayBrainMenu() {
     if (dialogueIndex === this.textArray.Scenes[sceneIndex].Dialogue.length) {
       this.showBrainMenu === true;
-      console.log("drawin brain menu");
+      console.log("drawing brain menu");
     }
 
   }

@@ -215,7 +215,7 @@ function drawBG(bgIMG, x, y,) {
 
 //p5 mousePressed
 function mousePressed() {
-    currentActivatedChoice.mousePressed();
+    currentActivatedChoice.Pressed();
 
 }
 
