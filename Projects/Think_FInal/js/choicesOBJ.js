@@ -2,6 +2,7 @@ class Choice {
   constructor(dialogue, characterSprite, room, textBox, brainMenuIMG/*mcEmotion, item, journalEntry**/) {
 
 
+
     // character info
 
 
@@ -18,6 +19,7 @@ class Choice {
     this.showBrainMenu = false; // initially false
 
     let self = this;//keep a copy of 'this'
+    this.dialogueIndex =0; // new sabine: need a seperate index
   }
 
   // this.context.fillStyle = this.fill_color; // change the color we are using
@@ -38,6 +40,7 @@ class Choice {
   drawTextBox() {
     // text box
     if (this.showDialogueBox === true) {
+      console.log("show")
       push();
       stroke("#FFF9");
       strokeWeight(5);
@@ -50,7 +53,7 @@ class Choice {
       textAlign(LEFT);
       textFont('Courier New');
       //plug in wanted text here!
-      text(this.textArray[dialogueIndex], this.textBox.body.x + 5, this.textBox.body.y + 5, this.textBox.body.w, this.textBox.body.h);
+      text(this.textArray[this.dialogueIndex], this.textBox.body.x + 5, this.textBox.body.y + 5, this.textBox.body.w, this.textBox.body.h);
       pop();
     }
   }
@@ -66,9 +69,7 @@ class Choice {
   startDialogueTimer() {
     let self = this;
     //dialogue appearance for the play game custscene
-    if (state === this.scene) {
       setTimeout(function () { self.showDialogueBox = true }, 1000);
-    }
 
   }
 
@@ -77,28 +78,28 @@ class Choice {
   //Allows the player to click through the dialogues
   //This code is taken from another project and will serve as an example for "Think" but needs to be modified used for iterating through story dialogue
   Pressed() {
+
+
     // for the story mode cutscenes
     if (this.showDialogueBox === true) {
-      dialogueIndex++;
+    
+      this.dialogueIndex++;
       // returns the Dialogue JSON path, selects the scene from the array, then the dialogue of that scene
-      if (dialogueIndex === this.textArray.Scenes[sceneIndex].Dialogue.length) {
-        // need a different way of operating the scene index
-        sceneIndex++; // modify this so that the scene is instead chosen by the curent choice
-        if (sceneIndex === this.textArray.Scenes.Dialogue.length) {
-          // at the end of all scenes, return to the title screen
-          this.showDialogueBox === false;
-        }
+      if (this.dialogueIndex === this.textArray.length) {
+        //if done :)
+        return true;
       }
     }
+    return false;
   }
 
-  displayBrainMenu() {
-    if (dialogueIndex === this.textArray.Scenes[sceneIndex].Dialogue.length) {
-      this.showBrainMenu === true;
-      console.log("drawing brain menu");
-    }
+  // displayBrainMenu() {
+  //   if ( this.dialogueIndex === this.textArray.Scenes[sceneIndex].Dialogue.length) {
+  //     this.showBrainMenu === true;
+  //     console.log("drawing brain menu");
+  //   }
 
-  }
+  // }
 
   // draws the brain choice menu
 

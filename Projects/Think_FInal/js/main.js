@@ -36,15 +36,16 @@ let storyDialogue = undefined;
 let sceneIndex = 0;
 // goes through the array for the Play Game mode and Story dialogue
 let dialogueIndex = 0;
-let showDialogueBox = false;
+// let showDialogueBox = false;
+
 
 
 
 //sets the initial state
-let state = "Dorm"
+//let state = "Dorm"
 
 //set inital state (sabine :)
-let setup_state = "Dorm-setup"
+let state = "Dorm-setup"
 
 
 let charspriteX = 1920 / 2;
@@ -116,16 +117,15 @@ function preload() {
 /**
  * creates the canvas
 */
-let DormChoice01 = undefined;
-let DormChoice02 = undefined;
-let DormChoice03 = undefined;
+// let DormChoice01 = undefined;
+// let DormChoice02 = undefined;
+// let DormChoice03 = undefined;
 
 //SABINE ADDITION::
 //A: since there is only one active choice at the time .. 
 //make an activeChoice var to hold the `activatedChoice`
 let currentActivatedChoice = null;
-
-
+let choices = [];
 
 
 
@@ -137,12 +137,14 @@ function setup() {
     // console.log(dialogArray)
     textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
     // all potnetial choices defined here
-    DormChoice01 = new Choice(dialogArray01, saraNeutral, "Dorm", textBoxSpeech);
-    DormChoice02 = new Choice(dialogArray02, saraSad, "Dorm", textBoxSpeech);
-    DormChoice03 = new Choice(dialogArray02, renHappy, "Dorm", textBoxSpeech);
+
+
+    choices.push(new Choice(dialogArray01, saraNeutral, "Dorm", textBoxSpeech));
+    choices.push(new Choice(dialogArray02, saraSad, "Dorm", textBoxSpeech));
+    choices.push(new Choice(dialogArray02, renHappy, "Dorm", textBoxSpeech));
 
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
-    currentActivatedChoice = DormChoice03;
+    currentActivatedChoice = choices[sceneIndex];
 
     //NOTE FOR LATER CODING....brain click function will change the currently activated choice, dialogue defined by the dialog array constant
 
@@ -158,6 +160,7 @@ function setup() {
 function draw() {
     background(0, 0, 0);
 
+    // console.log(state)
     // if (state === "title") {
     //     title();
     // }
@@ -168,14 +171,14 @@ function draw() {
     as well as possibly other vars to be set up ONE TIME ..
     so we need to differentiate */
 
-    if (setup_state === "Dorm-setup") {
+    if (state === "Dorm-setup") {
         setupdorm();
         //immediatly after one time - change state
         state = "Dorm"
 
 
     }
-    if (state === "Dorm") {
+    else if (state === "Dorm") {
         dorm();
 
 
@@ -183,7 +186,9 @@ function draw() {
 }
 
 
+//go to setup every time we initate a new choice... 
 function setupdorm() {
+    console.log("setup")
     currentActivatedChoice.startDialogueTimer();
 }
 
@@ -194,7 +199,7 @@ function dorm() {
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
     currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
-    currentActivatedChoice.drawTextBox(textBoxSpeech);
+    currentActivatedChoice.drawTextBox();
 
 
 }
@@ -222,7 +227,36 @@ function drawBG(bgIMG, x, y,) {
 
 //p5 mousePressed
 function mousePressed() {
-    currentActivatedChoice.Pressed();
+    //check if this activated choice is done ... 
+    let goToNextScene = currentActivatedChoice.Pressed();
+    if (goToNextScene === true) {
+
+        sceneIndex++;
+        let number_scenes_temp = 3
+        //if(sceneIndex === storyDialogue.Scenes.length )
+        if (sceneIndex >= number_scenes_temp) {
+            console.log("no");
+            console.log("closing text box")
+            currentActivatedChoice.showDialogueBox = false;
+
+        }
+
+        else {
+            currentActivatedChoice = choices[sceneIndex];
+            state = "Dorm-setup";
+        }
+
+
+    }
+
+
+    //if(sceneIndex){
+    //     //the text array ONLY shows the text not scene
+    //     if (sceneIndex === INNER_NUMBER_SCENES) {
+    //         // at the end of all scenes, return to the title screen
+    //         this.showDialogueBox === false;
+    //       }
+    // }
 
 }
 
