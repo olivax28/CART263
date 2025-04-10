@@ -105,11 +105,21 @@ console.log(everySepalWidth);
 const irisesWithColorsSorted = irisesWithColors.toSorted((a, b) => a.petalWidth - b.petalWidth);
 console.log(irisesWithColorsSorted);
 //visualizing
+//IDEA: Bouquet of irises that grow bigger and smaller on their own with a for loop. and who's colors are the random assigned colors
+
+
+
+
   } catch (e) { console.log(e); }
 }
 
 
 
+
+//visualizing
+//IDEA: Bouquet of irises that grow bigger and smaller on their own with a for loop. and who's colors are the random assigned colors
+
+document.createElement("box");
 
 
 
