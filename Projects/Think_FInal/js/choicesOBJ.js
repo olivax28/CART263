@@ -1,7 +1,7 @@
 class Choice {
   constructor(dialogue, characterSprite, room, textBox, brainMenuIMG, nextChoiceArray,playerOptions/*mcEmotion, item, journalEntry**/) {
 
-
+this.optionButtons = [];
 this.brainX = 1422.222;
 this.brainY = 327.2727;
     // character info
@@ -120,19 +120,38 @@ brainActivate(){
 
     
   
-  drawOptions(){
+  drawOptions(playerChoicesFont){
     for (let i = 0; i < this.playerOptions.length; i++){
       push();
-      fill("#000000");
-      textSize(20);
+      
+      textSize(25);
       textAlign(LEFT);
-      textFont('Courier New');
+      textFont(playerChoicesFont);
+      fill("red");
+      let bbox = playerChoicesFont.textBounds(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
+      rectMode(CORNER);
+  // rect(bbox.x, bbox.y, bbox.w, bbox.h);
+  fill("#000000");
+    ellipse(bbox.x, bbox.y, 5,5);
       //plug in wanted text here!
-      text(this.playerOptions[i], this.brainX - 130, this.brainY - 65 * i, 500,500);
+      text(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
       pop();
 
   }
 
+}
+
+calculateBoundingBoxes(playerChoicesFont){
+
+    for (let i = 0; i < this.playerOptions.length; i++){
+      textSize(25);
+      textAlign(LEFT);
+      textFont(playerChoicesFont);
+      let bbox = playerChoicesFont.textBounds(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
+
+      this.optionButtons.push(bbox);
+
+  }
 }
 }
 

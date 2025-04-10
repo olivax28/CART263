@@ -91,7 +91,7 @@ const UI = {
 
 }
 
-
+let playerChoicesFont;
 
 
 // //sound effects will be defined here
@@ -111,6 +111,7 @@ function preload() {
     renNeutral = loadImage("assets/images/Sprites/Ren_neutral.PNG");
     renHappy = loadImage("assets/images/Sprites/Ren_happy.PNG");
     dormBG = loadImage("assets/images/BGs/dorm_BG.PNG");
+    playerChoicesFont = loadFont("assets/Data/Roboto-Regular.ttf");
 
 }
 
@@ -142,7 +143,10 @@ function setup() {
 
 
     choices.push(new Choice(dialogArray01, saraNeutral, "Dorm", textBoxSpeech,brainMenu,storyDialogue.Scenes[0].NextChoices,storyDialogue.Scenes[0].playerOptions));
+    choices[0].calculateBoundingBoxes(playerChoicesFont);
+    
     choices.push(new Choice(dialogArray02, saraSad, "Dorm", textBoxSpeech,brainMenu));
+    // choices[1].calculateBoundingBoxes(playerChoicesFont);
     choices.push(new Choice(dialogArray02, renHappy, "Dorm", textBoxSpeech,brainMenu));
 
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
@@ -198,13 +202,13 @@ function setupdorm() {
 //start the game
 function dorm() {
     drawBG(dormBG, width / 2, height / 2);
+    currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
-    currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
     currentActivatedChoice.drawTextBox();
     if (currentActivatedChoice.showBrainMenu === true){
         currentActivatedChoice.drawBrainMenu();
-        currentActivatedChoice.drawOptions();
+        currentActivatedChoice.drawOptions(playerChoicesFont);
     }
 
 
@@ -233,14 +237,33 @@ function drawBG(bgIMG, x, y,) {
 
 //p5 mousePressed
 function mousePressed() {
-    //check if this activated choice is done ... 
+    if (currentActivatedChoice.showBrainMenu === true){
+        
+        for (let i = 0; i < currentActivatedChoice.playerOptions.length; i++){
+            let playerOptionBounds = currentActivatedChoice.optionButtons[i];
+       
+
+        if (mouseX >= playerOptionBounds.x && mouseX <=  (playerOptionBounds.x + playerOptionBounds.w) && mouseY >= playerOptionBounds.y && mouseY <=  (playerOptionBounds.y + playerOptionBounds.h)){
+            console.log(currentActivatedChoice.playerOptions[i]);
+            console.log(currentActivatedChoice.nextChoiceArray[i]);
+            let newIndex = currentActivatedChoice.nextChoiceArray[i];
+            console.log(choices[newIndex]);
+            currentActivatedChoice = choices[newIndex];
+        }
+            // ChoiceIndexSelected = storyDialogue.Scenes.NextChoices[0];
+            // currentActivatedChoice = choices[ChoiceIndexSelected];
+         
+        }
+  
+    }
+    else {
+          //check if this activated choice is done ... 
     let goToNextChoice = currentActivatedChoice.Pressed();
     if (goToNextChoice === true) {
-
+        let number_scenes_temp = 3
         // sceneIndex++;
         currentActivatedChoice.brainActivate();
-        let number_scenes_temp = 3
-        
+      
         //if(sceneIndex === storyDialogue.Scenes.length )
         if (sceneIndex >= number_scenes_temp) {
             console.log("no");
@@ -249,15 +272,18 @@ function mousePressed() {
 
         }
 
-        else {
-            currentActivatedChoice = choices[sceneIndex];
-            currentActivatedChoice.showDialogueBox = true;
-            // state = "Dorm-setup";
-        }
+        // else {
+        //     currentActivatedChoice = choices[sceneIndex];
+        //     currentActivatedChoice.showDialogueBox = true;
+        //     // state = "Dorm-setup";
+        // }
 //Check if dialogue is complteted for the choce
 //if yes, show choices
 
     }
+
+    }
+  
 
 
     //if(sceneIndex){
