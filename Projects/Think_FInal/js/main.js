@@ -9,7 +9,9 @@
 
 
 
-
+// NOTES FOR SABINE:
+//nEED TO NOT RUN DOMR SETUP EVERY TIME
+//NEED TO FIND A WAY OF ONLY PLAYING DIALOGUE FOR THE CHOICE
 // //the background image for the cutscenes
 // let BG = undefined;
 

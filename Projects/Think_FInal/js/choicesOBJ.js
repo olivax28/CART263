@@ -19,7 +19,7 @@ class Choice {
     this.showBrainMenu = false; // initially false
 
     let self = this;//keep a copy of 'this'
-    this.dialogueIndex =0; // new sabine: need a seperate index
+    this.dialogueIndex = 0; // new sabine: need a seperate index
   }
 
   // this.context.fillStyle = this.fill_color; // change the color we are using
@@ -69,7 +69,7 @@ class Choice {
   startDialogueTimer() {
     let self = this;
     //dialogue appearance for the play game custscene
-      setTimeout(function () { self.showDialogueBox = true }, 1000);
+    setTimeout(function () { self.showDialogueBox = true }, 1000);
 
   }
 
@@ -82,7 +82,7 @@ class Choice {
 
     // for the story mode cutscenes
     if (this.showDialogueBox === true) {
-    
+
       this.dialogueIndex++;
       // returns the Dialogue JSON path, selects the scene from the array, then the dialogue of that scene
       if (this.dialogueIndex === this.textArray.length) {
