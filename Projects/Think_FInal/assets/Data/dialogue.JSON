@@ -3,13 +3,18 @@
     "Scenes": [
         {
             "Delay": 5,
+            "Choice Variation": "Dorm1",
             "Dialogue": [
-                "Hello, this is an example of a line of dialogue"
+                "Hello, this is an example of a line of dialogue.",
+                "My Name is Sara, I'm your roommate. This is example 2 of a line of dialogue"
             ]
         },
         {
             "Delay": 5,
-            "Dialogue": []
+            "Dialogue": [
+                "this is scene Index number 02",
+                "this is the second line of the seconds scene"
+            ]
         },
         {
             "Delay": 2,
