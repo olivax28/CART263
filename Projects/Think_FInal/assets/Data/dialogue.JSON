@@ -7,6 +7,14 @@
             "Dialogue": [
                 "Hello, this is an example of a line of dialogue.",
                 "My Name is Sara, I'm your roommate. This is example 2 of a line of dialogue"
+            ],
+            "NextChoices":[
+                1,2,3
+            ],
+            "playerOptions":[
+                "Choice01",
+                "Choice02",
+                "Choice03"
             ]
         },
         {
@@ -18,7 +26,10 @@
         },
         {
             "Delay": 2,
-            "Dialogue": []
+            "Dialogue": [
+                "this is scene Index number 03",
+                "this is the second line of the seconds scene"
+            ]
         },
         {
             "Delay": 2.5,

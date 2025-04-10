@@ -360,7 +360,7 @@ length
     for (let row = 0; row <= rowNumbers3; row++) {
         for (let column = 0; column <= columnNumbers3; column++) {
             let returnedDiv = customNewBoxCreate(newDivID03);
-            returnedDiv.style.left = `${row * 40}px`;
+            returnedDiv.style.left = `${row * 40}px`
             returnedDiv.style.top = `${column * 40}px`;
             if (row % 3 === 1) {
                 returnedDiv.style.background = "red";

@@ -141,9 +141,9 @@ function setup() {
     // all potnetial choices defined here
 
 
-    choices.push(new Choice(dialogArray01, saraNeutral, "Dorm", textBoxSpeech));
-    choices.push(new Choice(dialogArray02, saraSad, "Dorm", textBoxSpeech));
-    choices.push(new Choice(dialogArray02, renHappy, "Dorm", textBoxSpeech));
+    choices.push(new Choice(dialogArray01, saraNeutral, "Dorm", textBoxSpeech,brainMenu,storyDialogue.Scenes[0].NextChoices,storyDialogue.Scenes[0].playerOptions));
+    choices.push(new Choice(dialogArray02, saraSad, "Dorm", textBoxSpeech,brainMenu));
+    choices.push(new Choice(dialogArray02, renHappy, "Dorm", textBoxSpeech,brainMenu));
 
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
     currentActivatedChoice = choices[sceneIndex];
@@ -202,6 +202,10 @@ function dorm() {
     drawUI(brainIdle, width / 1.35, height / 3.3);
     currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
     currentActivatedChoice.drawTextBox();
+    if (currentActivatedChoice.showBrainMenu === true){
+        currentActivatedChoice.drawBrainMenu();
+        currentActivatedChoice.drawOptions();
+    }
 
 
 }
@@ -230,11 +234,13 @@ function drawBG(bgIMG, x, y,) {
 //p5 mousePressed
 function mousePressed() {
     //check if this activated choice is done ... 
-    let goToNextScene = currentActivatedChoice.Pressed();
-    if (goToNextScene === true) {
+    let goToNextChoice = currentActivatedChoice.Pressed();
+    if (goToNextChoice === true) {
 
-        sceneIndex++;
+        // sceneIndex++;
+        currentActivatedChoice.brainActivate();
         let number_scenes_temp = 3
+        
         //if(sceneIndex === storyDialogue.Scenes.length )
         if (sceneIndex >= number_scenes_temp) {
             console.log("no");
@@ -245,9 +251,11 @@ function mousePressed() {
 
         else {
             currentActivatedChoice = choices[sceneIndex];
-            state = "Dorm-setup";
+            currentActivatedChoice.showDialogueBox = true;
+            // state = "Dorm-setup";
         }
-
+//Check if dialogue is complteted for the choce
+//if yes, show choices
 
     }
 
