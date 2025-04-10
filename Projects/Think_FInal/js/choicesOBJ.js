@@ -1,11 +1,13 @@
 class Choice {
-  constructor(dialogue, characterSprite, room, textBox, brainMenuIMG/*mcEmotion, item, journalEntry**/) {
+  constructor(dialogue, characterSprite, room, textBox, brainMenuIMG, nextChoiceArray,playerOptions/*mcEmotion, item, journalEntry**/) {
 
 
-
+this.brainX = 1422.222;
+this.brainY = 327.2727;
     // character info
-
-
+this.playerOptions = playerOptions;
+this.nextChoiceArray = nextChoiceArray;
+console.log(this.nextChoiceArray);
     this.spriteImg = characterSprite;
     this.brainMenuIMG = brainMenuIMG
     this.textArray = dialogue;
@@ -26,8 +28,8 @@ class Choice {
   drawCharacterSpriteElements(charspriteX, charSpriteY) {
     push();
     imageMode(CENTER);
-    image(this.spriteImg, charspriteX, charSpriteY);
     this.spriteImg.resize(0, 780);
+    image(this.spriteImg, charspriteX, charSpriteY);
     pop();
 
   }
@@ -40,7 +42,7 @@ class Choice {
   drawTextBox() {
     // text box
     if (this.showDialogueBox === true) {
-      console.log("show")
+      // console.log("show")
       push();
       stroke("#FFF9");
       strokeWeight(5);
@@ -102,17 +104,36 @@ class Choice {
   // }
 
   // draws the brain choice menu
-
-  drawBrainMwenu() {
+brainActivate(){
+  this.showBrainMenu = true
+  console.log("activate");
+}
+  drawBrainMenu() {
     // text box
-    if (this.showBrainMenu === true) {
       push();
       imageMode(CENTER);
-      image(this.brainMenuIMG, 1422.222, 327.2727);
+      image(this.brainMenuIMG, this.brainX, this.brainY);
       pop();
-    }
+      console.log("braindrawing");
+     
+      }
+
+    
+  
+  drawOptions(){
+    for (let i = 0; i < this.playerOptions.length; i++){
+      push();
+      fill("#000000");
+      textSize(20);
+      textAlign(LEFT);
+      textFont('Courier New');
+      //plug in wanted text here!
+      text(this.playerOptions[i], this.brainX - 130, this.brainY - 65 * i, 500,500);
+      pop();
+
   }
 
+}
 }
 
 
