@@ -7,5 +7,23 @@ body{
    text-align:center;
   }
 
+  .iris{
+    height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  }
+
+  .box{
+    border-bottom: 50px solid #555;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	height: 0;
+	width: 125px;
+  }
+
+
+
 
 
