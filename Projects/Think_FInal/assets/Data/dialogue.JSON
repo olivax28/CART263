@@ -5,8 +5,9 @@
             "Delay": 5,
             "Choice Variation": "Dorm0",
             "Dialogue": [
-                "Hello, this is an example of a line of dialogue.",
-                "My Name is Sara, I'm your roommate. This is example 2 of a line of dialogue"
+                "Sara: Hey, you're up early, you finally haven't missed lunch.",
+                "Sara: Relax, don't give me that look. It was just a joke, but they ARE serving that terrible tuna casserole in the cafeteria you seem to like for some reason. It might cheer you up some.",
+                "Sara: Speaking of... feeling any better today?"
             ],
             "NextChoices": [
                 1,
@@ -14,34 +15,135 @@
                 3
             ],
             "playerOptions": [
-                "Choice01 Longer",
-                "Choice02",
-                "Choice03"
+                "Not Really... 01",
+                "Actually, yeah. 02",
+                "... 03"
             ]
         },
         {
             "Delay": 5,
             "Choice Variation": "Dorm1",
             "Dialogue": [
-                "this is scene Index number 02",
-                "this is the second line of the seconds scene"
+                "Sara: You know...don't feel bad about that. We all go through tough times... trust me, I know.",
+                "Sara: Shit happens. But hey, what can you do? If ever... well, I know I'm not the super emotional type, but if you ever wanna vent a little, maybe join in for a bit of screamo karaoke..."
             ],
             "NextChoices": [
                 4,
-                5,
-                6
+                5
             ],
             "playerOptions": [
-                "Choice04 Longer",
-                "Choice05",
-                "Choice06"
+                "Sorry for dragging you into this...04",
+                "I'd rather not talk about it...05"
             ]
         },
         {
-            "Delay": 2,
+            "Delay": 5,
+            "Choice Variation": "Dorm2",
             "Dialogue": [
-                "this is scene Index number 03",
-                "this is the second line of the seconds scene"
+                "Sara: Wowww, reaally? You're quick to recover...",
+                "Sara: Well, if your miracle cure wears off, you know where to find me."
+            ],
+            "NextChoices": [
+                7,
+                6
+            ],
+            "playerOptions": [
+                "Thanks, but just forget it.",
+                "I'm fine, really!"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Dorm3",
+            "Dialogue": [
+                "Sara: ...",
+                "Sara: Thought so."
+            ],
+            "NextChoices": [
+                8
+            ],
+            "playerOptions": [
+                "[Say nothing]"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Dorm4",
+            "Dialogue": [
+                "Sara: Hey, don't stress.",
+                "Sara: Well, considering it's half passed 1:00, I need to head out. Band's waiting. But I should be back around 7:00, if you're up to hanging out or something.",
+                "Sara: See you around.",
+                "By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
+            ],
+            "NextChoices": [
+                11
+            ],
+            "playerOptions": [
+                "[Got and meet Ren]...11"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Dorm5",
+            "Dialogue": [
+                "Sara: Hmph. Whatever you say, up to you.",
+                "Sara: Well, I've got to go. Band practice. But I'll be back around 7:00, probably.",
+                "Sara: Enjoy that tuna casserole for me.",
+                "By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
+            ],
+            "NextChoices": [
+                9
+            ],
+            "playerOptions": [
+                "[Got and meet Ren]...9"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Dorm6",
+            "Dialogue": [
+                "Sara: You sure about that? I'm not convinced...but I guess I can't force it out of you.",
+                "Sara: I'm surprised, maybe the promise of tuna casserole was enough to make you feel better...",
+                "Sara: Heh.",
+                "Sara: But for real, it takes a while to heal from things. Remember that.",
+                "By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
+            ],
+            "NextChoices": [
+                10
+            ],
+            "playerOptions": [
+                "[Got and meet Ren]...10"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Dorm7",
+            "Dialogue": [
+                "Sara: Hmph. Whatever you say, up to you.",
+                "Sara: Well, I've got to go. Band practice. But I'll be back around 7:00, probably.",
+                "Sara: Enjoy that tuna casserole for me.",
+                "Oh by the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
+            ],
+            "NextChoices": [
+                9
+            ],
+            "playerOptions": [
+                "[Got and meet Ren]...9"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Dorm8",
+            "Dialogue": [
+                "Sara: Chatty today.",
+                "Sara: Well, I've got to go. Band practice. But I'll be back around 7:00, probably.",
+                "By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
+            ],
+            "NextChoices": [
+                9
+            ],
+            "playerOptions": [
+                "[Got and meet Ren]...9"
             ]
         },
         {

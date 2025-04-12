@@ -24,11 +24,7 @@ let brainIdle = undefined;
 let brainMenu = undefined;
 //Backgrounds
 let dormBG = undefined;
-// Character Sprites
-let saraNeutral = undefined;
-let saraSad = undefined;
-let renNeutral = undefined;
-let renHappy = undefined;
+
 
 
 // controls the dialogue
@@ -98,6 +94,14 @@ let playerChoicesFont;
 // let soundFX = undefined
 
 
+// Character Sprites
+let saraNeutral = undefined;
+let saraSad = undefined;
+let saraShock = undefined;
+let renNeutral = undefined;
+let renHappy = undefined;
+
+
 //load in all sprites
 function preload() {
     //load story mode dialogue data
@@ -108,6 +112,7 @@ function preload() {
     brainMenu = loadImage("assets/images/UI/brain_options.PNG");
     saraNeutral = loadImage("assets/images/Sprites/Sara_neutral.PNG");
     saraSad = loadImage("assets/images/Sprites/Sara_sad.PNG");
+    saraShock = loadImage("assets/images/Sprites/Sara_shock.PNG");
     renNeutral = loadImage("assets/images/Sprites/Ren_neutral.PNG");
     renHappy = loadImage("assets/images/Sprites/Ren_happy.PNG");
     dormBG = loadImage("assets/images/BGs/dorm_BG.PNG");
@@ -137,6 +142,13 @@ function setup() {
 
     const dialogArray00 = storyDialogue.Scenes[0].Dialogue;
     const dialogArray01 = storyDialogue.Scenes[1].Dialogue;
+    const dialogArray02 = storyDialogue.Scenes[2].Dialogue;
+    const dialogArray03 = storyDialogue.Scenes[3].Dialogue;
+    const dialogArray04 = storyDialogue.Scenes[4].Dialogue;
+    const dialogArray05 = storyDialogue.Scenes[5].Dialogue;
+    const dialogArray06 = storyDialogue.Scenes[6].Dialogue;
+    const dialogArray07 = storyDialogue.Scenes[7].Dialogue;
+    const dialogArray08 = storyDialogue.Scenes[8].Dialogue;
     // console.log(dialogArray)
     textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
     // all potnetial choices defined here
@@ -148,7 +160,26 @@ function setup() {
     choices.push(new Choice(dialogArray01, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[1].NextChoices, storyDialogue.Scenes[1].playerOptions));
     choices[1].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray01, renHappy, "Dorm", textBoxSpeech, brainMenu));
+    choices.push(new Choice(dialogArray02, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[2].NextChoices, storyDialogue.Scenes[2].playerOptions));
+    choices[2].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray03, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[3].NextChoices, storyDialogue.Scenes[3].playerOptions));
+    choices[3].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray04, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[4].NextChoices, storyDialogue.Scenes[4].playerOptions));
+    choices[4].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray05, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[5].NextChoices, storyDialogue.Scenes[5].playerOptions));
+    choices[5].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray06, saraShock, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[6].NextChoices, storyDialogue.Scenes[6].playerOptions));
+    choices[6].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray07, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[7].NextChoices, storyDialogue.Scenes[7].playerOptions));
+    choices[7].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray08, saraShock, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[8].NextChoices, storyDialogue.Scenes[8].playerOptions));
+    choices[8].calculateBoundingBoxes(playerChoicesFont);
 
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
     currentActivatedChoice = choices[sceneIndex];
