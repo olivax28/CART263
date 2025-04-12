@@ -1,24 +1,25 @@
 class Choice {
-  constructor(dialogue, characterSprite, room, textBox, brainMenuIMG, nextChoiceArray,playerOptions/*mcEmotion, item, journalEntry**/) {
+  constructor(dialogue, characterSprite, room, textBox, brainMenuIMG, nextChoiceArray, playerOptions/*mcEmotion, item, journalEntry**/) {
 
-this.optionButtons = [];
-this.brainX = 1422.222;
-this.brainY = 327.2727;
+    this.optionButtons = [];
+    this.brainX = 1422.222;
+    this.brainY = 327.2727;
     // character info
-this.playerOptions = playerOptions;
-this.nextChoiceArray = nextChoiceArray;
-console.log(this.nextChoiceArray);
+    this.playerOptions = playerOptions;
+    this.nextChoiceArray = nextChoiceArray;
+    // console.log(this.nextChoiceArray);
     this.spriteImg = characterSprite;
     this.brainMenuIMG = brainMenuIMG
     this.textArray = dialogue;
-    console.log(this.textArray) //init dialogue
+    // console.log(this.textArray) //init dialogue
     this.scene = room;
     this.textBox = textBox;
-    console.log(state) //same 
-    console.log(this.scene) //same
+    // console.log(state) //same 
+    // console.log(this.scene) //same
     //sabine: make showDialogueBox a member var of the class (so ech choice has its OWN)
     this.showDialogueBox = false; // initially false
     this.showBrainMenu = false; // initially false
+
 
     let self = this;//keep a copy of 'this'
     this.dialogueIndex = 0; // new sabine: need a seperate index
@@ -85,6 +86,7 @@ console.log(this.nextChoiceArray);
     // for the story mode cutscenes
     if (this.showDialogueBox === true) {
 
+
       this.dialogueIndex++;
       // returns the Dialogue JSON path, selects the scene from the array, then the dialogue of that scene
       if (this.dialogueIndex === this.textArray.length) {
@@ -92,6 +94,7 @@ console.log(this.nextChoiceArray);
         return true;
       }
     }
+
     return false;
   }
 
@@ -104,46 +107,46 @@ console.log(this.nextChoiceArray);
   // }
 
   // draws the brain choice menu
-brainActivate(){
-  this.showBrainMenu = true
-  console.log("activate");
-}
+  brainActivate() {
+    this.showBrainMenu = true
+    // console.log("activate");
+  }
   drawBrainMenu() {
     // text box
-      push();
-      imageMode(CENTER);
-      image(this.brainMenuIMG, this.brainX, this.brainY);
-      pop();
-      console.log("braindrawing");
-     
-      }
+    push();
+    imageMode(CENTER);
+    image(this.brainMenuIMG, this.brainX, this.brainY);
+    pop();
+    // console.log("braindrawing");
 
-    
-  
-  drawOptions(playerChoicesFont){
-    for (let i = 0; i < this.playerOptions.length; i++){
+  }
+
+
+
+  drawOptions(playerChoicesFont) {
+    for (let i = 0; i < this.playerOptions.length; i++) {
       push();
-      
+
       textSize(25);
       textAlign(LEFT);
       textFont(playerChoicesFont);
       fill("red");
       let bbox = playerChoicesFont.textBounds(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
       rectMode(CORNER);
-  // rect(bbox.x, bbox.y, bbox.w, bbox.h);
-  fill("#000000");
-    ellipse(bbox.x, bbox.y, 5,5);
+      // rect(bbox.x, bbox.y, bbox.w, bbox.h);
+      fill("#000000");
+      ellipse(bbox.x, bbox.y, 5, 5);
       //plug in wanted text here!
       text(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
       pop();
 
+    }
+
   }
 
-}
+  calculateBoundingBoxes(playerChoicesFont) {
 
-calculateBoundingBoxes(playerChoicesFont){
-
-    for (let i = 0; i < this.playerOptions.length; i++){
+    for (let i = 0; i < this.playerOptions.length; i++) {
       textSize(25);
       textAlign(LEFT);
       textFont(playerChoicesFont);
@@ -151,8 +154,8 @@ calculateBoundingBoxes(playerChoicesFont){
 
       this.optionButtons.push(bbox);
 
+    }
   }
-}
 }
 
 

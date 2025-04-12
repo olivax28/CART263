@@ -3,15 +3,17 @@
     "Scenes": [
         {
             "Delay": 5,
-            "Choice Variation": "Dorm1",
+            "Choice Variation": "Dorm0",
             "Dialogue": [
                 "Hello, this is an example of a line of dialogue.",
                 "My Name is Sara, I'm your roommate. This is example 2 of a line of dialogue"
             ],
-            "NextChoices":[
-                1,2,3
+            "NextChoices": [
+                1,
+                2,
+                3
             ],
-            "playerOptions":[
+            "playerOptions": [
                 "Choice01 Longer",
                 "Choice02",
                 "Choice03"
@@ -19,9 +21,20 @@
         },
         {
             "Delay": 5,
+            "Choice Variation": "Dorm1",
             "Dialogue": [
                 "this is scene Index number 02",
                 "this is the second line of the seconds scene"
+            ],
+            "NextChoices": [
+                4,
+                5,
+                6
+            ],
+            "playerOptions": [
+                "Choice04 Longer",
+                "Choice05",
+                "Choice06"
             ]
         },
         {

@@ -142,12 +142,13 @@ function setup() {
     // all potnetial choices defined here
 
 
-    choices.push(new Choice(dialogArray01, saraNeutral, "Dorm", textBoxSpeech,brainMenu,storyDialogue.Scenes[0].NextChoices,storyDialogue.Scenes[0].playerOptions));
+    choices.push(new Choice(dialogArray01, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[0].NextChoices, storyDialogue.Scenes[0].playerOptions));
     choices[0].calculateBoundingBoxes(playerChoicesFont);
-    
-    choices.push(new Choice(dialogArray02, saraSad, "Dorm", textBoxSpeech,brainMenu));
-    // choices[1].calculateBoundingBoxes(playerChoicesFont);
-    choices.push(new Choice(dialogArray02, renHappy, "Dorm", textBoxSpeech,brainMenu));
+
+    choices.push(new Choice(dialogArray02, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[1].NextChoices, storyDialogue.Scenes[1].playerOptions));
+    choices[1].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray02, renHappy, "Dorm", textBoxSpeech, brainMenu));
 
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
     currentActivatedChoice = choices[sceneIndex];
@@ -194,7 +195,7 @@ function draw() {
 
 //go to setup every time we initate a new choice... 
 function setupdorm() {
-    console.log("setup")
+    // console.log("setup")
     currentActivatedChoice.startDialogueTimer();
 }
 
@@ -206,7 +207,7 @@ function dorm() {
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
     currentActivatedChoice.drawTextBox();
-    if (currentActivatedChoice.showBrainMenu === true){
+    if (currentActivatedChoice.showBrainMenu === true) {
         currentActivatedChoice.drawBrainMenu();
         currentActivatedChoice.drawOptions(playerChoicesFont);
     }
@@ -237,101 +238,63 @@ function drawBG(bgIMG, x, y,) {
 
 //p5 mousePressed
 function mousePressed() {
-    if (currentActivatedChoice.showBrainMenu === true){
-        
-        for (let i = 0; i < currentActivatedChoice.playerOptions.length; i++){
-            let playerOptionBounds = currentActivatedChoice.optionButtons[i];
-       
+    if (currentActivatedChoice.showBrainMenu === true) {
 
-        if (mouseX >= playerOptionBounds.x && mouseX <=  (playerOptionBounds.x + playerOptionBounds.w) && mouseY >= playerOptionBounds.y && mouseY <=  (playerOptionBounds.y + playerOptionBounds.h)){
-            console.log(currentActivatedChoice.playerOptions[i]);
-            console.log(currentActivatedChoice.nextChoiceArray[i]);
-            let newIndex = currentActivatedChoice.nextChoiceArray[i];
-            console.log(choices[newIndex]);
-            currentActivatedChoice = choices[newIndex];
-        }
+        for (let i = 0; i < currentActivatedChoice.playerOptions.length; i++) {
+            let playerOptionBounds = currentActivatedChoice.optionButtons[i];
+
+
+            if (mouseX >= playerOptionBounds.x && mouseX <= (playerOptionBounds.x + playerOptionBounds.w) && mouseY >= playerOptionBounds.y && mouseY <= (playerOptionBounds.y + playerOptionBounds.h)) {
+                // console.log(currentActivatedChoice.playerOptions[i]);
+                // console.log(currentActivatedChoice.nextChoiceArray[i]);
+                let newIndex = currentActivatedChoice.nextChoiceArray[i];
+                // console.log(choices[newIndex]);
+                currentActivatedChoice = choices[newIndex];
+            }
             // ChoiceIndexSelected = storyDialogue.Scenes.NextChoices[0];
             // currentActivatedChoice = choices[ChoiceIndexSelected];
-         
+
         }
-  
+
     }
     else {
-          //check if this activated choice is done ... 
-    let goToNextChoice = currentActivatedChoice.Pressed();
-    if (goToNextChoice === true) {
-        let number_scenes_temp = 3
-        // sceneIndex++;
-        currentActivatedChoice.brainActivate();
-      
-        //if(sceneIndex === storyDialogue.Scenes.length )
-        if (sceneIndex >= number_scenes_temp) {
-            console.log("no");
-            console.log("closing text box")
-            currentActivatedChoice.showDialogueBox = false;
+        //check if this activated choice is done ... 
+        let goToNextChoice = currentActivatedChoice.Pressed();
+        if (goToNextChoice === true) {
+            // let number_scenes_temp = 3
+            // sceneIndex++;
+            currentActivatedChoice.brainActivate();
+            // currentActivatedChoice.showDialogueBox = true;
+
+            // //if(sceneIndex === storyDialogue.Scenes.length )
+            // if (sceneIndex >= number_scenes_temp) {
+            //     console.log("no");
+            //     console.log("closing text box")
+            //     currentActivatedChoice.showDialogueBox = false;
+
+            // }
+
+            // else {
+            //     currentActivatedChoice = choices[sceneIndex];
+            //     currentActivatedChoice.showDialogueBox = true;
+            //     // state = "Dorm-setup";
+            // }
 
         }
 
-        // else {
-        //     currentActivatedChoice = choices[sceneIndex];
-        //     currentActivatedChoice.showDialogueBox = true;
-        //     // state = "Dorm-setup";
-        // }
-//Check if dialogue is complteted for the choce
-//if yes, show choices
-
     }
 
-    }
-  
 
 
-    //if(sceneIndex){
-    //     //the text array ONLY shows the text not scene
-    //     if (sceneIndex === INNER_NUMBER_SCENES) {
-    //         // at the end of all scenes, return to the title screen
-    //         this.showDialogueBox === false;
-    //       }
-    // }
 
 }
 
 
 
 
-// // The title screen menu
-// function title() {
-//     //sets size and alignment of the Title text
-//     textSize(32);
-//     textAlign(LEFT, LEFT)
-//     background("#000000");
-//     push();
-//     imageMode(CENTER);
-//     image(titleScreenIMG, width / 2, height / 2);
-//     pop();
-//     //"title Boxes" act as hit boxes to detect which one the player wants to choose
-//     gamePick(/*titleBoxPlay*/);
-// }
 
 
-// // detects the overlap of the mouse over the menu boxes
-// function gamePick(titleBox) {
-//     if (state === "title") {
-//         const mouseGameModeOverlap = mouseX > titleBox.x &&
-//             mouseX < titleBox.x + titleBox.w &&
-//             mouseY > titleBox.y &&
-//             mouseY < titleBox.y + titleBox.h;
 
-//         if (mouseGameModeOverlap && mouseIsPressed) {
-//             state = titleBox.state
-//         }
-//     }
-// }
-
-
-// example of iterating through dialogue
-// const dialogArray = storyDialogue.Scenes[sceneIndex].Dialogue;
-//  checkDialogueTimer("storyCutscene", dialogArray);
 
 
 
