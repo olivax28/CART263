@@ -147,6 +147,19 @@
             ]
         },
         {
+            "Delay": 5,
+            "Choice Variation": "Lab9",
+            "Dialogue": [
+                "Ren: Hello."
+            ],
+            "NextChoices": [
+                12
+            ],
+            "playerOptions": [
+                "[Got and meet Ren]...12"
+            ]
+        },
+        {
             "Delay": 2.5,
             "Dialogue": []
         },

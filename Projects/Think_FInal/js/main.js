@@ -24,6 +24,7 @@ let brainIdle = undefined;
 let brainMenu = undefined;
 //Backgrounds
 let dormBG = undefined;
+let computerLabBG = undefined;
 
 
 
@@ -39,10 +40,8 @@ let dialogueIndex = 0;
 
 
 
-//sets the initial state
-//let state = "Dorm"
 
-//set inital state (sabine :)
+//set inital state 
 let state = "Dorm-setup"
 
 
@@ -116,6 +115,7 @@ function preload() {
     renNeutral = loadImage("assets/images/Sprites/Ren_neutral.PNG");
     renHappy = loadImage("assets/images/Sprites/Ren_happy.PNG");
     dormBG = loadImage("assets/images/BGs/dorm_BG.PNG");
+    computerLabBG = loadImage("assets/images/BGs/computerlab_BG.PNG");
     playerChoicesFont = loadFont("assets/Data/Roboto-Regular.ttf");
 
 }
@@ -149,6 +149,7 @@ function setup() {
     const dialogArray06 = storyDialogue.Scenes[6].Dialogue;
     const dialogArray07 = storyDialogue.Scenes[7].Dialogue;
     const dialogArray08 = storyDialogue.Scenes[8].Dialogue;
+    const dialogArray09 = storyDialogue.Scenes[9].Dialogue;
     // console.log(dialogArray)
     textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
     // all potnetial choices defined here
@@ -180,6 +181,9 @@ function setup() {
 
     choices.push(new Choice(dialogArray08, saraShock, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[8].NextChoices, storyDialogue.Scenes[8].playerOptions));
     choices[8].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray09, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[9].NextChoices, storyDialogue.Scenes[9].playerOptions));
+    choices[9].calculateBoundingBoxes(playerChoicesFont);
 
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
     currentActivatedChoice = choices[sceneIndex];
@@ -221,6 +225,19 @@ function draw() {
 
 
     }
+
+    if (state === "lab-setup") {
+        setupdorm();
+        //immediatly after one time - change state
+        state = "computerLab"
+
+
+    }
+    else if (state === "computerLab") {
+        lab();
+
+
+    }
 }
 
 
@@ -234,6 +251,26 @@ function setupdorm() {
 //start the game
 function dorm() {
     drawBG(dormBG, width / 2, height / 2);
+    currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
+    drawUI(uiBorder, width / 2, height / 2);
+    drawUI(brainIdle, width / 1.35, height / 3.3);
+    currentActivatedChoice.drawTextBox();
+    if (currentActivatedChoice.showBrainMenu === true) {
+        currentActivatedChoice.drawBrainMenu();
+        currentActivatedChoice.drawOptions(playerChoicesFont);
+    }
+    if (currentActivatedChoice.scene === "lab") {
+        state = "lab-setup"
+
+    };
+
+
+}
+
+
+
+function lab() {
+    drawBG(computerLabBG, width / 2, height / 2);
     currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
