@@ -250,6 +250,7 @@ function mousePressed() {
                 let newIndex = currentActivatedChoice.nextChoiceArray[i];
                 // console.log(choices[newIndex]);
                 currentActivatedChoice = choices[newIndex];
+                currentActivatedChoice.showDialogueBox = true;
             }
             // ChoiceIndexSelected = storyDialogue.Scenes.NextChoices[0];
             // currentActivatedChoice = choices[ChoiceIndexSelected];
