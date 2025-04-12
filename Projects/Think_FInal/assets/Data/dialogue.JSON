@@ -79,7 +79,7 @@
                 11
             ],
             "playerOptions": [
-                "[Got and meet Ren]...11"
+                "[Go and meet Ren]...11"
             ]
         },
         {
@@ -95,7 +95,7 @@
                 9
             ],
             "playerOptions": [
-                "[Got and meet Ren]...9"
+                "[Go and meet Ren]...9"
             ]
         },
         {
@@ -112,7 +112,7 @@
                 10
             ],
             "playerOptions": [
-                "[Got and meet Ren]...10"
+                "[Go and meet Ren]...10"
             ]
         },
         {
@@ -128,7 +128,7 @@
                 9
             ],
             "playerOptions": [
-                "[Got and meet Ren]...9"
+                "[Go and meet Ren]...9"
             ]
         },
         {
@@ -143,20 +143,51 @@
                 9
             ],
             "playerOptions": [
-                "[Got and meet Ren]...9"
+                "[Go and meet Ren]...9"
             ]
         },
         {
             "Delay": 5,
             "Choice Variation": "Lab9",
             "Dialogue": [
-                "Ren: Hello."
+                "Ren: Hey, I was looking for you! You don't have my photography book by any chance, do you?",
+                "Ren:...",
+                "Ren: Oh thanks! I almost thought you would keep it for yourself!",
+                "Ren:...",
+                "Ren:Sorry, uh...I wasn't serious... I know you wouldn't do that...",
+                "Ren: How've you been by the way?"
             ],
             "NextChoices": [
-                12
+                12,
+                13,
+                14
             ],
             "playerOptions": [
-                "[Got and meet Ren]...12"
+                "It's been a while, huh? 12",
+                "Fine...thanks for the book. 13",
+                "I've been better...14"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab10",
+            "Dialogue": [
+                "Ren: Hey, I was looking for you! You don't have my photography book by any chance, do you?",
+                "Ren:...",
+                "Ren: Oh thanks! I almost thought you would keep it for yourself!",
+                "Ren:...",
+                "Ren:Sorry, uh...I wasn't serious... I know you wouldn't do that...",
+                "Ren: How've you been by the way?"
+            ],
+            "NextChoices": [
+                12,
+                13,
+                14
+            ],
+            "playerOptions": [
+                "It's been a while, huh? 12",
+                "Fine...thanks for the book. 13",
+                "I've been better...14"
             ]
         },
         {
