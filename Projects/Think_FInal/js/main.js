@@ -227,6 +227,7 @@ function draw() {
     }
 
     if (state === "lab-setup") {
+        currentActivatedChoice.showDialogueBox = false;
         setupdorm();
         //immediatly after one time - change state
         state = "computerLab"
