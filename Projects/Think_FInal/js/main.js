@@ -135,20 +135,20 @@ let choices = [];
 function setup() {
     createCanvas(1920, 1080);
 
-    const dialogArray01 = storyDialogue.Scenes[0].Dialogue;
-    const dialogArray02 = storyDialogue.Scenes[1].Dialogue;
+    const dialogArray00 = storyDialogue.Scenes[0].Dialogue;
+    const dialogArray01 = storyDialogue.Scenes[1].Dialogue;
     // console.log(dialogArray)
     textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
     // all potnetial choices defined here
 
 
-    choices.push(new Choice(dialogArray01, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[0].NextChoices, storyDialogue.Scenes[0].playerOptions));
+    choices.push(new Choice(dialogArray00, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[0].NextChoices, storyDialogue.Scenes[0].playerOptions));
     choices[0].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray02, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[1].NextChoices, storyDialogue.Scenes[1].playerOptions));
+    choices.push(new Choice(dialogArray01, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[1].NextChoices, storyDialogue.Scenes[1].playerOptions));
     choices[1].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray02, renHappy, "Dorm", textBoxSpeech, brainMenu));
+    choices.push(new Choice(dialogArray01, renHappy, "Dorm", textBoxSpeech, brainMenu));
 
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
     currentActivatedChoice = choices[sceneIndex];

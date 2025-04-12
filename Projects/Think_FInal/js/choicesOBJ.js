@@ -131,11 +131,11 @@ class Choice {
       textAlign(LEFT);
       textFont(playerChoicesFont);
       fill("red");
-      let bbox = playerChoicesFont.textBounds(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
+      // let bbox = playerChoicesFont.textBounds(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
       rectMode(CORNER);
       // rect(bbox.x, bbox.y, bbox.w, bbox.h);
       fill("#000000");
-      ellipse(bbox.x, bbox.y, 5, 5);
+      // ellipse(bbox.x, bbox.y, 5, 5);
       //plug in wanted text here!
       text(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
       pop();
