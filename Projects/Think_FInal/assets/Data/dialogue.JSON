@@ -15,9 +15,9 @@
                 3
             ],
             "playerOptions": [
-                "Not Really... 01",
-                "Actually, yeah. 02",
-                "... 03"
+                "Not Really... ",
+                "Actually, yeah. ",
+                "[Say nothing]"
             ]
         },
         {
@@ -32,8 +32,8 @@
                 5
             ],
             "playerOptions": [
-                "Sorry for dragging you into this...04",
-                "I'd rather not talk about it...05"
+                "Sorry for dragging you into this...",
+                "I'd rather not talk about it..."
             ]
         },
         {
@@ -79,7 +79,7 @@
                 11
             ],
             "playerOptions": [
-                "[Go and meet Ren]...11"
+                "[Go and meet Ren]..."
             ]
         },
         {
@@ -95,7 +95,7 @@
                 9
             ],
             "playerOptions": [
-                "[Go and meet Ren]...9"
+                "[Go and meet Ren]..."
             ]
         },
         {
@@ -112,7 +112,7 @@
                 10
             ],
             "playerOptions": [
-                "[Go and meet Ren]...10"
+                "[Go and meet Ren]..."
             ]
         },
         {
@@ -128,7 +128,7 @@
                 9
             ],
             "playerOptions": [
-                "[Go and meet Ren]...9"
+                "[Go and meet Ren]..."
             ]
         },
         {
@@ -143,7 +143,7 @@
                 9
             ],
             "playerOptions": [
-                "[Go and meet Ren]...9"
+                "[Go and meet Ren]..."
             ]
         },
         {
@@ -163,9 +163,9 @@
                 14
             ],
             "playerOptions": [
-                "It's been a while, huh? 12",
-                "Fine...thanks for the book. 13",
-                "I've been better...14"
+                "It's been a while, huh? ",
+                "Fine...thanks for the book. ",
+                "I've been better..."
             ]
         },
         {
@@ -183,9 +183,9 @@
                 18
             ],
             "playerOptions": [
-                "Yeah...honestly, I'm not great. 16",
-                "Take the book. 17",
-                "(He hates you)18"
+                "Yeah...honestly, I'm not great.",
+                "Take the book. ",
+                "(He hates you)"
             ]
         },
         {
@@ -203,9 +203,9 @@
                 16
             ],
             "playerOptions": [
-                "Yeah and...I've been better.14",
-                "I am? thanks...and yeah.15",
-                "Yeah...honestly, I'm not great. 16"
+                "Yeah and...I've been better.",
+                "I am? thanks...and yeah.",
+                "Yeah...honestly, I'm not great. "
             ]
         },
         {
@@ -223,9 +223,9 @@
                 21
             ],
             "playerOptions": [
-                "I miss it.19",
-                "I'd rather not remember.20",
-                "Yeah. It was pretty nostalgic. 21"
+                "I miss it.",
+                "I'd rather not remember.",
+                "Yeah. It was pretty nostalgic."
             ]
         },
         {
@@ -242,8 +242,8 @@
                 21
             ],
             "playerOptions": [
-                "I'd rather not remember.20",
-                "Yeah, guess I just got busy. 21"
+                "I'd rather not remember.",
+                "Yeah, guess I just got busy."
             ]
         },
         {
@@ -260,8 +260,8 @@
                 22
             ],
             "playerOptions": [
-                "Thinking about the past, too.21",
-                "Keeping to myself. 22"
+                "Thinking about the past, too.",
+                "Keeping to myself. "
             ]
         },
         {
@@ -278,8 +278,8 @@
                 23
             ],
             "playerOptions": [
-                "It was useful, thanks. 22",
-                "Honestly, I feel inspired. 23"
+                "It was useful, thanks. ",
+                "Honestly, I feel inspired. "
             ]
         },
         {
@@ -296,8 +296,8 @@
                 24
             ],
             "playerOptions": [
-                "Sort of... haven't done too much. 22",
-                "Yeah, been a while since I held a camera. 24"
+                "Sort of... haven't done too much. ",
+                "Yeah, been a while since I held a camera."
             ]
         },
         {
@@ -312,7 +312,7 @@
                 24
             ],
             "playerOptions": [
-                "It's been a while since I held a camera. 24"
+                "It's been a while since I held a camera."
             ]
         },
         {
@@ -328,8 +328,8 @@
                 25
             ],
             "playerOptions": [
-                "Things have been really weird.. 24",
-                "I'm good. 25"
+                "Things have been really weird...",
+                "I'm good."
             ]
         },
         {
