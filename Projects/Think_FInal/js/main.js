@@ -25,7 +25,8 @@ let brainMenu = undefined;
 //Backgrounds
 let dormBG = undefined;
 let computerLabBG = undefined;
-
+let introIMG = undefined;
+let endingIMG = undefined;
 
 
 // controls the dialogue
@@ -42,7 +43,7 @@ let dialogueIndex = 0;
 
 
 //set inital state 
-let state = "Dorm-setup"
+let state = "start"
 
 
 let charspriteX = 1920 / 2;
@@ -117,9 +118,13 @@ function preload() {
     //load story mode dialogue data
     storyDialogue = loadJSON("assets/Data/dialogue.JSON");
     //sprites and sounds will be loaded in here
+    // UI
     uiBorder = loadImage("assets/images/UI/border.PNG");
     brainIdle = loadImage("assets/images/UI/brain_idle.PNG");
     brainMenu = loadImage("assets/images/UI/brain_options.PNG");
+    introIMG = loadImage("assets/images/UI/intro.PNG");
+    endingIMG = loadImage("assets/images/UI/ending.PNG");
+    // CHaracter Sprites
     saraNeutral = loadImage("assets/images/Sprites/Sara_neutral.PNG");
     saraSad = loadImage("assets/images/Sprites/Sara_sad.PNG");
     saraShock = loadImage("assets/images/Sprites/Sara_shock.PNG");
@@ -333,6 +338,13 @@ function draw() {
 
 
     }
+
+    if (state === "start") {
+        currentActivatedChoice.showDialogueBox = false;
+        start();
+
+
+    }
 }
 
 
@@ -359,9 +371,6 @@ function dorm() {
         state = "lab-setup"
 
     };
-
-
-
 }
 
 
@@ -388,23 +397,14 @@ function lab() {
 
 
 function ending() {
+    drawBG(endingIMG, width / 2, height / 2);
+    drawUI(uiBorder, width / 2, height / 2);
+}
 
-    push();
-    fill("pink");
-    rect(0, 0, 1920, 1080);
-    pop();
 
-    push();
-    fill("Violet");
-    rect(875, 440, 150, 100);
-    pop();
-    push();
-    textSize(32);
-    fill(255);
-    stroke(0);
-    strokeWeight(4);
-    text("Restart", 900, 500);
-    pop();
+function start() {
+    drawBG(introIMG, width / 2, height / 2);
+    drawUI(uiBorder, width / 2, height / 2);
 }
 
 
@@ -437,15 +437,13 @@ function mousePressed() {
 
 
             if (mouseX >= playerOptionBounds.x && mouseX <= (playerOptionBounds.x + playerOptionBounds.w) && mouseY >= playerOptionBounds.y && mouseY <= (playerOptionBounds.y + playerOptionBounds.h)) {
-                // console.log(currentActivatedChoice.playerOptions[i]);
-                // console.log(currentActivatedChoice.nextChoiceArray[i]);
+
                 let newIndex = currentActivatedChoice.nextChoiceArray[i];
                 // console.log(choices[newIndex]);
                 currentActivatedChoice = choices[newIndex];
                 currentActivatedChoice.showDialogueBox = true;
             }
-            // ChoiceIndexSelected = storyDialogue.Scenes.NextChoices[0];
-            // currentActivatedChoice = choices[ChoiceIndexSelected];
+
 
         }
 
@@ -454,24 +452,9 @@ function mousePressed() {
         //check if this activated choice is done ... 
         let goToNextChoice = currentActivatedChoice.Pressed();
         if (goToNextChoice === true) {
-            // let number_scenes_temp = 3
-            // sceneIndex++;
+
             currentActivatedChoice.brainActivate();
-            // currentActivatedChoice.showDialogueBox = true;
 
-            // //if(sceneIndex === storyDialogue.Scenes.length )
-            // if (sceneIndex >= number_scenes_temp) {
-            //     console.log("no");
-            //     console.log("closing text box")
-            //     currentActivatedChoice.showDialogueBox = false;
-
-            // }
-
-            // else {
-            //     currentActivatedChoice = choices[sceneIndex];
-            //     currentActivatedChoice.showDialogueBox = true;
-            //     // state = "Dorm-setup";
-            // }
 
         }
         if (state === "ending") {
@@ -482,6 +465,9 @@ function mousePressed() {
 
             }
             state = "Dorm-setup";
+        }
+        if (state === "start") {
+            state = "Dorm-setup"
         }
 
     }
