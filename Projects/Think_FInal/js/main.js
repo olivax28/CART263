@@ -233,7 +233,7 @@ function setup() {
     choices.push(new Choice(dialogArray13, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[13].NextChoices, storyDialogue.Scenes[13].playerOptions, playerNeutral));
     choices[13].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray14, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[14].NextChoices, storyDialogue.Scenes[14].playerOptions, playerNeutral));
+    choices.push(new Choice(dialogArray14, renHappy, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[14].NextChoices, storyDialogue.Scenes[14].playerOptions, playerNeutral));
     choices[14].calculateBoundingBoxes(playerChoicesFont);
 
     choices.push(new Choice(dialogArray15, renShock, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[15].NextChoices, storyDialogue.Scenes[15].playerOptions, playerHappy));
