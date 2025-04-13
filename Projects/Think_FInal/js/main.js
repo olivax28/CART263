@@ -114,8 +114,6 @@ let playerAnxious = undefined;
 
 //sounds
 let mouseClickSound = undefined;
-let dormtrack = undefined;
-let labtrack = undefined;
 let musictrack = undefined
 
 //load in all sprites
@@ -148,8 +146,9 @@ function preload() {
     computerLabBG = loadImage("assets/images/BGs/computerlab_BG.PNG");
     playerChoicesFont = loadFont("assets/Data/Roboto-Regular.ttf");
     //Sounds
-    soundFormats("mp3");
+    soundFormats("mp3", "wav");
     musictrack = loadSound("assets/sounds/intromusic.mp3");
+    mouseClickSound = loadSound("assets/sounds/mouse-click-sound.wav");
 
 }
 
@@ -440,7 +439,7 @@ function drawBG(bgIMG, x, y,) {
 
 //p5 mousePressed
 function mousePressed() {
-    // mouseClickSound.play();
+    mouseClickSound.play();
     if (currentActivatedChoice.showBrainMenu === true) {
 
         for (let i = 0; i < currentActivatedChoice.playerOptions.length; i++) {
