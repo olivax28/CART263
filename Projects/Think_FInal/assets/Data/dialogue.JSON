@@ -445,6 +445,19 @@
         },
         {
             "Delay": 5,
+            "Choice Variation": "Lab26",
+            "Dialogue": [
+                "Ren: Thanks for playing!"
+            ],
+            "NextChoices": [
+                26
+            ],
+            "playerOptions": [
+                "Thanks."
+            ]
+        },
+        {
+            "Delay": 5,
             "Dialogue": []
         }
     ]

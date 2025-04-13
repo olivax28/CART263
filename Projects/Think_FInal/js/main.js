@@ -269,6 +269,9 @@ function setup() {
     choices.push(new Choice(dialogArray25, renSad, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[25].NextChoices, storyDialogue.Scenes[25].playerOptions, playerAnxious));
     choices[25].calculateBoundingBoxes(playerChoicesFont);
 
+    choices.push(new Choice(dialogArray25, renHappy, "ending", textBoxSpeech, brainMenu, storyDialogue.Scenes[26].NextChoices, storyDialogue.Scenes[26].playerOptions, playerAnxious));
+    choices[26].calculateBoundingBoxes(playerChoicesFont);
+
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
     currentActivatedChoice = choices[sceneIndex];
 
@@ -323,6 +326,13 @@ function draw() {
 
 
     }
+
+    if (state === "ending") {
+        currentActivatedChoice.showDialogueBox = false;
+        ending();
+
+
+    }
 }
 
 
@@ -367,7 +377,20 @@ function lab() {
         currentActivatedChoice.drawOptions(playerChoicesFont);
     }
 
+    if (currentActivatedChoice.scene === "ending") {
+        state = "ending"
 
+    };
+
+
+}
+
+
+function ending() {
+    push();
+    fill("pink");
+    rect(0, 0, 1920, 1080);
+    pop();
 }
 
 
