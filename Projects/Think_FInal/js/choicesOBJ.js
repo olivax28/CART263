@@ -127,7 +127,7 @@ class Choice {
     for (let i = 0; i < this.playerOptions.length; i++) {
       push();
 
-      textSize(25);
+      textSize(20);
       textAlign(LEFT);
       textFont(playerChoicesFont);
       fill("red");

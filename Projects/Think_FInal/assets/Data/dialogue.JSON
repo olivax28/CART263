@@ -172,27 +172,276 @@
             "Delay": 5,
             "Choice Variation": "Lab10",
             "Dialogue": [
-                "Ren: Hey, I was looking for you! You don't have my photography book by any chance, do you?",
-                "Ren:...",
-                "Ren: Oh thanks! I almost thought you would keep it for yourself!",
-                "Ren:...",
-                "Ren:Sorry, uh...I wasn't serious... I know you wouldn't do that...",
-                "Ren: How've you been by the way?"
+                "Ren: Oh, hey! You pull an all-nighter again?",
+                "Ren: Ah, sorry, that was rude of me. I just mean...nevermind.",
+                "Ren: ...",
+                "Ren: Hey, is that my book?"
             ],
             "NextChoices": [
-                12,
-                13,
-                14
+                16,
+                17,
+                18
             ],
             "playerOptions": [
-                "It's been a while, huh? 12",
-                "Fine...thanks for the book. 13",
-                "I've been better...14"
+                "Yeah...honestly, I'm not great. 16",
+                "Take the book. 17",
+                "(He hates you)18"
             ]
         },
         {
-            "Delay": 2.5,
-            "Dialogue": []
+            "Delay": 5,
+            "Choice Variation": "Lab11",
+            "Dialogue": [
+                "Ren: Oh, hey! Long time no see, you're looking well!",
+                "Ren: Well, not that you usually look bad it's just...",
+                "Ren: ...",
+                "Ren: Hey, is that my book?"
+            ],
+            "NextChoices": [
+                14,
+                15,
+                16
+            ],
+            "playerOptions": [
+                "Yeah and...I've been better.14",
+                "I am? thanks...and yeah.15",
+                "Yeah...honestly, I'm not great. 16"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab12",
+            "Dialogue": [
+                "Ren: Right? Ha, it's alright, though. I guess we've all gotten more busy. No hard feelings.",
+                "Ren:But... I hope the book reminded you of old times! Remember when we would run to the park, and take photos of the most random things and send them in to those magazines?",
+                "Ren: ...",
+                "Ren: We really thought we were going to become famous, huh?"
+            ],
+            "NextChoices": [
+                19,
+                20,
+                21
+            ],
+            "playerOptions": [
+                "I miss it.19",
+                "I'd rather not remember.20",
+                "Yeah. It was pretty nostalgic. 21"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab13",
+            "Dialogue": [
+                "Ren: Right? Ha, it's alright, though. I guess we've all gotten more busy. No hard feelings.",
+                "Ren:But... I hope the book reminded you of old times! Remember when we would run to the park, and take photos of the most random things and send them in to those magazines?",
+                "Ren: ...",
+                "Ren: We really thought we were going to become famous, huh?"
+            ],
+            "NextChoices": [
+                20,
+                21
+            ],
+            "playerOptions": [
+                "I'd rather not remember.20",
+                "Yeah, guess I just got busy. 21"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab14",
+            "Dialogue": [
+                "Ren: Honestly, me too. I haven't felt like myself in a while with all the projects and school and the Photography Club.",
+                "Ren: But you know, I think it's times like these where it's even more important to do things you like, like photography! I hope my book helped jog your memory. I miss doing that together!",
+                "Ren: ...",
+                "Ren: I really do miss it. What've you been up to?"
+            ],
+            "NextChoices": [
+                21,
+                22
+            ],
+            "playerOptions": [
+                "Thinking about the past, too.21",
+                "Keeping to myself. 22"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab15",
+            "Dialogue": [
+                "Ren: Of course! I'm a little bad at giving compliments, but I mean it. I haven't seen you in anything but that blue hoodie for a while.",
+                "Ren: What I mean is, uh, We all get beaten down by the college pressure sometimes, especially in art. I mean, we got the pressure of the classes, and then the pressure of no job! Haha!",
+                "Ren: ...!",
+                "Ren: Uh,anyway, I'm glad you enjoyed the book, nice to brush up on some photography skills, right?"
+            ],
+            "NextChoices": [
+                22,
+                23
+            ],
+            "playerOptions": [
+                "It was useful, thanks. 22",
+                "Honestly, I feel inspired. 23"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab16",
+            "Dialogue": [
+                "Ren: Honestly, me neither.",
+                "Ren: Stress and school and assignments and the photography club are driving me nuts! I mean, the good kind I guess. It's been a lot fof un, but a lot of work.",
+                "Ren:...",
+                "Ren: Speaking of, did you manage to get any photos? I know that book used to inspire you a lot."
+            ],
+            "NextChoices": [
+                22,
+                24
+            ],
+            "playerOptions": [
+                "Sort of... haven't done too much. 22",
+                "Yeah, been a while since I held a camera. 24"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab17",
+            "Dialogue": [
+                "Ren: Oof!",
+                "Ren: Hey, don't toss it at me, that thing's heavier than it looks!",
+                "Maybe...maybe doing something you like will calm you down..."
+            ],
+            "NextChoices": [
+                24
+            ],
+            "playerOptions": [
+                "It's been a while since I held a camera. 24"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab18",
+            "Dialogue": [
+                "Ren: You alright there?!",
+                "Ren:...",
+                "Sorry, it's just... you look like you're about to run away."
+            ],
+            "NextChoices": [
+                24,
+                25
+            ],
+            "playerOptions": [
+                "Things have been really weird.. 24",
+                "I'm good. 25"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab19",
+            "Dialogue": [
+                "Ren: If it'll make you feel better... you can borrow my camera",
+                "Ren: It's in my locker, sitting at the top.",
+                "[ITEM RECEIVED: Ren's Locker Code.]"
+            ],
+            "NextChoices": [
+                26
+            ],
+            "playerOptions": [
+                "Thanks."
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab20",
+            "Dialogue": [
+                "Ren: I'm sorry... I want to make it up to you. ",
+                "Ren: Why don't you borrow my camera? It's sitting at the top of my locker.",
+                "[ITEM RECEIVED: Ren's Locker Code.]"
+            ],
+            "NextChoices": [
+                26
+            ],
+            "playerOptions": [
+                "Thanks."
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab21",
+            "Dialogue": [
+                "Ren: Well.. how about meeting some of my new friends? I bet we'd all get along, being artists and all.",
+                "Ren: We're getting together at the Photography Club's Spring Party, you should come.",
+                "Ren: By the way, if ever you want to borrow my old camera, feel free to take it from my locker.",
+                "[ITEM RECEIVED: Ren's Locker Code]",
+                "[ITEM RECEIVED: Photography Club Spring Party Invite]"
+            ],
+            "NextChoices": [
+                26
+            ],
+            "playerOptions": [
+                "I'll think about it. Thanks, Ren"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab22",
+            "Dialogue": [
+                "Ren: If you want to get back into photography, why not stop by the Photography Club's spring party? Who knows, maybe you'll meet some new friends or something, right?",
+                "Ren: I know these things aren't really your thing, but I promise everyone there is nice... not to brag about my own club.",
+                "[ITEM RECEIVED: Photography Club Spring Party Invite]"
+            ],
+            "NextChoices": [
+                26
+            ],
+            "playerOptions": [
+                "I'll think about it. Thanks, Ren."
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab23",
+            "Dialogue": [
+                "Ren: That's great! I've always loved that book, there's a reason it's so beat up!",
+                "Ren: I mean, yknow, cause I used to take it with me everyhwere.",
+                "Ren: Right, well, if you're still feeling sinpired, why not borrow my camera? It's at the top of my locker, if you ever want to get it, ",
+                "Ren: And, before I forget... the Photography Club's having their annual spring party. Why don't you stop by?",
+                "[ITEM RECEIVED: Ren's Locker Code]",
+                "[ITEM RECEIVED: Photography Club Spring Party Invite]"
+            ],
+            "NextChoices": [
+                26
+            ],
+            "playerOptions": [
+                "Sure, thanks, Ren!"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab24",
+            "Dialogue": [
+                "Ren: I know your camera was always finnicky... if you ever want to borrow mine, you're welcome to take it from my locker.",
+                "Ren: Maybe, that'll cheer you up.",
+                "[ITEM RECEIVED: Ren's Locker Code]"
+            ],
+            "NextChoices": [
+                26
+            ],
+            "playerOptions": [
+                "Thanks, Ren!"
+            ]
+        },
+        {
+            "Delay": 5,
+            "Choice Variation": "Lab25",
+            "Dialogue": [
+                "Ren: Hey, before you leave...",
+                "Ren: I heard that these help with anxiety, I always got some on me.",
+                "Ren: See you around...",
+                "[ITEM RECEIVED: Sour Candy]"
+            ],
+            "NextChoices": [
+                26
+            ],
+            "playerOptions": [
+                "Thanks."
+            ]
         },
         {
             "Delay": 5,

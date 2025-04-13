@@ -97,8 +97,11 @@ let playerChoicesFont;
 let saraNeutral = undefined;
 let saraSad = undefined;
 let saraShock = undefined;
+let renAnnoyed = undefined;
 let renNeutral = undefined;
 let renHappy = undefined;
+let renSad = undefined;
+let renShock = undefined;
 
 
 //load in all sprites
@@ -114,6 +117,9 @@ function preload() {
     saraShock = loadImage("assets/images/Sprites/Sara_shock.PNG");
     renNeutral = loadImage("assets/images/Sprites/Ren_neutral.PNG");
     renHappy = loadImage("assets/images/Sprites/Ren_happy.PNG");
+    renAnnoyed = loadImage("assets/images/Sprites/Ren_annoyed.PNG");
+    renSad = loadImage("assets/images/Sprites/Ren_sad.PNG");
+    renShock = loadImage("assets/images/Sprites/Ren_shock.PNG");
     dormBG = loadImage("assets/images/BGs/dorm_BG.PNG");
     computerLabBG = loadImage("assets/images/BGs/computerlab_BG.PNG");
     playerChoicesFont = loadFont("assets/Data/Roboto-Regular.ttf");
@@ -150,6 +156,22 @@ function setup() {
     const dialogArray07 = storyDialogue.Scenes[7].Dialogue;
     const dialogArray08 = storyDialogue.Scenes[8].Dialogue;
     const dialogArray09 = storyDialogue.Scenes[9].Dialogue;
+    const dialogArray10 = storyDialogue.Scenes[10].Dialogue;
+    const dialogArray11 = storyDialogue.Scenes[11].Dialogue;
+    const dialogArray12 = storyDialogue.Scenes[12].Dialogue;
+    const dialogArray13 = storyDialogue.Scenes[13].Dialogue;
+    const dialogArray14 = storyDialogue.Scenes[14].Dialogue;
+    const dialogArray15 = storyDialogue.Scenes[15].Dialogue;
+    const dialogArray16 = storyDialogue.Scenes[16].Dialogue;
+    const dialogArray17 = storyDialogue.Scenes[17].Dialogue;
+    const dialogArray18 = storyDialogue.Scenes[18].Dialogue;
+    const dialogArray19 = storyDialogue.Scenes[19].Dialogue;
+    const dialogArray20 = storyDialogue.Scenes[20].Dialogue;
+    const dialogArray21 = storyDialogue.Scenes[21].Dialogue;
+    const dialogArray22 = storyDialogue.Scenes[22].Dialogue;
+    const dialogArray23 = storyDialogue.Scenes[23].Dialogue;
+    const dialogArray24 = storyDialogue.Scenes[24].Dialogue;
+    const dialogArray25 = storyDialogue.Scenes[25].Dialogue;
     // console.log(dialogArray)
     textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
     // all potnetial choices defined here
@@ -184,6 +206,54 @@ function setup() {
 
     choices.push(new Choice(dialogArray09, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[9].NextChoices, storyDialogue.Scenes[9].playerOptions));
     choices[9].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray10, renShock, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[10].NextChoices, storyDialogue.Scenes[10].playerOptions));
+    choices[10].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray11, renHappy, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[11].NextChoices, storyDialogue.Scenes[11].playerOptions));
+    choices[11].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray12, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[12].NextChoices, storyDialogue.Scenes[12].playerOptions));
+    choices[12].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray13, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[13].NextChoices, storyDialogue.Scenes[13].playerOptions));
+    choices[13].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray14, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[14].NextChoices, storyDialogue.Scenes[14].playerOptions));
+    choices[14].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray15, renShock, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[15].NextChoices, storyDialogue.Scenes[15].playerOptions));
+    choices[15].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray16, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[16].NextChoices, storyDialogue.Scenes[16].playerOptions));
+    choices[16].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray17, renAnnoyed, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[17].NextChoices, storyDialogue.Scenes[17].playerOptions));
+    choices[17].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray18, renShock, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[18].NextChoices, storyDialogue.Scenes[18].playerOptions));
+    choices[18].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray19, renSad, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[19].NextChoices, storyDialogue.Scenes[19].playerOptions));
+    choices[19].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray20, renSad, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[20].NextChoices, storyDialogue.Scenes[20].playerOptions));
+    choices[20].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray21, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[21].NextChoices, storyDialogue.Scenes[21].playerOptions));
+    choices[21].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray22, renHappy, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[22].NextChoices, storyDialogue.Scenes[22].playerOptions));
+    choices[22].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray23, renHappy, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[23].NextChoices, storyDialogue.Scenes[23].playerOptions));
+    choices[23].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray24, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[24].NextChoices, storyDialogue.Scenes[24].playerOptions));
+    choices[24].calculateBoundingBoxes(playerChoicesFont);
+
+    choices.push(new Choice(dialogArray25, renSad, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[25].NextChoices, storyDialogue.Scenes[25].playerOptions));
+    choices[25].calculateBoundingBoxes(playerChoicesFont);
 
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
     currentActivatedChoice = choices[sceneIndex];
