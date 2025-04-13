@@ -112,6 +112,11 @@ let playerNeutral = undefined;
 let playerAngry = undefined;
 let playerAnxious = undefined;
 
+//sounds
+let mouseClickSound = undefined;
+let dormtrack = undefined;
+let labtrack = undefined;
+let musictrack = undefined
 
 //load in all sprites
 function preload() {
@@ -142,6 +147,9 @@ function preload() {
     dormBG = loadImage("assets/images/BGs/dorm_BG.PNG");
     computerLabBG = loadImage("assets/images/BGs/computerlab_BG.PNG");
     playerChoicesFont = loadFont("assets/Data/Roboto-Regular.ttf");
+    //Sounds
+    soundFormats("mp3");
+    musictrack = loadSound("assets/sounds/intromusic.mp3");
 
 }
 
@@ -341,6 +349,7 @@ function draw() {
 
     if (state === "start") {
         currentActivatedChoice.showDialogueBox = false;
+
         start();
 
 
@@ -405,6 +414,7 @@ function ending() {
 function start() {
     drawBG(introIMG, width / 2, height / 2);
     drawUI(uiBorder, width / 2, height / 2);
+
 }
 
 
@@ -430,6 +440,7 @@ function drawBG(bgIMG, x, y,) {
 
 //p5 mousePressed
 function mousePressed() {
+    // mouseClickSound.play();
     if (currentActivatedChoice.showBrainMenu === true) {
 
         for (let i = 0; i < currentActivatedChoice.playerOptions.length; i++) {
@@ -467,6 +478,7 @@ function mousePressed() {
             state = "Dorm-setup";
         }
         if (state === "start") {
+            musictrack.play();
             state = "Dorm-setup"
         }
 
