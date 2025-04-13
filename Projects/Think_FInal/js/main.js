@@ -272,7 +272,7 @@ function setup() {
     choices.push(new Choice(dialogArray25, renHappy, "ending", textBoxSpeech, brainMenu, storyDialogue.Scenes[26].NextChoices, storyDialogue.Scenes[26].playerOptions, playerAnxious));
     choices[26].calculateBoundingBoxes(playerChoicesFont);
 
-    //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
+    //SABINE: at the beginning -> the activatedchoice will be DormChoice00:
     currentActivatedChoice = choices[sceneIndex];
 
     //NOTE FOR LATER CODING....brain click function will change the currently activated choice, dialogue defined by the dialog array constant
@@ -361,6 +361,7 @@ function dorm() {
     };
 
 
+
 }
 
 
@@ -387,9 +388,22 @@ function lab() {
 
 
 function ending() {
+
     push();
     fill("pink");
     rect(0, 0, 1920, 1080);
+    pop();
+
+    push();
+    fill("Violet");
+    rect(875, 440, 150, 100);
+    pop();
+    push();
+    textSize(32);
+    fill(255);
+    stroke(0);
+    strokeWeight(4);
+    text("Restart", 900, 500);
     pop();
 }
 
@@ -459,6 +473,10 @@ function mousePressed() {
             //     // state = "Dorm-setup";
             // }
 
+        }
+        if (state === "ending") {
+            currentActivatedChoice = choices[0];
+            state = "Dorm-setup";
         }
 
     }

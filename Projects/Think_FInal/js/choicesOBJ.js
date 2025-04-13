@@ -20,6 +20,7 @@ class Choice {
     this.showDialogueBox = false; // initially false
     this.showBrainMenu = false; // initially false
     this.emotionIMG = playerEmote;
+    this.dialogueReset = 0;
 
 
     let self = this;//keep a copy of 'this'
@@ -93,29 +94,20 @@ class Choice {
   //This code is taken from another project and will serve as an example for "Think" but needs to be modified used for iterating through story dialogue
   Pressed() {
 
-
-    // for the story mode cutscenes
     if (this.showDialogueBox === true) {
-
-
       this.dialogueIndex++;
       // returns the Dialogue JSON path, selects the scene from the array, then the dialogue of that scene
       if (this.dialogueIndex === this.textArray.length) {
+
         //if done :)
+        this.dialogueIndex = this.dialogueReset;
         return true;
+
       }
     }
 
     return false;
   }
-
-  // displayBrainMenu() {
-  //   if ( this.dialogueIndex === this.textArray.Scenes[sceneIndex].Dialogue.length) {
-  //     this.showBrainMenu === true;
-  //     console.log("drawing brain menu");
-  //   }
-
-  // }
 
   // draws the brain choice menu
   brainActivate() {
@@ -167,6 +159,12 @@ class Choice {
 
     }
   }
+
+  // resetDialogue() {
+  //   if (this.scene === "ending") {
+  //     this.dialogueIndex = this.dialogueReset;
+  //   }
+  // }
 }
 
 
