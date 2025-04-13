@@ -476,6 +476,11 @@ function mousePressed() {
         }
         if (state === "ending") {
             currentActivatedChoice = choices[0];
+            for (let i = 0; i < choices.length; i++) {
+                choices[i].dialogueIndex = 0;
+                choices[i].showBrainMenu = false;
+
+            }
             state = "Dorm-setup";
         }
 
