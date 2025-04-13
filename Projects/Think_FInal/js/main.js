@@ -103,6 +103,14 @@ let renHappy = undefined;
 let renSad = undefined;
 let renShock = undefined;
 
+//player emotions
+
+let playerSad = undefined;
+let playerHappy = undefined;
+let playerNeutral = undefined;
+let playerAngry = undefined;
+let playerAnxious = undefined;
+
 
 //load in all sprites
 function preload() {
@@ -120,6 +128,12 @@ function preload() {
     renAnnoyed = loadImage("assets/images/Sprites/Ren_annoyed.PNG");
     renSad = loadImage("assets/images/Sprites/Ren_sad.PNG");
     renShock = loadImage("assets/images/Sprites/Ren_shock.PNG");
+    // Player Emotes
+    playerNeutral = loadImage("assets/images/Sprites/player_neutral.PNG");
+    playerSad = loadImage("assets/images/Sprites/player_sad.PNG");
+    playerHappy = loadImage("assets/images/Sprites/player_happy.PNG");
+    playerAngry = loadImage("assets/images/Sprites/player_angry.PNG");
+    playerAnxious = loadImage("assets/images/Sprites/player_anxious.PNG");
     dormBG = loadImage("assets/images/BGs/dorm_BG.PNG");
     computerLabBG = loadImage("assets/images/BGs/computerlab_BG.PNG");
     playerChoicesFont = loadFont("assets/Data/Roboto-Regular.ttf");
@@ -177,82 +191,82 @@ function setup() {
     // all potnetial choices defined here
 
 
-    choices.push(new Choice(dialogArray00, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[0].NextChoices, storyDialogue.Scenes[0].playerOptions));
+    choices.push(new Choice(dialogArray00, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[0].NextChoices, storyDialogue.Scenes[0].playerOptions, playerNeutral));
     choices[0].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray01, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[1].NextChoices, storyDialogue.Scenes[1].playerOptions));
+    choices.push(new Choice(dialogArray01, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[1].NextChoices, storyDialogue.Scenes[1].playerOptions, playerNeutral));
     choices[1].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray02, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[2].NextChoices, storyDialogue.Scenes[2].playerOptions));
+    choices.push(new Choice(dialogArray02, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[2].NextChoices, storyDialogue.Scenes[2].playerOptions, playerNeutral));
     choices[2].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray03, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[3].NextChoices, storyDialogue.Scenes[3].playerOptions));
+    choices.push(new Choice(dialogArray03, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[3].NextChoices, storyDialogue.Scenes[3].playerOptions, playerNeutral));
     choices[3].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray04, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[4].NextChoices, storyDialogue.Scenes[4].playerOptions));
+    choices.push(new Choice(dialogArray04, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[4].NextChoices, storyDialogue.Scenes[4].playerOptions, playerHappy));
     choices[4].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray05, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[5].NextChoices, storyDialogue.Scenes[5].playerOptions));
+    choices.push(new Choice(dialogArray05, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[5].NextChoices, storyDialogue.Scenes[5].playerOptions, playerNeutral));
     choices[5].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray06, saraShock, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[6].NextChoices, storyDialogue.Scenes[6].playerOptions));
+    choices.push(new Choice(dialogArray06, saraShock, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[6].NextChoices, storyDialogue.Scenes[6].playerOptions, playerAnxious));
     choices[6].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray07, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[7].NextChoices, storyDialogue.Scenes[7].playerOptions));
+    choices.push(new Choice(dialogArray07, saraSad, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[7].NextChoices, storyDialogue.Scenes[7].playerOptions, playerNeutral));
     choices[7].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray08, saraShock, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[8].NextChoices, storyDialogue.Scenes[8].playerOptions));
+    choices.push(new Choice(dialogArray08, saraShock, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[8].NextChoices, storyDialogue.Scenes[8].playerOptions, playerNeutral));
     choices[8].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray09, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[9].NextChoices, storyDialogue.Scenes[9].playerOptions));
+    choices.push(new Choice(dialogArray09, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[9].NextChoices, storyDialogue.Scenes[9].playerOptions, playerNeutral));
     choices[9].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray10, renShock, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[10].NextChoices, storyDialogue.Scenes[10].playerOptions));
+    choices.push(new Choice(dialogArray10, renShock, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[10].NextChoices, storyDialogue.Scenes[10].playerOptions, playerAnxious));
     choices[10].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray11, renHappy, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[11].NextChoices, storyDialogue.Scenes[11].playerOptions));
+    choices.push(new Choice(dialogArray11, renHappy, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[11].NextChoices, storyDialogue.Scenes[11].playerOptions, playerHappy));
     choices[11].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray12, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[12].NextChoices, storyDialogue.Scenes[12].playerOptions));
+    choices.push(new Choice(dialogArray12, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[12].NextChoices, storyDialogue.Scenes[12].playerOptions, playerNeutral));
     choices[12].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray13, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[13].NextChoices, storyDialogue.Scenes[13].playerOptions));
+    choices.push(new Choice(dialogArray13, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[13].NextChoices, storyDialogue.Scenes[13].playerOptions, playerNeutral));
     choices[13].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray14, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[14].NextChoices, storyDialogue.Scenes[14].playerOptions));
+    choices.push(new Choice(dialogArray14, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[14].NextChoices, storyDialogue.Scenes[14].playerOptions, playerNeutral));
     choices[14].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray15, renShock, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[15].NextChoices, storyDialogue.Scenes[15].playerOptions));
+    choices.push(new Choice(dialogArray15, renShock, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[15].NextChoices, storyDialogue.Scenes[15].playerOptions, playerHappy));
     choices[15].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray16, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[16].NextChoices, storyDialogue.Scenes[16].playerOptions));
+    choices.push(new Choice(dialogArray16, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[16].NextChoices, storyDialogue.Scenes[16].playerOptions, playerNeutral));
     choices[16].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray17, renAnnoyed, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[17].NextChoices, storyDialogue.Scenes[17].playerOptions));
+    choices.push(new Choice(dialogArray17, renAnnoyed, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[17].NextChoices, storyDialogue.Scenes[17].playerOptions, playerNeutral));
     choices[17].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray18, renShock, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[18].NextChoices, storyDialogue.Scenes[18].playerOptions));
+    choices.push(new Choice(dialogArray18, renShock, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[18].NextChoices, storyDialogue.Scenes[18].playerOptions, playerAnxious));
     choices[18].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray19, renSad, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[19].NextChoices, storyDialogue.Scenes[19].playerOptions));
+    choices.push(new Choice(dialogArray19, renSad, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[19].NextChoices, storyDialogue.Scenes[19].playerOptions, playerSad));
     choices[19].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray20, renSad, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[20].NextChoices, storyDialogue.Scenes[20].playerOptions));
+    choices.push(new Choice(dialogArray20, renSad, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[20].NextChoices, storyDialogue.Scenes[20].playerOptions, playerAngry));
     choices[20].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray21, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[21].NextChoices, storyDialogue.Scenes[21].playerOptions));
+    choices.push(new Choice(dialogArray21, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[21].NextChoices, storyDialogue.Scenes[21].playerOptions, playerNeutral));
     choices[21].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray22, renHappy, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[22].NextChoices, storyDialogue.Scenes[22].playerOptions));
+    choices.push(new Choice(dialogArray22, renHappy, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[22].NextChoices, storyDialogue.Scenes[22].playerOptions, playerNeutral));
     choices[22].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray23, renHappy, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[23].NextChoices, storyDialogue.Scenes[23].playerOptions));
+    choices.push(new Choice(dialogArray23, renHappy, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[23].NextChoices, storyDialogue.Scenes[23].playerOptions, playerHappy));
     choices[23].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray24, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[24].NextChoices, storyDialogue.Scenes[24].playerOptions));
+    choices.push(new Choice(dialogArray24, renNeutral, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[24].NextChoices, storyDialogue.Scenes[24].playerOptions, playerNeutral));
     choices[24].calculateBoundingBoxes(playerChoicesFont);
 
-    choices.push(new Choice(dialogArray25, renSad, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[25].NextChoices, storyDialogue.Scenes[25].playerOptions));
+    choices.push(new Choice(dialogArray25, renSad, "lab", textBoxSpeech, brainMenu, storyDialogue.Scenes[25].NextChoices, storyDialogue.Scenes[25].playerOptions, playerAnxious));
     choices[25].calculateBoundingBoxes(playerChoicesFont);
 
     //SABINE: at the beginning -> the activatedchoice will be DormChoice01:
@@ -325,6 +339,7 @@ function dorm() {
     currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
+    currentActivatedChoice.drawPlayerEmotion();
     currentActivatedChoice.drawTextBox();
     if (currentActivatedChoice.showBrainMenu === true) {
         currentActivatedChoice.drawBrainMenu();
@@ -345,6 +360,7 @@ function lab() {
     currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
     drawUI(uiBorder, width / 2, height / 2);
     drawUI(brainIdle, width / 1.35, height / 3.3);
+    currentActivatedChoice.drawPlayerEmotion();
     currentActivatedChoice.drawTextBox();
     if (currentActivatedChoice.showBrainMenu === true) {
         currentActivatedChoice.drawBrainMenu();

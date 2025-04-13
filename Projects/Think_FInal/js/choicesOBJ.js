@@ -1,5 +1,5 @@
 class Choice {
-  constructor(dialogue, characterSprite, room, textBox, brainMenuIMG, nextChoiceArray, playerOptions/*mcEmotion, item, journalEntry**/) {
+  constructor(dialogue, characterSprite, room, textBox, brainMenuIMG, nextChoiceArray, playerOptions, playerEmote/*mcEmotion, item, journalEntry**/) {
 
     this.optionButtons = [];
     this.brainX = 1422.222;
@@ -19,6 +19,7 @@ class Choice {
     //sabine: make showDialogueBox a member var of the class (so ech choice has its OWN)
     this.showDialogueBox = false; // initially false
     this.showBrainMenu = false; // initially false
+    this.emotionIMG = playerEmote;
 
 
     let self = this;//keep a copy of 'this'
@@ -31,6 +32,16 @@ class Choice {
     imageMode(CENTER);
     this.spriteImg.resize(0, 780);
     image(this.spriteImg, charspriteX, charSpriteY);
+    pop();
+
+  }
+
+
+  drawPlayerEmotion() {
+    push();
+    imageMode(CENTER);
+    this.emotionIMG.resize(150, 150);
+    image(this.emotionIMG, 450, 300);
     pop();
 
   }
