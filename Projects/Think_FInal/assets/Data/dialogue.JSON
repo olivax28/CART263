@@ -73,7 +73,7 @@
                 "Sara: Hey, don't stress.",
                 "Sara: Well, considering it's half passed 1:00, I need to head out. Band's waiting. But I should be back around 7:00, if you're up to hanging out or something.",
                 "Sara: See you around.",
-                "By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
+                "Sara: By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
             ],
             "NextChoices": [
                 11
@@ -89,7 +89,7 @@
                 "Sara: Hmph. Whatever you say, up to you.",
                 "Sara: Well, I've got to go. Band practice. But I'll be back around 7:00, probably.",
                 "Sara: Enjoy that tuna casserole for me.",
-                "By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
+                "Sara: By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
             ],
             "NextChoices": [
                 9
@@ -106,7 +106,7 @@
                 "Sara: I'm surprised, maybe the promise of tuna casserole was enough to make you feel better...",
                 "Sara: Heh.",
                 "Sara: But for real, it takes a while to heal from things. Remember that.",
-                "By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
+                "Sara: By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
             ],
             "NextChoices": [
                 10
@@ -122,7 +122,7 @@
                 "Sara: Hmph. Whatever you say, up to you.",
                 "Sara: Well, I've got to go. Band practice. But I'll be back around 7:00, probably.",
                 "Sara: Enjoy that tuna casserole for me.",
-                "Oh by the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
+                "Sara: Oh by the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
             ],
             "NextChoices": [
                 9
@@ -137,7 +137,7 @@
             "Dialogue": [
                 "Sara: Chatty today.",
                 "Sara: Well, I've got to go. Band practice. But I'll be back around 7:00, probably.",
-                "By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
+                " Sara: By the way, Ren mentioned you got a book of his or something? He wanted me to let you know he wants it back now. Told me he's in the computer lab, you can probably meet him there now, if you want."
             ],
             "NextChoices": [
                 9
@@ -287,7 +287,7 @@
             "Choice Variation": "Lab16",
             "Dialogue": [
                 "Ren: Honestly, me neither.",
-                "Ren: Stress and school and assignments and the photography club are driving me nuts! I mean, the good kind I guess. It's been a lot fof un, but a lot of work.",
+                "Ren: Stress and school and assignments and the photography club are driving me nuts! I mean, the good kind I guess. It's been a lot of fun, but a lot of work.",
                 "Ren:...",
                 "Ren: Speaking of, did you manage to get any photos? I know that book used to inspire you a lot."
             ],
