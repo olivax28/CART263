@@ -100,7 +100,7 @@ class Choice {
       if (this.dialogueIndex === this.textArray.length) {
 
         //if done :)
-        this.dialogueIndex = this.dialogueReset;
+        // this.dialogueIndex = this.dialogueReset;
         return true;
 
       }

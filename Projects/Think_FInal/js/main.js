@@ -478,6 +478,7 @@ function mousePressed() {
         }
         if (state === "start") {
             musictrack.play();
+            musictrack.loop();
             state = "Dorm-setup"
         }
 
