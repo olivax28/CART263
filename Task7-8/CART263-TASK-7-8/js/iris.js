@@ -14,7 +14,7 @@ class iris {
 
     }
 
-    drawPetals() {
+    drawIris() {
         //structure taken from 'garden' project 
         this.irisDiv.classList.add("iris");
         this.irisDiv.style.width = this.petalWidth + "px";

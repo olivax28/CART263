@@ -113,12 +113,12 @@ window.onload = async function () {
   } catch (e) { console.log(e); }
 
   //visualizing
-  //IDEA: Bouquet of irises that grow bigger and smaller on their own with a for loop. and who's colors are the random assigned colors
+  //IDEA: Bouquet of irises that grow bigger and smaller on their own with a for loop. and who's colors are the random assigned colors in a flowerbox
 
   //Draw and add the FlowerBox to the DOM
   let flowerBox = document.createElement("div");
   flowerBox.classList.add("flowerBox");
-  // access parent element
+
   let parentElement = document.querySelector("body")
   parentElement.appendChild(flowerBox);
 
@@ -127,7 +127,42 @@ window.onload = async function () {
   let parentElementBox = document.querySelector(".flowerBox");
   parentElementBox.appendChild(rectangle);
 
+  //render the flowers and append them into the flowerbox
 
+  //create some flowers
+
+  let irisBox = {
+    // An array to store the individual flowers
+    irises: [],
+    // How many flowers in the garden
+    numIrises: 20,
+  }
+
+
+  for (let i = 0; i < irisBox.numIrises; i++) {
+    // Create variables for our arguments for clarity
+    let x = Math.random();
+    let y = Math.random();
+    let size = Math.random();
+    let stemLength = Math.random() * 50 + 20;
+    let petalColor = {
+      r: parseInt(Math.random() * 155) + 100,
+      g: parseInt(Math.random() * 155) + 100,
+      b: parseInt(Math.random() * 155) + 100,
+    };
+
+    // Create a new flower using the arguments
+    let newIris = new iris(x, y, sepalLength, sepalWidth, petalLength, petalWidth, irisColor);
+    // Add the flower to the array of flowers
+    irisBox.irises.push(newIris);
+  }
+
+
+
+  for (let i = 0; i < irisBox.numIrises; i++) {
+    // Add to the irises array
+    irisBox.irises[i].drawIris();
+  }
 
 }
 
