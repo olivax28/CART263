@@ -2,7 +2,7 @@
 
 Olivia Axiuk & Julia Axiuk
 
-[View this project online]
+[View this project online] https://olivax28.github.io/CART263//Projects/Think_FInal/
 
 
 ## Artist Statement
