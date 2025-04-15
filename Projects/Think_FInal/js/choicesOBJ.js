@@ -129,7 +129,6 @@ class Choice {
   drawOptions(playerChoicesFont) {
     for (let i = 0; i < this.playerOptions.length; i++) {
       push();
-
       textSize(20);
       textAlign(LEFT);
       textFont(playerChoicesFont);
@@ -140,8 +139,9 @@ class Choice {
       fill("#d5427c");
       // ellipse(bbox.x, bbox.y, 5, 5);
       //plug in wanted text here!
-      text(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
+      text(this.playerOptions[i], this.brainX - 130, this.brainY - 70 * i);
       pop();
+      push()
 
     }
 
@@ -153,18 +153,14 @@ class Choice {
       textSize(25);
       textAlign(LEFT);
       textFont(playerChoicesFont);
-      let bbox = playerChoicesFont.textBounds(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
+      let bbox = playerChoicesFont.textBounds(this.playerOptions[i], this.brainX - 130, this.brainY - 70 * i);
 
       this.optionButtons.push(bbox);
 
     }
   }
 
-  // resetDialogue() {
-  //   if (this.scene === "ending") {
-  //     this.dialogueIndex = this.dialogueReset;
-  //   }
-  // }
+
 }
 
 
