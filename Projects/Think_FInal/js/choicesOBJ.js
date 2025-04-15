@@ -1,21 +1,17 @@
 class Choice {
-  constructor(dialogue, characterSprite, room, textBox, brainMenuIMG, nextChoiceArray, playerOptions, playerEmote/*mcEmotion, item, journalEntry**/) {
+  constructor(dialogue, characterSprite, room, textBox, brainMenuIMG, nextChoiceArray, playerOptions, playerEmote) {
 
     this.optionButtons = [];
     this.brainX = 1422.222;
     this.brainY = 327.2727;
-    // character info
     this.playerOptions = playerOptions;
     this.nextChoiceArray = nextChoiceArray;
-    // console.log(this.nextChoiceArray);
     this.spriteImg = characterSprite;
     this.brainMenuIMG = brainMenuIMG
     this.textArray = dialogue;
-    // console.log(this.textArray) //init dialogue
     this.scene = room;
     this.textBox = textBox;
-    // console.log(state) //same 
-    // console.log(this.scene) //same
+
     //sabine: make showDialogueBox a member var of the class (so ech choice has its OWN)
     this.showDialogueBox = false; // initially false
     this.showBrainMenu = false; // initially false
@@ -27,7 +23,7 @@ class Choice {
     this.dialogueIndex = 0; // new sabine: need a seperate index
   }
 
-  // this.context.fillStyle = this.fill_color; // change the color we are using
+  //sets position and resize for character sprites
   drawCharacterSpriteElements(charspriteX, charSpriteY) {
     push();
     imageMode(CENTER);
@@ -37,7 +33,7 @@ class Choice {
 
   }
 
-
+  //sets size and position of MC emotion
   drawPlayerEmotion() {
     push();
     imageMode(CENTER);
@@ -55,7 +51,7 @@ class Choice {
   drawTextBox() {
     // text box
     if (this.showDialogueBox === true) {
-      // console.log("show")
+
       push();
       stroke("#FFF9");
       strokeWeight(5);
@@ -112,15 +108,15 @@ class Choice {
   // draws the brain choice menu
   brainActivate() {
     this.showBrainMenu = true
-    // console.log("activate");
+
   }
   drawBrainMenu() {
-    // text box
+
     push();
     imageMode(CENTER);
     image(this.brainMenuIMG, this.brainX, this.brainY);
     pop();
-    // console.log("braindrawing");
+
 
   }
 
@@ -133,11 +129,11 @@ class Choice {
       textAlign(LEFT);
       textFont(playerChoicesFont);
       fill("red");
-      // let bbox = playerChoicesFont.textBounds(this.playerOptions[i], this.brainX - 130, this.brainY - 85 * i);
+
       rectMode(CORNER);
-      // rect(bbox.x, bbox.y, bbox.w, bbox.h);
+
       fill("#d5427c");
-      // ellipse(bbox.x, bbox.y, 5, 5);
+
       //plug in wanted text here!
       text(this.playerOptions[i], this.brainX - 130, this.brainY - 70 * i);
       pop();
@@ -146,7 +142,7 @@ class Choice {
     }
 
   }
-
+  //bounding boxes that will serve as the bound for the brain choices click
   calculateBoundingBoxes(playerChoicesFont) {
 
     for (let i = 0; i < this.playerOptions.length; i++) {

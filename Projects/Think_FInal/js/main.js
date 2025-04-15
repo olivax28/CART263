@@ -1,78 +1,59 @@
 /**
- * Think prototype
+ * 'Think - Demo'
  * Olivia Axiuk Julia Axiuk
  *  * Made with p5
 * https://p5js.org/
+
+Music Attribution: AnalogueCabin by Noir et Blanc Vie, found in Youtube Audio Library
+Mouse clicking sound: Mouse click by Devern on Freesound.com
  */
 
 "use strict";
 
 
 
-// NOTES FOR SABINE:
-//nEED TO NOT RUN DOMR SETUP EVERY TIME
-//NEED TO FIND A WAY OF ONLY PLAYING DIALOGUE FOR THE CHOICE
-// //the background image for the cutscenes
-// let BG = undefined;
+/**
+ * Welcome to 'Think - Demo'. 'Think' is an interactive, decisions-based web-novel. Play in the POV of the main character in her newly adult life, trying to navigate the regular hardships of growing up,
+ * such as college studies, friends, identity... and something much more sinister.
+ * Every choice you make to help the MC (Main Character) leads to a new path, and see how the different emotions from each of these choices influence those around you.
+ * 'Think - Demo' shows the basics of the game's functionality, introduces you to two of the main characters that MC interacts with, and allows you to experience an snippet of the final atmosphere of 'Think'.
+ * Click to cycle through dialogue, choose what MC is thinking from the 'brain' menu in the upper right, and watch as the MCs emotions in the left change and characters react.
+ * 
+* */
 
-// //The titlescreen image
-// let titleScreenIMG = undefined;
 
 
+// Variables for the UI
 let uiBorder = undefined;
 let brainIdle = undefined;
 let brainMenu = undefined;
-//Backgrounds
+//Variables for the background images
 let dormBG = undefined;
 let computerLabBG = undefined;
 let introIMG = undefined;
 let endingIMG = undefined;
 
-
-// controls the dialogue
+// Variable to laod in the dialogue
 let storyDialogue = undefined;
 
-// goes through the scenes of the JSON file for the story mode dialogue
+// Viariable for the Index of the scenes array
 let sceneIndex = 0;
-// goes through the array for the Play Game mode and Story dialogue
-let dialogueIndex = 0;
-// let showDialogueBox = false;
-
-
-
-
 
 //set inital state 
 let state = "start"
 
-
+// X and Y for the character sprties (later defined)
 let charspriteX = 1920 / 2;
 let charSpriteY = 1080 / 2 + 20;
 
-
-
-// // Might need a timer?
-// let playSceneTimer = {
-//     counter: undefined,
-// };
 
 // loads in the timer based on the JSON file
 let textBoxDelay = {
     counter: undefined
 };
 
-// // the hit boxes for the title screen
-// const clickBox = {
-//     // x: //,
-//     // y: //,
-//     // w://,
-//     // h: //,
-//     // fill: "#******",
-//     // state: ""
 
-// }
-
-
+// Defines the speech box for the character currently being interacted with
 const textBoxSpeech = {
     body: {
         x: 600,
@@ -83,16 +64,9 @@ const textBoxSpeech = {
     },
 }
 
-const UI = {
 
-}
-
+// Font is a google font loaded in
 let playerChoicesFont;
-
-
-// //sound effects will be defined here
-// let soundFX = undefined
-
 
 // Character Sprites
 let saraNeutral = undefined;
@@ -120,7 +94,7 @@ let musictrack = undefined
 function preload() {
     //load story mode dialogue data
     storyDialogue = loadJSON("assets/Data/dialogue.JSON");
-    //sprites and sounds will be loaded in here
+    //sprites and sounds
     // UI
     uiBorder = loadImage("assets/images/UI/border.PNG");
     brainIdle = loadImage("assets/images/UI/brain_idle.PNG");
@@ -153,14 +127,6 @@ function preload() {
 }
 
 
-
-/**
- * creates the canvas
-*/
-// let DormChoice01 = undefined;
-// let DormChoice02 = undefined;
-// let DormChoice03 = undefined;
-
 //SABINE ADDITION::
 //A: since there is only one active choice at the time .. 
 //make an activeChoice var to hold the `activatedChoice`
@@ -171,7 +137,7 @@ let choices = [];
 
 function setup() {
     createCanvas(1920, 1080);
-
+    // load dialogue arrays from the JSON
     const dialogArray00 = storyDialogue.Scenes[0].Dialogue;
     const dialogArray01 = storyDialogue.Scenes[1].Dialogue;
     const dialogArray02 = storyDialogue.Scenes[2].Dialogue;
@@ -198,9 +164,8 @@ function setup() {
     const dialogArray23 = storyDialogue.Scenes[23].Dialogue;
     const dialogArray24 = storyDialogue.Scenes[24].Dialogue;
     const dialogArray25 = storyDialogue.Scenes[25].Dialogue;
-    // console.log(dialogArray)
     textBoxDelay.counter = storyDialogue.Scenes[sceneIndex].Delay;
-    // all potnetial choices defined here
+    // all potential choices defined using the Choice constructor in ChoicesOBJ
 
 
     choices.push(new Choice(dialogArray00, saraNeutral, "Dorm", textBoxSpeech, brainMenu, storyDialogue.Scenes[0].NextChoices, storyDialogue.Scenes[0].playerOptions, playerNeutral));
@@ -287,11 +252,7 @@ function setup() {
     //SABINE: at the beginning -> the activatedchoice will be DormChoice00:
     currentActivatedChoice = choices[sceneIndex];
 
-    //NOTE FOR LATER CODING....brain click function will change the currently activated choice, dialogue defined by the dialog array constant
 
-
-    // links the storyTimer object to the JSON file, then directs it to the Delay part of each scene (calls each after the designated delay time)
-    // storyTimer.counter = storyDialogue.Scenes[sceneIndex].Delay;
 }
 
 
@@ -301,10 +262,7 @@ function setup() {
 function draw() {
     background(0, 0, 0);
 
-    // console.log(state)
-    // if (state === "title") {
-    //     title();
-    // }
+
     /*SABINE:: idea: for every transition to a new "choice"
     have a state to `set-up` the choice ...: will run ONE time -
     then we have the actual state (which loops..)
@@ -358,12 +316,13 @@ function draw() {
 
 //go to setup every time we initate a new choice... 
 function setupdorm() {
-    // console.log("setup")
+    //delay in the dialogue box popping up at the beginning of both states
     currentActivatedChoice.startDialogueTimer();
 }
 
 
 //start the game
+//draws all the elements in the first state
 function dorm() {
     drawBG(dormBG, width / 2, height / 2);
     currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
@@ -371,10 +330,12 @@ function dorm() {
     drawUI(brainIdle, width / 1.35, height / 3.3);
     currentActivatedChoice.drawPlayerEmotion();
     currentActivatedChoice.drawTextBox();
+    //activates the dialogue
     if (currentActivatedChoice.showBrainMenu === true) {
         currentActivatedChoice.drawBrainMenu();
         currentActivatedChoice.drawOptions(playerChoicesFont);
     }
+    //changes to the lab state when that option is reached
     if (currentActivatedChoice.scene === "lab") {
         state = "lab-setup"
 
@@ -382,7 +343,7 @@ function dorm() {
 }
 
 
-
+//sets up the lab state
 function lab() {
     drawBG(computerLabBG, width / 2, height / 2);
     currentActivatedChoice.drawCharacterSpriteElements(charspriteX, charSpriteY);
@@ -403,13 +364,13 @@ function lab() {
 
 }
 
-
+//draws ending screen
 function ending() {
     drawBG(endingIMG, width / 2, height / 2);
     drawUI(uiBorder, width / 2, height / 2);
 }
 
-
+//draws start screen
 function start() {
     drawBG(introIMG, width / 2, height / 2);
     drawUI(uiBorder, width / 2, height / 2);
@@ -417,7 +378,7 @@ function start() {
 }
 
 
-
+//draws the UI
 function drawUI(uiElement, x, y,) {
     push();
     imageMode(CENTER);
@@ -427,7 +388,7 @@ function drawUI(uiElement, x, y,) {
 }
 
 
-
+//resizesa and draws all BGs
 function drawBG(bgIMG, x, y,) {
     push();
     imageMode(CENTER);
@@ -437,8 +398,9 @@ function drawBG(bgIMG, x, y,) {
 
 }
 
-//p5 mousePressed
+//cycles through dialogue, restarts and starts the game,  and allows choices in the brain menu to activate based on the mouse pressed
 function mousePressed() {
+    //plays click sound on click
     mouseClickSound.play();
     if (currentActivatedChoice.showBrainMenu === true) {
 
@@ -449,7 +411,7 @@ function mousePressed() {
             if (mouseX >= playerOptionBounds.x && mouseX <= (playerOptionBounds.x + playerOptionBounds.w) && mouseY >= playerOptionBounds.y && mouseY <= (playerOptionBounds.y + playerOptionBounds.h)) {
 
                 let newIndex = currentActivatedChoice.nextChoiceArray[i];
-                // console.log(choices[newIndex]);
+
                 currentActivatedChoice = choices[newIndex];
                 currentActivatedChoice.showDialogueBox = true;
             }
@@ -476,6 +438,7 @@ function mousePressed() {
             }
             state = "Dorm-setup";
         }
+        //plays music on first click and loops it
         if (state === "start") {
             musictrack.play();
             musictrack.loop();
