@@ -141,14 +141,14 @@ window.onload = async function () {
 
     for (let i = 0; i < irisBox.numIrises; i++) {
       // Create variables for our arguments for clarity
-      let x = Math.random() * 10;
-      let y = Math.random() * 10;
-      let sepalL = irisesWithColors.sepalLength;
+      let x = Math.random() * 1000;
+      let y = Math.random() * 1000;
+      let sepalL = irisesWithColors[i].sepalLength * 10;
 
-      let sepalW = irisesWithColors[i].sepalWidth;
+      let sepalW = irisesWithColors[i].sepalWidth * 10;
       // console.log(irisesWithColors[i].sepalWidth)
-      let petalL = irisesWithColors[i].petalLength;
-      let petalW = irisesWithColors[i].petalWidth;
+      let petalL = irisesWithColors[i].petalLength * 10;
+      let petalW = irisesWithColors[i].petalWidth * 10;
       let irisColor = `#(${irisesWithColors[i].color}`;
 
       // console.log(irisesWithColors[i].color);

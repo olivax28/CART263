@@ -42,5 +42,6 @@ h1 {
   height: 200px;
   background: rgb(255, 0, 212);
   border-radius: 50%;
+  position: absolute;
 
 }
