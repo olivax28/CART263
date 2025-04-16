@@ -13,10 +13,29 @@ class iris {
         this.irisSepalDiv = document.createElement("div");
         this.xSepal = xSepal;
 
+
+        let self = this;
+
+        this.irisPetalDiv.addEventListener("click", pickFlower);
+        function pickFlower(e) {
+
+            // self.stemLength = self.stemLength + 10;
+
+            self.x = 10
+            self.y = 100
+
+            //update the actual div...
+            self.irisPetalDiv.style.left = self.x + "px";
+            self.irisPetalDiv.style.top = self.y + "px";
+
+            // and also the petal element needs to move up
+            self.flowerPetalDiv.style.top =
+                self.y - self.stemLength - self.size / 2 + "px";
+        }
+
     }
 
     drawIris() {
-        console.log(document.getElementsByClassName("flowerBox")[0]);
         //structure taken from 'garden' project 
         this.irisPetalDiv.classList.add("iris");
         this.irisPetalDiv.style.width = this.petalWidth + "px";
@@ -36,7 +55,7 @@ class iris {
         this.irisSepalDiv.style.left = this.xSepal + 500 + "px";
         this.irisSepalDiv.style.top = this.y + 300 + "px";
         this.irisSepalDiv.style.background = ("yellow");
-        console.log(this.irisColor);
+
         document.getElementsByClassName("flowerBox")[0].appendChild(this.irisSepalDiv);
 
 

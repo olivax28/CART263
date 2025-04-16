@@ -128,7 +128,8 @@ window.onload = async function () {
       // An array to store the individual flowers
       irises: [],
       // How many flowers in the garden
-      numIrises: 20,
+      numIrises: 30,
+
     }
 
 
