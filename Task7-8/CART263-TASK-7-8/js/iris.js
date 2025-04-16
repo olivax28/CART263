@@ -1,5 +1,5 @@
 class iris {
-    constructor(x, y, sepalLength, sepalWidth, petalLength, petalWidth, irisColor) {
+    constructor(x, y, sepalLength, sepalWidth, petalLength, petalWidth, irisColor, xSepal) {
 
         this.x = x;
         this.y = y;
@@ -11,10 +11,12 @@ class iris {
         this.irisColor = irisColor;
         this.irisPetalDiv = document.createElement("div");
         this.irisSepalDiv = document.createElement("div");
+        this.xSepal = xSepal;
 
     }
 
     drawIris() {
+        console.log(document.getElementsByClassName("flowerBox")[0]);
         //structure taken from 'garden' project 
         this.irisPetalDiv.classList.add("iris");
         this.irisPetalDiv.style.width = this.petalWidth + "px";
@@ -24,18 +26,18 @@ class iris {
         this.irisPetalDiv.style.top = this.y + 400 + "px";
         this.irisPetalDiv.style.background = this.irisColor;
         //add to the DOM
+        document.getElementsByClassName("flowerBox")[0].appendChild(this.irisPetalDiv);
+
 
         this.irisSepalDiv.classList.add("iris");
         this.irisSepalDiv.style.width = this.sepalWidth + "px";
         this.irisSepalDiv.style.height = this.sepalLength + "px";
         // this.irisDiv.style.background =  ;//will euqual to the given color. so a word, figure this out;
-        this.irisSepalDiv.style.left = this.x + 500 + "px";
+        this.irisSepalDiv.style.left = this.xSepal + 500 + "px";
         this.irisSepalDiv.style.top = this.y + 400 + "px";
         this.irisSepalDiv.style.background = ("yellow");
         console.log(this.irisColor);
         document.getElementsByClassName("flowerBox")[0].appendChild(this.irisSepalDiv);
-        console.log(document.getElementsByClassName("flowerBox")[0]);
-        document.getElementsByClassName("flowerBox")[0].appendChild(this.irisPetalDiv);
 
 
     }

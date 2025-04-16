@@ -142,14 +142,14 @@ window.onload = async function () {
     for (let i = 0; i < irisBox.numIrises; i++) {
       // Create variables for our arguments for clarity
       let x = Math.random() * 500;
-
+      let xSep = x + 50;
       let y = (Math.random() * 200);
-      let sepalL = irisesWithColors[i].sepalLength * 20;
+      let sepalL = irisesWithColors[i].sepalLength * 10;
 
-      let sepalW = irisesWithColors[i].sepalWidth * 2;
+      let sepalW = irisesWithColors[i].sepalWidth * 10;
       // console.log(irisesWithColors[i].sepalWidth)
       let petalL = irisesWithColors[i].petalLength * 95;
-      let petalW = irisesWithColors[i].petalWidth * 500;
+      let petalW = irisesWithColors[i].petalWidth * 300;
       let irisColor = `${irisesWithColors[i].color}`;
 
       // console.log(irisesWithColors[i].color);
@@ -159,7 +159,7 @@ window.onload = async function () {
       // console.log(irisesWithColors);
 
       // Create a new flower using the arguments
-      let newIris = new iris(x, y, sepalL, sepalW, petalL, petalW, irisColor);
+      let newIris = new iris(x, y, sepalL, sepalW, petalL, petalW, irisColor, xSep);
       // Add the flower to the array of flowers
       irisBox.irises.push(newIris);
     }
