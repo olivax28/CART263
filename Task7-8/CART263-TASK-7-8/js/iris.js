@@ -1,5 +1,5 @@
 class iris {
-    constructor(x, y, sepalLength, sepalWidth, petalLength, petalWidth, irisColor, xSepal) {
+    constructor(x, y, sepalLength, sepalWidth, petalLength, petalWidth, irisColor, xSepal, price) {
 
         this.x = x;
         this.y = y;
@@ -12,15 +12,14 @@ class iris {
         this.irisPetalDiv = document.createElement("div");
         this.irisSepalDiv = document.createElement("div");
         this.xSepal = xSepal;
-        // this.priceIndex = 0;
-
+        this.price = price;
         let self = this;
 
         this.irisPetalDiv.addEventListener("click", pickFlower);
         // modified from the garden project flowers
         function pickFlower(e) {
 
-            let price = 0;
+
 
             self.x = 10 + (Math.random() * 100);
             self.y = 100 + (Math.random() * 100);
@@ -30,7 +29,8 @@ class iris {
 
             self.irisSepalDiv.style.left = self.x + 20 + "px";
             self.irisSepalDiv.style.top = self.y + "px";
-            price = price + 25;
+            self.price = self.price + 25;
+
             console.log(price);
 
 

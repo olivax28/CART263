@@ -1,3 +1,7 @@
+
+let price = 0;
+
+
 window.onload = async function () {
   // console.log("task 7-8");
 
@@ -106,6 +110,8 @@ window.onload = async function () {
 
     const irisesWithColorsSorted = irisesWithColors.toSorted((a, b) => a.petalWidth - b.petalWidth);
     console.log(irisesWithColorsSorted);
+
+
     //visualizing
 
 
@@ -136,19 +142,19 @@ window.onload = async function () {
     let irisBox = {
       // An array to store the individual flowers
       irises: [],
-      // How many flowers in the garden
+      // How many flowers in the box
       numIrises: 30,
 
     }
 
 
-    // irisIndex = 0;
+
 
     //render the flowers and append them into the flowerbox
 
     //create some flowers
 
-    console.log(irisesWithColors);
+
 
 
     for (let i = 0; i < irisBox.numIrises; i++) {
@@ -164,16 +170,17 @@ window.onload = async function () {
       let petalW = irisesWithColors[i].petalWidth * 300;
       let irisColor = `${irisesWithColors[i].color}`;
 
-      // console.log(irisesWithColors[i].color);
 
 
 
-      // console.log(irisesWithColors);
+
+
 
       // Create a new flower using the arguments
-      let newIris = new iris(x, y, sepalL, sepalW, petalL, petalW, irisColor, xSep);
+      let newIris = new iris(x, y, sepalL, sepalW, petalL, petalW, irisColor, xSep, price);
       // Add the flower to the array of flowers
       irisBox.irises.push(newIris);
+
     }
 
 
