@@ -29,7 +29,7 @@ class iris {
             self.irisPetalDiv.style.top = self.y + "px";
 
             // and also the petal element needs to move up
-            self.irisSepalDiv.style.left = self.x + "px";
+            self.irisSepalDiv.style.left = self.x + 20 + "px";
             self.irisSepalDiv.style.top = self.y + "px";
 
         }

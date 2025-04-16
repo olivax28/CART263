@@ -1,5 +1,6 @@
 window.onload = async function () {
   // console.log("task 7-8");
+
   try {
 
     //Part 01
@@ -118,9 +119,16 @@ window.onload = async function () {
 
     let rectangle = document.createElement("div");
     rectangle.classList.add("rectangle");
-    rectangle.innerHTML = ("Irises for Sale, 1$")
+    rectangle.innerHTML = ("Irises for Sale, 25¢")
     let parentElementBox = document.querySelector(".flowerBox");
     parentElementBox.appendChild(rectangle);
+
+
+    let bucket = document.createElement("div");
+    bucket.classList.add("bucket");
+    parentElement.appendChild(bucket);
+
+
 
 
 
@@ -171,7 +179,9 @@ window.onload = async function () {
 
     for (let i = 0; i < irisBox.numIrises; i++) {
       // Add to the irises array
+
       irisBox.irises[i].drawIris();
+
     }
 
 
