@@ -12,25 +12,27 @@ class iris {
         this.irisPetalDiv = document.createElement("div");
         this.irisSepalDiv = document.createElement("div");
         this.xSepal = xSepal;
-
+        // this.priceIndex = 0;
 
         let self = this;
 
         this.irisPetalDiv.addEventListener("click", pickFlower);
+        // modified from the garden project flowers
         function pickFlower(e) {
 
-            // self.stemLength = self.stemLength + 10;
+            let price = 0;
 
             self.x = 10 + (Math.random() * 100);
             self.y = 100 + (Math.random() * 100);
 
-            //update the actual div...
             self.irisPetalDiv.style.left = self.x + "px";
             self.irisPetalDiv.style.top = self.y + "px";
 
-            // and also the petal element needs to move up
             self.irisSepalDiv.style.left = self.x + 20 + "px";
             self.irisSepalDiv.style.top = self.y + "px";
+            price = price + 25;
+            console.log(price);
+
 
         }
 

@@ -107,7 +107,7 @@ window.onload = async function () {
     const irisesWithColorsSorted = irisesWithColors.toSorted((a, b) => a.petalWidth - b.petalWidth);
     console.log(irisesWithColorsSorted);
     //visualizing
-    //IDEA: Box of irises that grow bigger and smaller on their own with a for loop. and who's colors are the random assigned colors
+
 
     //Draw and add the FlowerBox to the DOM
     let flowerBox = document.createElement("div");
@@ -180,10 +180,14 @@ window.onload = async function () {
 
     for (let i = 0; i < irisBox.numIrises; i++) {
       // Add to the irises array
-
       irisBox.irises[i].drawIris();
-
     }
+
+    // Add to the irises array
+
+
+
+
 
 
 
