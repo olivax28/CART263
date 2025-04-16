@@ -16,14 +16,22 @@ class iris {
 
     drawIris() {
         //structure taken from 'garden' project 
-        this.irisDiv.classList.add("iris");
-        this.irisDiv.style.width = this.petalWidth + "px";
-        this.irisDiv.style.height = this.petalLength + "px";
+        this.irisPetalDiv.classList.add("iris");
+        this.irisPetalDiv.style.width = this.petalWidth + "px";
+        this.irisPetalDiv.style.height = this.petalLength + "px";
         // this.irisDiv.style.background =  ;//will euqual to the given color. so a word, figure this out;
-        this.irisDiv.style.left = this.x + "px";
-        this.irisDiv.style.top = this.y + "px";
+        this.irisPetalDiv.style.left = this.x + "px";
+        this.irisPetalDiv.style.top = this.y + "px";
         //add to the DOM
-        document.getElementsByClassName("flowerBox")[0].appendChild(this.irisDiv);
+
+        this.irisSepalDiv.classList.add("iris");
+        this.irisSepalDiv.style.width = this.sepalWidth + "px";
+        this.irisSepalDiv.style.height = this.sepalLength + "px";
+        // this.irisDiv.style.background =  ;//will euqual to the given color. so a word, figure this out;
+        this.irisSepalDiv.style.left = this.x + "px";
+        this.irisSepalDiv.style.top = this.y + "px";
+        document.getElementsByClassName("flowerBox")[0].appendChild(this.irisSepalDiv);
+        // document.getElementById("top-layer").appendChild(bubble)
 
     }
 

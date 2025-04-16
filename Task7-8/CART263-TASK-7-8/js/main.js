@@ -147,10 +147,12 @@ window.onload = async function () {
       let x = Math.random();
       let y = Math.random();
       let sepalL = irisesWithColors.sepalLength;
-      let sepalW = irisesWithColors.sepalWidth;
-      let petalL = irisesWithColors.petalLength;
-      let petalW = irisesWithColors.petalWidth;
-      let irisColor = irisesWithColors.sepalWidth;
+
+      let sepalW = irisesWithColors[i].sepalWidth;
+      // console.log(irisesWithColors[i].sepalWidth)
+      let petalL = irisesWithColors[i].petalLength;
+      let petalW = irisesWithColors[i].petalWidth;
+      let irisColor = irisesWithColors[i].sepalWidth;
 
 
 
