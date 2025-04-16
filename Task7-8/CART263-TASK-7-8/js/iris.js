@@ -21,16 +21,17 @@ class iris {
 
             // self.stemLength = self.stemLength + 10;
 
-            self.x = 10
-            self.y = 100
+            self.x = 10 + (Math.random() * 100);
+            self.y = 100 + (Math.random() * 100);
 
             //update the actual div...
             self.irisPetalDiv.style.left = self.x + "px";
             self.irisPetalDiv.style.top = self.y + "px";
 
             // and also the petal element needs to move up
-            self.flowerPetalDiv.style.top =
-                self.y - self.stemLength - self.size / 2 + "px";
+            self.irisSepalDiv.style.left = self.x + "px";
+            self.irisSepalDiv.style.top = self.y + "px";
+
         }
 
     }
