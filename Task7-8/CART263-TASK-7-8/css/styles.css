@@ -33,8 +33,11 @@ h1 {
   height: 100px;
   width: 900px;
   background-color: #e48b70;
-
-
+  font-size: 60px;
+  padding-top: 120px;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(97, 66, 28)
 }
 
 .iris {

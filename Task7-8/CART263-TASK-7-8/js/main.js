@@ -112,11 +112,13 @@ window.onload = async function () {
     let flowerBox = document.createElement("div");
     flowerBox.classList.add("flowerBox");
 
+
     let parentElement = document.querySelector("body")
     parentElement.appendChild(flowerBox);
 
     let rectangle = document.createElement("div");
     rectangle.classList.add("rectangle");
+    rectangle.innerHTML = ("Irises for Sale, 1$")
     let parentElementBox = document.querySelector(".flowerBox");
     parentElementBox.appendChild(rectangle);
 
