@@ -119,13 +119,14 @@ window.onload = async function () {
 
     let rectangle = document.createElement("div");
     rectangle.classList.add("rectangle");
-    rectangle.innerHTML = ("Irises for Sale, 25¢")
+    rectangle.innerHTML = ("Irises for Sale, 25¢");
     let parentElementBox = document.querySelector(".flowerBox");
     parentElementBox.appendChild(rectangle);
 
 
     let bucket = document.createElement("div");
     bucket.classList.add("bucket");
+    bucket.innerHTML = ("Flower Bucket");
     parentElement.appendChild(bucket);
 
 
