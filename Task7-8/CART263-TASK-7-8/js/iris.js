@@ -22,6 +22,7 @@ class iris {
         // this.irisDiv.style.background =  ;//will euqual to the given color. so a word, figure this out;
         this.irisPetalDiv.style.left = this.x + "px";
         this.irisPetalDiv.style.top = this.y + "px";
+        this.irisPetalDiv.style.background = this.irisColor;
         //add to the DOM
 
         this.irisSepalDiv.classList.add("iris");
@@ -30,7 +31,9 @@ class iris {
         // this.irisDiv.style.background =  ;//will euqual to the given color. so a word, figure this out;
         this.irisSepalDiv.style.left = this.x + "px";
         this.irisSepalDiv.style.top = this.y + "px";
+        this.irisSepalDiv.style.background = this.irisColor;
         document.getElementsByClassName("flowerBox")[0].appendChild(this.irisSepalDiv);
+        document.getElementsByClassName("flowerBox")[0].appendChild(this.irisPetalDiv);
         // document.getElementById("top-layer").appendChild(bubble)
 
     }
