@@ -3,7 +3,7 @@ class iris {
 
         this.x = x;
         this.y = y;
-        this.size = size;
+        // this.size = size;
         this.sepalLength = sepalLength;
         this.sepalWidth = sepalWidth;
         this.petalLength = petalLength;
