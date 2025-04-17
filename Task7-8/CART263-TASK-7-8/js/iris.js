@@ -1,5 +1,5 @@
 class iris {
-    constructor(x, y, sepalLength, sepalWidth, petalLength, petalWidth, irisColor, xSepal, price) {
+    constructor(x, y, sepalLength, sepalWidth, petalLength, petalWidth, irisColor, xSepal) {
 
         this.x = x;
         this.y = y;
@@ -12,14 +12,13 @@ class iris {
         this.irisPetalDiv = document.createElement("div");
         this.irisSepalDiv = document.createElement("div");
         this.xSepal = xSepal;
-        this.price = price;
+        // this.priceIndex = 0;
+
         let self = this;
 
         this.irisPetalDiv.addEventListener("click", pickFlower);
         // modified from the garden project flowers
         function pickFlower(e) {
-
-
 
             self.x = 10 + (Math.random() * 100);
             self.y = 100 + (Math.random() * 100);
@@ -29,11 +28,15 @@ class iris {
 
             self.irisSepalDiv.style.left = self.x + 20 + "px";
             self.irisSepalDiv.style.top = self.y + "px";
-            self.price = self.price + 25;
-
+            price = price + 25;
             console.log(price);
 
-
+            let pricetag = document.createElement("div");
+            pricetag.classList.add("pricetag");
+            pricetag.innerHTML = ("price");
+            let parentElement = document.querySelector("h1");
+            parentElement.appendChild(pricetag);
+            pricetag.innerHTML = (`${price}¢`);
         }
 
     }
@@ -44,7 +47,7 @@ class iris {
         this.irisPetalDiv.style.width = this.petalWidth + "px";
         this.irisPetalDiv.style.height = this.petalLength + "px";
         // this.irisDiv.style.background =  ;//will euqual to the given color. so a word, figure this out;
-        this.irisPetalDiv.style.left = this.x + 500 + "px";
+        this.irisPetalDiv.style.left = this.x + 700 + "px";
         this.irisPetalDiv.style.top = this.y + 300 + "px";
         this.irisPetalDiv.style.background = this.irisColor;
         //add to the DOM
@@ -55,13 +58,14 @@ class iris {
         this.irisSepalDiv.style.width = this.sepalWidth + "px";
         this.irisSepalDiv.style.height = this.sepalLength + "px";
         // this.irisDiv.style.background =  ;//will euqual to the given color. so a word, figure this out;
-        this.irisSepalDiv.style.left = this.xSepal + 500 + "px";
+        this.irisSepalDiv.style.left = this.xSepal + 700 + "px";
         this.irisSepalDiv.style.top = this.y + 300 + "px";
-        this.irisSepalDiv.style.background = ("yellow");
+        this.irisSepalDiv.style.background = ("#f0e046");
 
         document.getElementsByClassName("flowerBox")[0].appendChild(this.irisSepalDiv);
 
-
     }
+
+
 
 }
